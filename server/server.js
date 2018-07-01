@@ -21,7 +21,7 @@ mongoose.connect(MONGODB_URI)
 
 // Set static directory
 const DIST_DIR = path.join(__dirname, '../client/assets')
-const HTML_FILE = path.join(DIST_DIR, 'index.html')
+const HTML_FILE = path.join(DIST_DIR, 'template.html')
 const COMPILER = webpack(WEBPACK_CONFIG)
 
 if (NODE_ENV == 'development') {

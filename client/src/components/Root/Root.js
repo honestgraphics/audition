@@ -1,19 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import {
+  Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+import Main from './Main'
 import LoginBox from '../LoginBox/LoginBox'
-import Table from '../Table/Table'
+import { LogoutBox } from '../LogoutBox'
+
+/*import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import Table from '../Table/Table'*/
+import history from './history'
 
 
 const Root = () => (
-  <div>
+  <Router history={history}>
+    <Switch>
+      <Route
+        exact
+        path="/"
+        component={ Main }
+      />
+      <Route
+        exact
+        path="/signin"
+        component={ LoginBox }
+      />
+      <Route
+        exact
+        path="/signup"
+        component={ LogoutBox }
+      />
+    </Switch>
+  </Router>
+  /*<div>
     <Header />
     <LoginBox />
     <Table />
     <Footer />
-  </div>
+  </div>*/
 )
 
 export default Root

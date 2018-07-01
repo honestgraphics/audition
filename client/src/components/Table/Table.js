@@ -5,8 +5,8 @@ import './Table.scss'
 
 const Table = () => (
   <div className="container">
-    <table class="table table-sm table-hover">
-      <thead class="thead-dark">
+    <table className="table table-sm table-hover">
+      <thead className="thead-dark">
         <tr>
           <th scope="col">Auditioned By, no mobile</th>
           <th scope="col">Audition Date Submitted, no mobile</th>

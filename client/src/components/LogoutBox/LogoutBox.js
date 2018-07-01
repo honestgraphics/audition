@@ -1,19 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import logo from '../../../assets/images/auditionlogo.png';
 
+import './LogoutBox.scss'
 
-import './LoginBox.scss'
+const LogoutBox = () => (
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-12"></div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
 
-const LoginBox = () => (
-<div className="container-fluid bg">
-    <div className="row">
-      <div className="col-md-4 col-sm-4 col-xs-12"></div>
-      <div className="col-md-4 col-sm-4 col-xs-12">
-        <form className="form-container">
-          <img className="logo" src={logo} alt="Logo" />
-          <h3 className="brand">Audition</h3>
+        <form>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormEmail2">Email address</label>
             <input type="email" className="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" />
@@ -28,10 +25,9 @@ const LoginBox = () => (
               Remember me
             </label>
           </div>
-          <button type="submit" className="btn btn-success btn-block">Sign in</button>
+          <button type="submit" className="btn btn-primary">Sign up</button>
           <div>
-            Or <Link to="/signup">Sign up</Link>
-          </div>
+          Already have an account? <Link to="/signin">Sign in</Link></div>
         </form>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12"></div>
@@ -39,4 +35,4 @@ const LoginBox = () => (
   </div>
 )
 
-export default LoginBox
+export default LogoutBox
