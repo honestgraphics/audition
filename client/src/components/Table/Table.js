@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 import './Table.scss'
 
@@ -8,14 +8,14 @@ const Table = () => (
     <table className="table table-sm table-hover">
       <thead className="thead-dark">
         <tr>
+          <th scope="col">Click to Submit</th>
           <th scope="col">Auditioned By, no mobile</th>
           <th scope="col">Audition Date Submitted, no mobile</th>
           <th scope="col">Manager Approval By, no mobile</th>
           <th scope="col">Manager Date Submitted, no mobile</th>
-          <th scope="col">Click to Submit</th>
-          <th scope="col">Click to Approve Audition</th>
+          <th scope="col">Audition Approval Status</th>
           <th scope="col">Click Link to Audition Song</th>
-          <th scope="col">WIZS ID</th>
+          <th scope="col">ID</th>
           <th scope="col">Category</th>
           <th scope="col">ISRC</th>
           <th scope="col">Record Label</th>

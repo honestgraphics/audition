@@ -1,7 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import logo from '../../../assets/images/auditionlogo.png';
+import logo from '../../assets/images/auditionlogo.png';
 
 
 import './LoginBox.scss'
