@@ -1,3 +1,7 @@
+.body {
+background-color: red;
+}
+
 .nav_logo {
   width: 4%;
 }
@@ -10,4 +14,10 @@
 
 .nav-link {
   color: white;
+}
+
+img.card {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
 }
