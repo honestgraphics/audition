@@ -1,4 +1,7 @@
-import React, { Component, Fragment } from 'react'
+import React, {
+  // Component, 
+  Fragment 
+} from 'react'
 
 import Header from '../components/Header/Header'
 import Table from '../components/Table/Table'
