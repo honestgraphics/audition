@@ -1,84 +1,50 @@
-# Create React Express App
+# Audition
+## UNC Coding BootCamp - Project 3
+Listen to Songs to make sure that you are ready to play them live. Add the necessary data about the songs for keeping track of what is played. Submit for Manager Approval. Then add to the Database if everything is correct.
 
-## About This Boilerplate
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+![audition](screenshot url here soon)
 
-## Starting the app locally
+## Background
+This app is called Audition and it was done as part of Project 3 for the February 2018 UNC Coding Boot Camp.
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
+This app lets you listen to songs to make sure that you are ready to play them live. Add the necessary data about the songs for keeping track of what is played. Submit for Manager Approval. Then add to the Database if everything is correct.
 
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
+## How to get started with the app
+The application is online at [Heroku](Heroku link will be here). You will more than likely have to wait a little while after visiting this url before Heroku spins up the virtual machine which hosts the project.
 
-After both installations complete, run the following command in your terminal:
+Please install Git Bash, Robo 3T, and Node.js if you want to use the app locally. 
 
-```
-yarn start
-```
+After all of these are installed, download the Audition Github Repo.
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-## Deployment (Heroku)
+Next install the project dependencies by entering:
 
-### Create a Git Repo
+  npm install
 
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
 
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
+The project is now ready to run!
 
-### Heroku
+Start the server by typing in:
 
-Make sure that you have a Heroku app created for this project. If so, proceed to the next section, otherwise run the following command in your terminal:
+    yarn run dev
+    
+      OR
+    
+    node server.js
 
-```
-heroku create
-```
+Open a browser and navigate to:
 
-Optionally add an argument for your application's name after `create`, e.g.
+  http://localhost:3000/ 
 
-```
-heroku myAwesomeApp
-```
+in the address line.
 
-### Deploying
 
-#### Option 1
+<how to use the app will go here>
 
-Use the deploy script inside of the outer `package.json`
+## Authors
+This app was built by Jeannie Rose, John Woltz, Waleed Hamza, & Tony Hill.
 
-After confirming that you have an up to date git repository and a Heroku app created, run the following command to deploy:
-
-```
-yarn deploy
-```
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
-
-#### Option 2
-
-Manually deploy 
-
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
-
-1. Build the React app for production by running the following command:
-
-```
-yarn build
-```
-
-2. Add and commit all changes to git
-
-3. Push to Heroku
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+## Issues we encountered
+Issues we encountered were /<*will be filled in here*>/

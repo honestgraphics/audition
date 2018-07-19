@@ -9,7 +9,11 @@ const Header = () => (
   <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <img className="nav_logo" src={logo} alt="Logo" />
-      <Link to="/"><a className="navbar-brand navbar_app_name" href="/">Audition</a></Link>
+      <Link to="/">
+        <div className="navbar-brand navbar_app_name">
+          Audition
+        </div>
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

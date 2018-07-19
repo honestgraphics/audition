@@ -72,6 +72,30 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   margin-bottom: 15px;
   vertical-align: top; }
 
+.custom-file-upload input[type="file"] {
+  display: none; }
+
+.custom-file-upload {
+  flex: 1; }
+
+.custom-file-upload .custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 100%;
+  background-color: #437cff;
+  color: #fff; }
+
+.upload-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem; }
+
+.form-row {
+  margin-bottom: .5em; }
+
 .App {
   text-align: center; }
 
