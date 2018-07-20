@@ -11,6 +11,7 @@ const HomeCards = () => (
             <div className="cardTitle">
               <Link to="/"><h1>Home Page</h1></Link>
             </div>
+
           </div>
           <div className="card2" >
             <div className="cardTitle">
