@@ -10,7 +10,7 @@ import auditioncard from '../../assets/images/auditioncard.png';
 import './HomeCards.scss'
 
 const HomeCards = () => (
-      <div class="homeCards">
+      <div className="homeCards">
         <div className="cards">
           <div className="card" style={{width: '18rem'}}>
             <Link to="/"><img className="card-img-top homecard" src={homecard} alt="Home Card" /></Link>
