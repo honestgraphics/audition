@@ -18,7 +18,7 @@ class Manager extends React.Component {
   render() {
     return (
       <Fragment>
-        <h1>MANAGER PAGE</h1>
+        {/* <h1>MANAGER PAGE</h1> */}
         <Header />
         <Table />
         <Footer />

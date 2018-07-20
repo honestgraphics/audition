@@ -1,10 +1,70 @@
-.homeCards {
-  margin-left: 10%;
-  margin-right: 10%; }
+#root, .homeCards {
+  padding: 0;
+  margin: 0;
+  display: block; }
 
-.cards {
+.card1 {
+  width: 50%;
+  height: 50vh;
+  float: left;
   display: flex;
-  justify-content: space-between; }
+  flex-wrap: wrap;
+  text-align: center;
+  text-shadow: 2px 3px 1px greenyellow;
+  position: relative;
+  font-family: "Permanent Marker", cursive;
+  background: linear-gradient(to bottom right, #777, yellow); }
 
-.card-img-top {
-  width: 100%; }
+.card2 {
+  width: 50%;
+  height: 50vh;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  text-shadow: 2px 3px 1px greenyellow;
+  position: relative;
+  font-family: "Permanent Marker", cursive;
+  background: linear-gradient(to bottom left, #777, yellow); }
+
+.card3 {
+  width: 50%;
+  height: 50vh;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  text-shadow: 2px 3px 1px greenyellow;
+  position: relative;
+  font-family: "Permanent Marker", cursive;
+  background: linear-gradient(to top right, #777, yellow); }
+
+.card4 {
+  width: 50%;
+  height: 50vh;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  text-shadow: 2px 3px 1px greenyellow;
+  position: relative;
+  font-family: "Permanent Marker", cursive;
+  background: linear-gradient(to top left, #777, yellow); }
+
+.cardTitle {
+  position: relative;
+  left: 0;
+  top: 25% vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle; }
+
+.cardTitle :hover {
+  text-decoration: none;
+  margin-bottom: 12px; }
+
+h1 {
+  font-size: 70px; }

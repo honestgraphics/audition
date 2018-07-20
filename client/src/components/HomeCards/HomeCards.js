@@ -1,30 +1,33 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
-
-import homecard from '../../assets/images/homecard.png';
-import managerapprovalcard from '../../assets/images/managerapprovalcard.png';
-import databasecard from '../../assets/images/databasecard.png';
-import auditioncard from '../../assets/images/auditioncard.png';
-
 import './HomeCards.scss'
+
 
 const HomeCards = () => (
       <div class="homeCards">
-        <div className="cards">
-          <div className="card" style={{width: '18rem'}}>
-            <Link to="/"><img className="card-img-top homecard" src={homecard} alt="Home Card" /></Link>
+        {/* <div className="cards"> */}
+          <div className="card1">
+            <div className="cardTitle">
+              <Link to="/"><h1>Home Page</h1></Link>
+            </div>
           </div>
-          <div className="card" style={{width: '18rem'}}>
-            <Link to="/Audition"><img className="card-img-top auditioncard" src={auditioncard} alt="Audition Card" /></Link>
+          <div className="card2" >
+            <div className="cardTitle">
+              <Link to="/Audition"><h1>Audition Page</h1></Link>
+            </div>
           </div>
-          <div className="card" style={{width: '18rem'}}>
-            <Link to="/Manager"><img className="card-img-top managerapprovalcard" src={managerapprovalcard} alt="Manager Approval Card" /></Link>
+          <div className="card3" >
+            <div className="cardTitle">
+              <Link to="/Manager"><h1>Manager Page</h1></Link>
+            </div>
           </div>
-          <div className="card" style={{width: '18rem'}}>
-            <Link to="/Database"><img className="card-img-top databasecard" src={databasecard} alt="Database Card" /></Link>
+          <div className="card4" >
+            <div className="cardTitle">
+              <Link to="/Database"><h1>Database</h1></Link>
+            </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
 )
 
