@@ -19,15 +19,20 @@ class UploadBtn extends Component {
   // handle handleFileUpload function
   handleFileUpload = (event) => {
     event.preventDefault();
-    console.log(event.target.files);
+    console.log('hello', event.target.files);
+
+    // setting loading state in editbtn.js to true
+    this.props.updateState(true);
 
     // make use of the aws-3 package to upload file
     uploadFile(event.target.files[0], config)
       .then((data) => {
         console.log(data, config);
+        // setting loading state in editbtn.js to false
+        // this.props.updateState(false);
         this.props.updateAuditionLink(data.location);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("error", error));
   }
   render() {
     return (
@@ -35,7 +40,7 @@ class UploadBtn extends Component {
         <div className="custom-file-upload">
           <label htmlFor="file-upload" className="custom-file-upload">
               <i className="fa fa-cloud-upload" />
-              Upload Music
+              Upload
           </label>
           <input onChange={this.handleFileUpload} id="file-upload" type="file" />
         </div>
