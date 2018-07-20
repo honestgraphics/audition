@@ -16,14 +16,12 @@ const config = {
 
 // create stateful component for upload button
 class UploadBtn extends Component {
+
+
+//// METHODS
   // handle handleFileUpload function
   handleFileUpload = (event) => {
     event.preventDefault();
-    console.log('hello', event.target.files);
-
-    // setting loading state in editbtn.js to true
-    this.props.updateState(true);
-
     // make use of the aws-3 package to upload file
     uploadFile(event.target.files[0], config)
       .then((data) => {
@@ -34,17 +32,21 @@ class UploadBtn extends Component {
       })
       .catch((error) => console.log("error", error));
   }
+
+
   render() {
     return (
-      <Fragment>
-        <div className="custom-file-upload">
-          <label htmlFor="file-upload" className="custom-file-upload">
-              <i className="fa fa-cloud-upload" />
-              Upload
-          </label>
-          <input onChange={this.handleFileUpload} id="file-upload" type="file" />
-        </div>
-      </Fragment>
+      <div className="App">
+        <Fragment>
+          <div className="custom-file-upload">
+            <label htmlFor="file-upload" className="custom-file-upload">
+                <i className="fa fa-cloud-upload" />
+                Upload
+            </label>
+            <input onChange={this.handleFileUpload} id="file-upload" type="file" />
+          </div>
+        </Fragment>
+      </div>
     )
   }
 }

@@ -17,6 +17,9 @@ img.card {
   justify-content: space-between;
   width: 20%; }
 
+.navbar {
+  width: 100%; }
+
 .footer {
   position: absolute;
   bottom: 0;

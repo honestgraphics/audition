@@ -3,21 +3,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
-import UploadBtn from '../UploadBtn/uploadbtn';
-
-import spinner from '../../assets/images/Spinner.gif';
 
 class EditBtn extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loading: false,
       isOpen: false,
       track: {
         id: '',
         songTitle: '',
-        auditionLink: '',
+        auditionLink: 'http://fb.com',
         albumTitle: '',
         category: '',
         isrc: '',
@@ -52,13 +48,8 @@ class EditBtn extends Component {
     }));
   }
 
-  // passing ability to set state of loading to child(uploadbtn.js)
-  updateState = (text) => {
-    console.log('set state');
-    this.setState(prevState => ({
-      ...prevState,
-      loading: text
-    }));
+  openTrack = (auditionLink) => {
+    window.open(auditionLink, '', 'width=320, height=75')
   }
 
   render() {
@@ -85,29 +76,27 @@ class EditBtn extends Component {
             <div className="modal-content">
                 {/* Modal Header */}
                 <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">Add New Track</h5>
+                    <h5 className="modal-title" id="exampleModalLabel">Edit</h5>
                     <button onClick={this.toggleModal} type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 {/* Modal Body */}
                 <div className="modal-body">
-                  {!auditionLink && <div className="col upload-icon">
-                  {(this.state.loading === true) ?
-                    (<img src={ spinner } alt="Loading" height="100" width="100" />)
-                    : <UploadBtn updateAuditionLink={this.updateAuditionLink} updateState={this.updateState}/>}
-                  </div>}
-                  {auditionLink && <form>
+                  <form>
                     {/* Modal Row 1 */}
                     <div className="form-row">
                       <div className="col">
                         {/* Audition Link Input (disabled bc filled in by upload button) */}
                         <label htmlFor="auditionLink">Audition Link</label>
-                        {/* {<input type="text" className="form-control" id="auditionLink" placeholder="http://" onChange={this.updateTrack} value={auditionLink} disabled />} */}
-                        <a target="_blank" className="form-control" id="auditionLink" href={auditionLink} onClick="window.open({auditionLink},'resizable,height=260,width=370'); return false;">{auditionLink}</a>
-                        <noscript>You need Javascript to use the previous link or use <a href={auditionLink} target="_blank">{auditionLink}</a></noscript>
-
-                        {/* {<a target="_blank" className="form-control" id="auditionLink" href={auditionLink}>{auditionLink}</a>} */}
+                      </div>
+                      <div className="input-group mb-3">
+                        <input type="text" className="form-control" value={auditionLink} disabled>{auditionLink}</input>
+                        <div className="input-group-append">
+                          <button onClick={() => this.openTrack('https://auditionbucket.s3.amazonaws.com/tracks/4.wav')} className="btn btn-success">
+                            <i className="fas fa-play"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                     {/* Modal Row 2 */}
@@ -162,13 +151,13 @@ class EditBtn extends Component {
                         <input className="form-control" id="filePath" value={filePath} onChange={this.updateTrack} />
                         </div>
                     </div>
-                  </form>}
+                  </form>
                 </div>
-                {auditionLink && <div className="modal-footer">
+                <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" onClick={this.toggleModal} data-dismiss="modal">Close</button>
                     <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => { this.handleSave() }}
                     disabled={!auditionLink}>Save changes</button>
-                </div>}
+                </div>
             </div>
         </div>
         </Modal>
