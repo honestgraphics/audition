@@ -16,3 +16,6 @@ img.card {
   display: flex;
   justify-content: space-between;
   width: 20%; }
+
+.navbar {
+  width: 100%; }
