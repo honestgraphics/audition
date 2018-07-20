@@ -3,28 +3,61 @@ import React from 'react'
 
 import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
+import UploadBtn from '../UploadBtn/uploadbtn';
 
 const Table = () => (
   <div className="container">
     <table className="table table-sm table-hover">
       <thead className="thead-dark">
         <tr>
-          <th scope="col">Click to Submit</th>
-          <th scope="col">Auditioned By, no mobile</th>
-          <th scope="col">Audition Date Submitted, no mobile</th>
-          <th scope="col">Manager Approval By, no mobile</th>
-          <th scope="col">Manager Date Submitted, no mobile</th>
-          <th scope="col">Audition Approval Status</th>
-          <th scope="col">Click Link to Audition Song</th>
-          <th scope="col">ID</th>
-          <th scope="col">Category</th>
-          <th scope="col">ISRC</th>
-          <th scope="col">Record Label</th>
-          <th scope="col">Artist</th>
-          <th scope="col">Song Title</th>
-          <th scope="col">Album</th>
-          <th scope="col">File Path</th>
-          <th scope="col">Edit & Delete Links</th>
+          <th className="responsive-visibility" scope="col">
+            Click to Submit
+          </th>
+          <th className="responsive-invisibility" scope="col">
+            Associate That Approved
+          </th>
+          <th className="responsive-invisibility" scope="col">
+            Associate Submission Date
+          </th>
+          <th className="responsive-invisibility" scope="col">
+           Manager That Approved
+          </th>
+          <th className="responsive-invisibility" scope="col">
+            Manager Submission Date
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Audition Approved?
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Audition Link
+          </th>
+          <th className="responsive-visibility" scope="col">
+            ID
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Category
+          </th>
+          <th className="responsive-visibility" scope="col">
+            ISRC
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Record Label
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Artist
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Song Title
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Album
+          </th>
+          <th className="responsive-visibility" scope="col">
+            File Path
+          </th>
+          <th className="responsive-visibility" scope="col">
+            Edit & Delete Links
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -47,6 +80,11 @@ const Table = () => (
           <td>form box</td>
           <td><EditBtn /> & Delete Link</td>
 
+        </tr>
+        <tr>
+          <td className="addATrackBtnRow">
+            <UploadBtn />
+          </td>
         </tr>
       </tbody>
     </table>

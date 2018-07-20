@@ -5,7 +5,7 @@
   width: 4%; }
 
 .navbar_app_name {
-  font-family: 'Markazi Text', serif;
+  font-family: 'Permanent Marker', cursive;
   font-size: 60px;
   color: white; }
 
@@ -16,3 +16,6 @@ img.card {
   display: flex;
   justify-content: space-between;
   width: 20%; }
+
+.navbar {
+  width: 100%; }
