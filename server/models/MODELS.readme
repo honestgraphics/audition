@@ -1,0 +1,5 @@
+For now the audition schema doesn't link to other schemas for Associates or Managers.
+I wanted to wait until Passport is finished to implement that change. Many entries
+are marked as required: true and other false. I wasn't sure what information the 
+modal encapsulated so there may be more entries in the schema than we need. On a
+review we can see what needs changing.
