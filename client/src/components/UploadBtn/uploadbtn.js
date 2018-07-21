@@ -45,6 +45,9 @@ class UploadBtn extends Component {
          });
       }
       )
+      .then(() => {
+        this.props.fetchTrack();
+      })
       .catch((error) => {
         this.setState(prevState => ({
           ...prevState,

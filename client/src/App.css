@@ -134,6 +134,9 @@ h1 {
   margin-bottom: 15px;
   vertical-align: top; }
 
+.table-sm td, .table-sm th {
+  font-size: .8rem; }
+
 .custom-file-upload input[type="file"] {
   display: none; }
 
