@@ -15,6 +15,7 @@ export default class Table extends React.Component {
   }
   componentDidMount() {
     this.props.fetchTrack();
+    console.log("Hellow world");
   }
 
   openTrack = (auditionLink) => {
@@ -81,24 +82,27 @@ export default class Table extends React.Component {
         </tr>
       </thead>
       <tbody>
-        {tracks.map((track) => (<tr>
+        {tracks.map((track) => (
+        <tr>
           <td>
-            autofill
+           {/* Let's add a submit button component later!  */}autofill
           </td>
           <td>
-            autofill
+            {track.auditionedBy}
           </td>
           <td>
-            autofill
+            {track.auditionDateSubmitted}
           </td>
           <td>
-            autofill
+            {track.managerApprovalBy}
           </td>
           <td>
-            checkbox
+            {track.managerDateSubmitted}
           </td>
           <td>
-            checkbox
+            {/* Let's add a checkbox component later where we can pass a true/false value. 
+             Until then we can drop a boolean in the table*/}
+            {track.auditionApprovalStatus}
           </td>
           <td>
           <Link to="#" onClick={() => this.openTrack(track.auditionSongLink)}> 
@@ -106,28 +110,29 @@ export default class Table extends React.Component {
           </Link>
           </td>
           <td>
-            autofill
+           {track.auditionId}
           </td>
           <td>
-            dropdown box
+            {/* We can make a song category dropdown component, for now I'll put in the type */}
+            {track.songCategory}
           </td>
           <td>
-            form box
+            {track.ISRC}
           </td>
           <td>
-            form box
+            {track.recordLabel}
           </td>
           <td>
-            form box
+             {track.artist}
           </td>
           <td>
-            form box
+            {track.songTitle}
           </td>
           <td>
-            form box
+            {track.album}
           </td>
           <td>
-            form box
+            {track.filepath}
           </td>
           <td>
             <EditBtn /><DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
