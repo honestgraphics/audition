@@ -4,7 +4,7 @@ Listen to Songs to make sure that you are ready to play them live. Add the neces
 
 
 
-![audition](screenshot url here soon)
+![audition](https://snag.gy/lpV7v2.jpg)
 
 ## Background
 This app is called Audition and it was done as part of Project 3 for the February 2018 UNC Coding Boot Camp.
