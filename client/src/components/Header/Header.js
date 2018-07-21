@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import UploadBtn from '../UploadBtn/uploadbtn';
 import './Header.scss'
 
-const Header = () => (
+const Header = ({ fetchTrack }) => (
   <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <img className="nav_logo" src={logo} alt="Logo" />
@@ -38,7 +38,7 @@ const Header = () => (
             <NavLink  className="nav-link" to="/Database">Database</NavLink>
           </li>
           <li>
-          <UploadBtn />
+          <UploadBtn fetchTrack={fetchTrack} />
           </li>
         </ul>
       </div>

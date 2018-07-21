@@ -1,9 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 // import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
+import DeleteBtn from '../DeleteBtn/deletebtn';
 
 export default class Table extends React.Component {
   constructor(props) {
@@ -13,18 +14,16 @@ export default class Table extends React.Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:3001/api/auditions')
-    .then((res) => {
-      const { data } = res;
-      this.setState(prevState => ({
-        ...prevState,
-        tracks: data
-      }));
-    })
+    this.props.fetchTrack();
   }
+
+  openTrack = (auditionLink) => {
+    window.open(auditionLink, '', 'width=320, height=75')
+  }
+  
  render() {
-   const { tracks } = this.state;
-   return (<div className="container-fluid">
+   const { tracks, fetchTrack } = this.props;
+   return (<div className="container">
    <div className="row">
    <div className="col-md-12">
             <div className="panel-body">
@@ -35,22 +34,22 @@ export default class Table extends React.Component {
             Click to Submit
           </th>
           <th className="responsive-invisibility" scope="col">
-            Associate That Approved
+            Associate
           </th>
           <th className="responsive-invisibility" scope="col">
-            Associate Submission Date
+            Submission Date
           </th>
           <th className="responsive-invisibility" scope="col">
-           Manager That Approved
+           Manager
           </th>
           <th className="responsive-invisibility" scope="col">
-            Manager Submission Date
+            Submission Date
           </th>
           <th className="responsive-visibility" scope="col">
-            Audition Approved?
+            Approve Audition
           </th>
           <th className="responsive-visibility" scope="col">
-            Audition Link
+            Audition
           </th>
           <th className="responsive-visibility" scope="col">
             ID
@@ -77,7 +76,7 @@ export default class Table extends React.Component {
             File Path
           </th>
           <th className="responsive-visibility" scope="col">
-            Edit & Delete Links
+            Edit & Delete
           </th>
         </tr>
       </thead>
@@ -102,7 +101,9 @@ export default class Table extends React.Component {
             checkbox
           </td>
           <td>
-           {track.auditionSongLink}
+          <Link to="#" onClick={() => this.openTrack(track.auditionSongLink)}> 
+            <i className="fas fa-play text-success"></i>
+          </Link>
           </td>
           <td>
             autofill
@@ -129,8 +130,7 @@ export default class Table extends React.Component {
             form box
           </td>
           <td>
-            <EditBtn />
-            & Delete Link
+            <EditBtn /><DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
           </td>
         </tr>))}
       </tbody>
