@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // import PropTypes from 'prop-types'
 import logo from '../../assets/images/auditionlogo.png';
 import { NavLink } from 'react-router-dom'
+import UploadBtn from '../UploadBtn/uploadbtn';
 import './Header.scss'
 
 const Header = () => (
@@ -35,6 +36,9 @@ const Header = () => (
           <li className="nav-item">
             {/* <a  className="nav-link" href="#">Database</a> */}
             <NavLink  className="nav-link" to="/Database">Database</NavLink>
+          </li>
+          <li>
+          <UploadBtn />
           </li>
         </ul>
       </div>

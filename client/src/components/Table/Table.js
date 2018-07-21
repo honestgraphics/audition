@@ -3,7 +3,6 @@ import React from 'react'
 
 import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
-import UploadBtn from '../UploadBtn/uploadbtn';
 
 const Table = () => (
   <div className="container">
@@ -80,11 +79,6 @@ const Table = () => (
           <td>form box</td>
           <td><EditBtn /> & Delete Link</td>
 
-        </tr>
-        <tr>
-          <td className="addATrackBtnRow">
-            <UploadBtn />
-          </td>
         </tr>
       </tbody>
     </table>
