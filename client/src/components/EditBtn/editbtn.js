@@ -1,6 +1,6 @@
 //used in table to edit a row of data
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
 
@@ -65,9 +65,9 @@ class EditBtn extends Component {
       songArtist
     } = this.state;
     return (
-      <div className="App">
+      <Fragment>
         <Link to="#" onClick={this.toggleModal}>
-          Edit
+          <i className="fas fa-edit text-info"></i>
         </Link>
 
         <Modal show={this.state.isOpen}
@@ -161,7 +161,7 @@ class EditBtn extends Component {
             </div>
         </div>
         </Modal>
-      </div>
+      </Fragment>
     );
   }
 }
