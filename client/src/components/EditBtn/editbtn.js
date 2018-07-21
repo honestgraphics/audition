@@ -1,8 +1,10 @@
 //used in table to edit a row of data
 
+
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
+import API from "../../api/api";
 
 class EditBtn extends Component {
   constructor(props) {
@@ -31,14 +33,26 @@ class EditBtn extends Component {
     console.log('got here');
   }
 
-
-
   updateTrack = (event) => {
     event.preventDefault();
     this.setState(prevState => ({
       ...prevState,
       [event.target.id]: event.target.value
     }));
+  }
+
+  // for this function to do something 
+  // we need a way to ensure that the _id of the track being 
+  // updated is somehow passed in here,
+  // otherwise the DB entry can't be reached
+  
+  // It will also be helpful to make sure that the fields are autofilled when 
+  // the modal is opened. Once these things are assured 
+
+  handleSave = () => {
+    // API.updateAudition(_id, this.state.track).then((response)=>{
+    //   console.log(response);
+    // })
   }
 
   updateAuditionLink = (link) => {
