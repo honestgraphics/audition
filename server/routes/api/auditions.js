@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const auditionService = require("../../service/auditionService");
 
-// Matches with "/api/books"
+// Matches with "/api/auditions"
 router.route("/")
   .get(auditionService.findAll)
   .post(auditionService.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/auditions/:id"
 router
   .route("/:id")
   .get(auditionService.findById)
