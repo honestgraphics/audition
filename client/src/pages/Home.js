@@ -14,10 +14,10 @@ class Home extends React.Component {
   }
   render() {
     return (
-      // <Fragment>
-        // {/* <h1>HOME PAGE</h1> */}
+      <Fragment>
+        {/* <h1>HOME PAGE</h1> */}
         <HomeCards />
-      // </Fragment>
+      </Fragment>
     );
   }
 }
