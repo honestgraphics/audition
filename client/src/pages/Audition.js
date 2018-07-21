@@ -7,6 +7,7 @@ import axios from 'axios';
 import Header from '../components/Header/Header'
 import Table from '../components/Table/Table'
 import Footer from '../components/Footer/Footer'
+import api from "../api/api"
 
 
 class Audition extends React.Component {
@@ -18,7 +19,7 @@ class Audition extends React.Component {
   }
   fetchTrack = () => {
     console.log('hhhh')
-    axios.get('http://localhost:3001/api/auditions')
+    api.getAuditions()
     .then((res) => {
       const { data } = res;
       this.setState(prevState => ({

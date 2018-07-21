@@ -14,7 +14,7 @@ export default {
     return axios.get("/api/auditions/" + id);
   },
   // 
-  updateAudition: function(id){
+  updateAudition: function(id, newData){
     return axios.get("/api/auditions/"+id, newData);
   },
   // Deletes the Auditions with the given id
