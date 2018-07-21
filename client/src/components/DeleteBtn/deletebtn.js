@@ -3,14 +3,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
+// import S3Client, { uploadFile, deleteFile } from '../../../src'
 
 
 
 
 class DeleteBtn extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   deleteTrack = () => {
     const { trackId, fetchTrack } = this.props;
@@ -21,6 +22,7 @@ class DeleteBtn extends Component {
     })
     .catch((error) => console.log(error));
   }
+
   render() {
     return (<Link to="#" onClick={this.deleteTrack}> <i className="fas fa-trash text-danger"></i></Link>)
   }

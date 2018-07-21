@@ -2,6 +2,10 @@ import React, { Component, Fragment } from 'react'
 import { uploadFile } from "aws-s3";
 import axios from 'axios';
 import Spinner from '../../assets/images/Spinner.gif';
+// import { uploadFile } from '../../aws-s3';
+
+
+
 // import PropTypes from 'prop-types'
 
 import './uploadbtn.scss';
@@ -33,28 +37,32 @@ class UploadBtn extends Component {
       ...prevState,
       loading: true,
     }));
-    // make use of the aws-3 package to upload file
-    uploadFile(event.target.files[0], config)
-      .then((data) => {
-        this.setState(prevState => ({
-          ...prevState,
-          loading: false
-        }));
-        return axios.post('http://localhost:3001/api/auditions', {
-          auditionSongLink: data.location
-         });
-      }
-      )
-      .then(() => {
-        this.props.fetchTrack();
-      })
-      .catch((error) => {
-        this.setState(prevState => ({
-          ...prevState,
-          loading: false
-        }))
-        console.log("error", error)
-      });
+
+
+      // make use of the aws-3 package to upload file
+      uploadFile(event.target.files[0], config)
+        .then((data) => {
+          this.setState(prevState => ({
+            ...prevState,
+            loading: false
+          }));
+          return axios.post('http://localhost:3001/api/auditions', {
+            auditionSongLink: data.location
+          });
+        }
+        )
+        .then(() => {
+          this.props.fetchTrack();
+        })
+        .catch((error) => {
+          this.setState(prevState => ({
+            ...prevState,
+            loading: false
+          }))
+          console.log("error", error)
+        });
+
+
   }
 
 
@@ -64,13 +72,14 @@ class UploadBtn extends Component {
       <div className="App">
         <Fragment>
           {/* Ternary stating if loading is true, then load loading gif, else  */}
-          {loading ? <img src={Spinner} alt="spinner" height="100" width="100"/> : <div className="custom-file-upload">
-            <label htmlFor="file-upload" className="custom-file-upload">
-                <i className="fa fa-cloud-upload" />
-                Upload
-            </label>
-            <input onChange={this.handleFileUpload} id="file-upload" type="file" />
-          </div>}
+          {loading ? <img src={Spinner} alt="spinner" height="70" width="70"/> 
+          : <div className="custom-file-upload">
+              <label htmlFor="file-upload" className="custom-file-upload">
+                  <i className="fa fa-cloud-upload" />
+                  Upload
+              </label>
+              <input onChange={this.handleFileUpload} id="file-upload" type="file" />
+            </div>}
         </Fragment>
       </div>
     )
