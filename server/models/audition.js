@@ -7,11 +7,11 @@ const auditionSchema = new Schema({
     // that I am unsure are going to be required. 
     
 
-  auditionedBy: { type: String, required: false },
+  auditionedBy: { type: String, },
 
   auditionDateSubmitted: { type: Date, default: Date.now },
 
-  managerApprovalBy: {type: String, required: false},
+  managerApprovalBy: {type: String,},
 
 // Temporary default date of Date.now to get started
   managerDateSubmitted: { type: Date, default: Date.now },
@@ -22,23 +22,23 @@ const auditionSchema = new Schema({
   auditionSongLink: {type: String},
 
   // can use this entry or internal mongo _id value for purpose of table
-  auditionId: {type: String, required: false},
+  auditionId: {type: String,},
 
-  songCategory: {type: String, required: true},
+  songCategory: {type: String},
 
-  ISRC: {type: String, required: true},
+  ISRC: {type: String},
 
-  recordLabel: {type: String, required: true},
+  recordLabel: {type: String},
 
-  artist: {type: String, required: true},
+  artist: {type: String},
 
-  songTitle: {type: String, required: true},
+  songTitle: {type: String},
 
-  album: {type: String, required: true},
+  album: {type: String},
 
-  filepath: {type: String, required: false},
+  filepath: {type: String,},
 
-  editAndDeleteLinks: {type: String, required: false}
+  editAndDeleteLinks: {type: String,}
 
 });
 
