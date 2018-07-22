@@ -9,7 +9,6 @@ import Table from '../components/Table/Table'
 import Footer from '../components/Footer/Footer'
 import api from "../api/api"
 
-
 class Audition extends React.Component {
   constructor(props) {
     super(props);
