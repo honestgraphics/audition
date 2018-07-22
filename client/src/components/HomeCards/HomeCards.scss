@@ -1,4 +1,4 @@
-$shadow:  2px 3px 1px greenyellow;
+$shadow: 0 3px 6px #999, 0 3px 6px #999;
 $bigFont: 'Permanent Marker', cursive;
 
 #root, .homeCards {
@@ -7,58 +7,30 @@ $bigFont: 'Permanent Marker', cursive;
   display: block;
 }
 
-.card1 {
-  width: 50%; 
-  height: 50vh; 
-  float: left; 
+.card1,  .card2, .card3, .card4 {
+  width: 50%;
+  height: 50vh;
+  float: left;
   display: flex;
   flex-wrap: wrap;
-  text-align: center; 
+  text-align: center;
   text-shadow: $shadow;
   position: relative;
-  font-family: $bigFont;
-  background: linear-gradient(to bottom right, #777, yellow);
-}
+  font-family: $bigFont; 
+  background-color: #777}
 
 .card2 {
-  width: 50%; 
-  height: 50vh; 
-  float: left; 
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center; 
-  text-shadow: $shadow;
-  position: relative;
-  font-family: $bigFont;
-  background: linear-gradient(to bottom left, #777, yellow);
-}
+  background-color: rgb(55, 115, 245);
+   }
 
 .card3 {
-  width: 50%; 
-  height: 50vh; 
-  float: left; 
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center; 
-  text-shadow: $shadow;
-  position: relative;
-  font-family: $bigFont;
-  background: linear-gradient(to top right, #777, yellow);
-}
+  background-color: rgb(25, 116, 116);
+ }
 
 .card4 {
-  width: 50%; 
-  height: 50vh; 
-  float: left; 
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center; 
-  text-shadow: $shadow;
-  position: relative;
-  font-family: $bigFont;
-  background: linear-gradient(to top left, #777, yellow);
-  // background: #444;
+  background-color: rgb(31, 37, 22);
 }
+
 
 .cardTitle {
   position: relative;

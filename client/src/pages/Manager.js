@@ -20,7 +20,7 @@ class Manager extends React.Component {
       <Fragment>
         {/* <h1>MANAGER PAGE</h1> */}
         <Header />
-        <Table />
+        {/* <Table /> */}
         <Footer />
     </Fragment>
     );

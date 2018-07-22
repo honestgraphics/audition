@@ -19,7 +19,7 @@ class Database extends React.Component {
       <Fragment>
         {/* <h1>DATABASE PAGE</h1> */}
         <Header />
-        <Table />
+        {/* <Table /> */}
         <Footer />
     </Fragment>
     );

@@ -3,11 +3,12 @@ import React, { Redirect, Component, Fragment } from 'react'
 import {
   Router,
   Route,
+  BrowserRouter
   // Switch
 } from 'react-router-dom'
 import LoginBox from './components/LoginBox/LoginBox'
 import { LogoutBox } from './components/LogoutBox'
-
+import Login from './pages/Login.js'
 import history from './components/Routes/history'
 import Audition from './pages/Audition.js'
 import Home from './pages/Home.js'
@@ -27,6 +28,11 @@ class App extends Component {
               exact
               path="/"
               component={ Home }
+            />
+            <Route
+              exact
+              path="/login"
+              component={ Login }
             />
             <Route
               exact
