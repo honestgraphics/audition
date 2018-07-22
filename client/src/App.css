@@ -533,7 +533,8 @@ h1 {
   vertical-align: top; }
 
 .table-sm td, .table-sm th {
-  font-size: .8rem; }
+  font-size: .8rem;
+  font-family: 'open sans' !important; }
 
 .tableContainer {
   margin-top: 30px; }
