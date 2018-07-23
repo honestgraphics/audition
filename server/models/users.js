@@ -17,16 +17,12 @@ module.exports = function (connection){
         lastname:  {
             type: String,
             default: ''
+        },
+        isSignedIn:{
+            type: Boolean,
+            default: false
         }
     });
-
-    // UserSchema.methods.generateHash = function(password){
-    //     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-    // };
-
-    // UserSchema.methods.validPassword = function(passwprd){
-    //     return bcrypt.compareSync(password, this.password)
-    // };
 
 
     connection.modal('User', UserSchema)

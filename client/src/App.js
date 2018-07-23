@@ -14,6 +14,8 @@ import Audition from './pages/Audition.js'
 import Home from './pages/Home.js'
 import Manager from './pages/Manager.js'
 import Database from './pages/Database.js'
+import Logout from './pages/Logout';
+import SignUpBox from './components/SignUpBox/SignUpBox';
 
 
 class App extends Component {
@@ -33,6 +35,16 @@ class App extends Component {
               exact
               path="/login"
               component={ Login }
+            />
+            <Route
+              exact
+              path="/logout"
+              component={ Logout }
+            />
+             <Route
+              exact
+              path="/signup"
+              component={ SignUpBox}
             />
             <Route
               exact

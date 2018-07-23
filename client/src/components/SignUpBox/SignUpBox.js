@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/images/auditionlogo.png';
 
 
-import './LoginBox.scss'
+import './SignUpBox.css'
 
 const SignUpBox = () => (
 <div className="container-fluid bg">
@@ -31,9 +31,13 @@ const SignUpBox = () => (
             <label htmlFor="exampleDropdownFormPassword2">Password</label>
             <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Password" />
           </div>
+          <div className="form-group">
+            <label htmlFor="exampleDropdownFormPassword2">Confirm Password</label>
+            <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Confirm Password" />
+          </div>
          
-          <button type="submit" className="btn btn-success btn-block">Sign in</button>
-          
+          <button type="submit" className="btn btn-success btn-block">Sign up</button>
+
         </form>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12"></div>
