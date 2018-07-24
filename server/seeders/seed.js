@@ -5,28 +5,32 @@ const models = require('../models')(connection)
 
 models.model('User').create([
     {
+        firstname: 'Waleed',
+        lastname: 'Hamza',
         email: 'admin@test.com',
-        firstName: 'Waleed',
-        lastName: 'Hamza',
-        password: 'password'
+        password: 'password',
+        isSignedIn: false
     },
     {
+        firstname: 'Tony',
+        lastname: 'Hill',
         email: 'admin@test.com',
-        firstName: 'Toney',
-        lastName: 'Hill',
-        password: 'password'
+        password: 'password',
+        isSignedIn: false
     },
     {
+        firstname: 'Jeannie',
+        lastname: 'Rose',
         email: 'admin@test.com',
-        firstName: 'Jeannie',
-        lastName: 'Rose',
-        password: 'password'
+        password: 'password',
+        isSignedIn: false
     },
     {
+        firstname: 'John',
+        lastname: 'Woltz',
         email: 'admin@test.com',
-        firstName: 'John',
-        lastName: 'Wolts',
-        password: 'password'
+        password: 'password',
+        isSignedIn: false
     },
 ]).then(data=>{
     console.log('Users created!')

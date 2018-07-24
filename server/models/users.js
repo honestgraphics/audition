@@ -1,15 +1,7 @@
-const mongoose = require('mongoose');
-
-module.exports = function (connection){
+const mongoose = require('mongoose')
+module.exports = function(connection){
     const UserSchema = new mongoose.Schema({
-        email: {
-            type: String,
-            default: ''
-        },
-        password:  {
-            type: String,
-            default: ''
-        },
+        
         firstname:  {
             type: String,
             default: ''
@@ -18,12 +10,19 @@ module.exports = function (connection){
             type: String,
             default: ''
         },
+        email: {
+            type: String,
+            default: ''
+        },
+        password:  {
+            type: String,
+            default: ''
+        },
         isSignedIn:{
             type: Boolean,
             default: false
         }
     });
-
-
-    connection.modal('User', UserSchema)
+    
+    connection.model('User', UserSchema)
 }

@@ -5,7 +5,7 @@ import './HomeCards.scss'
 
 
 const HomeCards = () => (
-      <div class="homeCards">
+      <div className="homeCards">
         {/* <div className="cards"> */}
           <div className="card1">
             <div className="cardTitle">
