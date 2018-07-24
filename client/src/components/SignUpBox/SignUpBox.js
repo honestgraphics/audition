@@ -2,7 +2,7 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/auditionlogo.png';
-
+import GoogleBtn from "../Google+/googleBtn"
 
 import './SignUpBox.css'
 
@@ -37,7 +37,7 @@ const SignUpBox = () => (
           </div>
          
           <button type="submit" className="btn btn-success btn-block">Sign up</button>
-
+          <GoogleBtn />
         </form>
       </div>
       <div className="col-md-4 col-sm-4 col-xs-12">test</div>
