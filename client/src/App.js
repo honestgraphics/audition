@@ -3,7 +3,7 @@ import React, { Redirect, Component, Fragment } from 'react'
 import {
   Router,
   Route,
-  BrowserRouter
+  // BrowserRouter
   // Switch
 } from 'react-router-dom'
 import LoginBox from './components/LoginBox/LoginBox'

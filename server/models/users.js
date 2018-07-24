@@ -21,7 +21,12 @@ module.exports = function(connection){
         isSignedIn:{
             type: Boolean,
             default: false
+        },
+        isAdmin:{
+            type: Boolean,
+            default: false
         }
+
     });
     
     connection.model('User', UserSchema)

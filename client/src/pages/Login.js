@@ -1,6 +1,6 @@
 import React, {
     // Component, 
-    Fragment 
+    // Fragment 
   } from 'react'
   
 import LoginBox from '../components/LoginBox/LoginBox';

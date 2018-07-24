@@ -4,7 +4,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
-import API from "../../api/api";
+// import API from "../../api/api";
 
 class EditBtn extends Component {
   constructor(props) {

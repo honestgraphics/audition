@@ -20,6 +20,10 @@ export default {
   // Deletes the Auditions with the given id
   deleteAudition: function(id) {
     return axios.delete("/api/auditions/" + id);
-  },
-
+  }
+  
+  ,
+  getUsers: function() {
+    return axios.get("/api/auditions/users");
+  }
 };

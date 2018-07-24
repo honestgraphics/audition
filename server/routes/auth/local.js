@@ -8,6 +8,7 @@ module.exports = function(){
     const Router = express.Router()
     //Allows the user to log into the application. Note, we're using the provided middleware from passport.
     Router.post('/login', passport.authenticate('local'), function(req, res){
+        console.log('inside the post route local.js')
         res.json(req.user)
     })
     //Allows the user to log out.
