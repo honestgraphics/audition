@@ -43,6 +43,12 @@ passport.use(new localStrategy(authentication.authenticateUser))
 passport.serializeUser(authentication.serializeUser)
 passport.deserializeUser(authentication.deserializeUser)
 
+
+
+// passport.use('local-signup', localSignupStrategy);
+// passport.use('local-login', localLoginStrategy);
+
+
 //configure custom database middleware to attach connection to all request objects
 app.use(middleware.databaseHandler(models))
 

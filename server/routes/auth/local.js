@@ -17,6 +17,10 @@ module.exports = function(){
         req.logout();
         res.json({success: true})
     })
+    Router.post('./signup' ,passport.authenticate('local.signup' , function(req, res) {
+        console.log(req.user)
+        res.json(req.user);
+    }))
     //Return the Router, since this has all the routes mounted on it and we have to user it higher up.
-    return Router
+    return Router;
 }

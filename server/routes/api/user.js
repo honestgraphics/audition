@@ -80,5 +80,10 @@ module.exports = function(){
             })
         })
     })
+
+    router.get('/login', passport.authenticate('login', {
+        scope:['user']
+      }));
+      
     return Router
 }
