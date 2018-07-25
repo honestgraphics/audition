@@ -41,11 +41,11 @@ return (
         <div className="row">
           <div className="col-md-4 col-sm-4 col-xs-12"></div>
           <div className="col-md-4 col-sm-4 col-xs-12">
-            <form className="form-container">
+            <form className="form-container" action="/audition">
               <img className="logo" src={logo} alt="Logo" />
               <h3 className="brand">Audition</h3>
               <div className="form-group">
-                <label htmlFor="exampleDropdownFormEmail2">UserName</label>
+                <label htmlFor="exampleDropdownFormEmail2">Email</label>
                 <input type="email" 
                 onChange={this.handleInputChange}
                 name="username" value= {this.state.username} className="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com" />
@@ -63,7 +63,7 @@ return (
                   Remember me
                 </label>
               </div> */}
-              <button type="submit" className="btn btn-success btn-block">Sign in</button>
+              <button type="submit" value="Log In" className="btn btn-success btn-block">Sign in{this.state.processForm}</button>
               <GoogleBtn />
               <div>
                 Or <Link to="/signup">Sign up</Link>

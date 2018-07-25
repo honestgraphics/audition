@@ -33,7 +33,7 @@ processForm(event) {
   const formData = `username=${username}&password=${password}`;
 
 axios.post('/login', formData)
-
+// console.log(formData)
 }
   render (){
 
@@ -42,7 +42,7 @@ axios.post('/login', formData)
     <div className="row">
       <div className="col-md-4 col-sm-4 col-xs-12"></div>
       <div className="col-md-4 col-sm-4 col-xs-12">
-        <form className="form-container">
+        <form className="form-container" action="/login">
           <img className="logo" src={logo} alt="Logo" />
           <h3 className="brand">Audition</h3>
           <div className="form-group">
@@ -61,10 +61,10 @@ axios.post('/login', formData)
           </div>
           
           <div className="form-group">
-            <label htmlFor="exampleDropdownFormEmail2">User Name</label>
+            <label htmlFor="exampleDropdownFormEmail2">Email</label>
             <input 
             onChange={this.handleInputChange}
-                name="username" value= {this.state.username}
+                name="email" value= {this.state.username}
                 type="text" className="form-control" id="SignupEmail" placeholder="email@example.com" />
           </div>
           <div className="form-group">
@@ -82,11 +82,11 @@ axios.post('/login', formData)
                 type="text" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
           </div>
          
-          <button type="submit" className="btn btn-success btn-block">Sign up</button>
+          <button type="submit" value="Log In" className="btn btn-success btn-block">Sign up{this.state.handleInputChange}</button>
           <GoogleBtn />
         </form>
       </div>
-      <div className="col-md-4 col-sm-4 col-xs-12">test</div>
+      <div className="col-md-4 col-sm-4 col-xs-12"></div>
     </div>
   </div>
 )

@@ -7,9 +7,10 @@ module.exports = function(){
     //Create a Router instance, so we can mount routes on that and pass it up higher in the imports.
     const Router = express.Router()
     //Allows the user to log into the application. Note, we're using the provided middleware from passport.
-    Router.post('/login', passport.authenticate('local'), function(req, res){
+    Router.post('/login', passport.authenticate('local',{ failureRedirect: '/login' }), function(req, res){
         console.log('inside the post route local.js')
         res.json(req.user)
+        res.redirect('/audition');
     })
     //Allows the user to log out.
     Router.get('/logout', function(req, res){
@@ -17,10 +18,18 @@ module.exports = function(){
         req.logout();
         res.json({success: true})
     })
-    Router.post('./signup' ,passport.authenticate('local.signup' , function(req, res) {
+    Router.post('./signup' ,passport.authenticate('local' , function(req, res) {
         console.log(req.user)
-        res.json(req.user);
+        res.render('successfully Registered');
+        // res.json(req.user);
     }))
+
+    app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res) {
+    res.redirect('/audition');
+  });
+
+
     //Return the Router, since this has all the routes mounted on it and we have to user it higher up.
     return Router;
 }

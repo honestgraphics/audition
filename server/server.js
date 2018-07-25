@@ -38,8 +38,10 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+
+
 // Passport handels user object and passing the functions in the libraries folder  
-passport.use(new localStrategy(authentication.authenticateUser))
+// passport.use(new localStrategy(authentication.authenticateUser))
 passport.serializeUser(authentication.serializeUser)
 passport.deserializeUser(authentication.deserializeUser)
 
