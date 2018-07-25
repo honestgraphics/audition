@@ -3,6 +3,10 @@
   margin: 0;
   display: block; }
 
+.homeCards {
+  animation: fadein 3s;
+  -webkit-animation: fadein 3s; }
+
 .card1, .card2, .card3, .card4 {
   width: 50%;
   height: 50vh;
@@ -21,16 +25,28 @@ img {
   min-height: 100%; }
 
 .card1 {
-  background-image: url(assets/images/unsplash1.jpg); }
+  background-image: url(assets/images/unsplash1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card2 {
-  background-image: url(assets/images/unsplash2.jpg); }
+  background-image: url(assets/images/unsplash2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card3 {
-  background-image: url(assets/images/unsplash5.jpg); }
+  background-image: url(assets/images/unsplash5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card4 {
-  background-image: url(assets/images/unsplash3.jpg); }
+  background-image: url(assets/images/unsplash3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .cardTitle {
   position: relative;
@@ -42,19 +58,20 @@ img {
   justify-content: center; }
 
 h1 {
-  font-size: 90px;
+  font-size: 9vw;
   font-family: "Permanent Marker", cursive;
   text-shadow: 2px 2px 2px #131311;
   color: whitesmoke; }
 
-p {
-  font-family: 'open sans';
-  font-size: 30px;
-  line-height: 1.1; }
+h1:hover {
+  color: #f3f382;
+  font-size: 9.5vw; }
 
-h1 {
-  -webkit-animation: animation 3000ms linear both;
-  animation: animation 3000ms linear both; }
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 /* Generated with Bounce.js. Edit at https://goo.gl/et2XBk */
 @-webkit-keyframes animation {

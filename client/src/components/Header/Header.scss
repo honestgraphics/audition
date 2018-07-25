@@ -1,11 +1,16 @@
 
 .nav_logo {
-  width: 4%;
+  height: 7vh;
+  // width: 4%;
+}
+
+@media screen and (max-width: 600px) {
+  .nav_logo {display:none !important;}
 }
 
 .navbar_app_name {
   font-family: 'Permanent Marker', cursive;
-  font-size: 60px;
+  font-size: 8vh;
   color: whitesmoke !important;
   text-shadow: 3px 3px 3px rgb(19, 19, 17);
 }
@@ -13,7 +18,7 @@
 .nav-link {
   color: whitesmoke !important;
   font-family: 'open sans';
-  font-size: 18px;
+  font-size: 20px;
   text-shadow: 2px 2px 2px rgb(19, 19, 17);
 
 }
@@ -27,15 +32,17 @@ img.card {
 .navbar {
   width: 100%;
   box-shadow: 0px 8px 20px 0px #999;
+  opacity: .85;
 }
 
 
-
-
-
 .navbar_app_name {
-  -webkit-animation: animation 2000ms linear both;
-  animation: animation 2000ms linear both;
+  -webkit-animation: animation 3500ms linear both;
+  animation: animation 3500ms linear both;
+}
+
+.navbar-toggler{
+  background-color: whitesmoke;
 }
 
 /* Generated with Bounce.js. Edit at https://goo.gl/et2XBk */

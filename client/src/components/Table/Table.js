@@ -16,7 +16,7 @@ export default class Table extends React.Component {
   }
   componentDidMount() {
     this.props.fetchTrack();
-    console.log("Hellow world");
+    // console.log("Hellow world");
   }
 
   openTrack = (auditionLink) => {
