@@ -264,11 +264,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   position: relative;
   color: whitesmoke;
   background-size: 100%;
-  text-shadow: 1px 1px 1px black; }
+  text-shadow: 1px 1px 1px black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 img {
-  max-width: 100%;
-  max-height: 100%; }
+  max-height: 100%;
+  min-height: 100%; }
 
 .card1 {
   background-image: url(assets/images/unsplash1.jpg); }
@@ -277,10 +278,10 @@ img {
   background-image: url(assets/images/unsplash2.jpg); }
 
 .card3 {
-  background-image: url(assets/images/unsplash3.jpg); }
+  background-image: url(assets/images/unsplash5.jpg); }
 
 .card4 {
-  background-image: url(assets/images/unsplash5.jpg); }
+  background-image: url(assets/images/unsplash3.jpg); }
 
 .cardTitle {
   position: relative;
@@ -292,14 +293,15 @@ img {
   justify-content: center; }
 
 h1 {
-  font-size: 70px;
+  font-size: 90px;
   font-family: "Permanent Marker", cursive;
   text-shadow: 2px 2px 2px #131311;
-  color: #fcfc96; }
+  color: whitesmoke; }
 
 p {
   font-family: 'open sans';
-  font-size: 20px; }
+  font-size: 30px;
+  line-height: 1.1; }
 
 h1 {
   -webkit-animation: animation 3000ms linear both;
@@ -533,7 +535,8 @@ h1 {
   vertical-align: top; }
 
 .table-sm td, .table-sm th {
-  font-size: .8rem; }
+  font-size: .8rem;
+  font-family: 'open sans' !important; }
 
 .tableContainer {
   margin-top: 30px; }
@@ -601,6 +604,5 @@ h1 {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'open sans';
-  background-image: url(../src/assets/images/background.png);
-}
+  font-family: 'open sans' !important;
+  background-image: url(../src/assets/images/background.png); }

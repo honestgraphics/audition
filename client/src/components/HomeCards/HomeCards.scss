@@ -17,12 +17,18 @@ $bigFont: 'Permanent Marker', cursive;
   position: relative;
   color: whitesmoke;
   background-size: 100%;
-  text-shadow: 1px 1px 1px black;  
+  text-shadow: 1px 1px 1px black;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 img {
-  max-width: 100%;
+  // max-width: 100%;
   max-height: 100%;
+  min-height: 100%
 }
 
 
@@ -35,11 +41,11 @@ img {
 }
 
 .card3 {
-  background-image: url(assets/images/unsplash3.jpg);
+  background-image: url(assets/images/unsplash5.jpg);
 }
 
 .card4 {
-  background-image: url(assets/images/unsplash5.jpg);
+  background-image: url(assets/images/unsplash3.jpg);
 }
 
 .cardTitle {
@@ -53,15 +59,16 @@ img {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 90px;
   font-family: $bigFont;
   text-shadow: $shadow;
-  color: rgb(252, 252, 150)
+  color: whitesmoke
 }
 
 p {
   font-family: 'open sans';
-  font-size: 20px;
+  font-size: 30px;
+  line-height: 1.1;
 }
 
 h1 {
