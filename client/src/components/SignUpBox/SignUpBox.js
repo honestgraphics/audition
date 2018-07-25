@@ -7,14 +7,17 @@ import axios from 'axios'
 import './SignUpBox.css'
 
 class SignUpBox extends React.Component {
- 
-  state = {
+ constructor (){
+   super();
+   this.state = {
     firstname: '',
     lastname: '',
     email: '',
     password: '',
     confirmpassword: ''
   }
+ }
+
 
   handleInputChange = event => {
     const value = event.target.value;

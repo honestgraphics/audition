@@ -7,11 +7,13 @@ import axios from 'axios'
 import './LoginBox.scss'
 
 class LoginBox extends React.Component {
- 
-          state = {
-            username: '',
-            password: ''
-          }
+ constructor (){
+   super();
+  this.state = {
+    username: '',
+    password: ''
+  }
+ }
 
 
   handleInputChange = event => {
