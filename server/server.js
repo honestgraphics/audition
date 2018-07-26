@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 const routes = require("./routes")
 const bodyParser = require("body-parser");
 const cors = require('cors');
+const fileUpload = require('express-fileupload');
 //requiring dotenv so we can use a .env file
 require("dotenv").config();
 
 //setting port variable
 const PORT = process.env.PORT || 3001;
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 //setting express variable
 const app = express();
@@ -18,6 +20,7 @@ app.use(cors()); //enabled cors
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(fileUpload());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

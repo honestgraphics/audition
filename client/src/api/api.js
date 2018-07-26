@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export default {
+  //// MONGO FRONT END ROUTES:
+  
   // Gets all auditions
   getAuditions: function() {
     return axios.get("/api/auditions");
@@ -15,11 +17,19 @@ export default {
   },
   // 
   updateAudition: function(id, newData){
-    return axios.get("/api/auditions/"+id, newData);
+    return axios.put("/api/auditions/"+id, newData);
   },
   // Deletes the Auditions with the given id
   deleteAudition: function(id) {
     return axios.delete("/api/auditions/" + id);
   },
+
+
+  //// AWS FRONT END ROUTES:
+
+  uploadTrack: function(newTrack) {
+    return axios.post("/api/aws/", newTrack)
+  }
+
 
 };

@@ -18,11 +18,12 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "aws-sdk": "^2.276.1",
+    "aws-sdk": "^2.281.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.15.4",
+    "express-fileupload": "^0.4.0",
     "mongoose": "^5.2.4"
   }
 }
