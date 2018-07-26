@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/auditions");
   },
   // creates a new single audition
-  createAudition: function(){
-      return axios.post("/api/auditions")
+  createAudition: function(newData){
+      return axios.post("/api/auditions", newData);
   },
   // Gets the Audition with the given id
   getAudition: function(id) {
@@ -20,10 +20,19 @@ export default {
   // Deletes the Auditions with the given id
   deleteAudition: function(id) {
     return axios.delete("/api/auditions/" + id);
+  },
+
+// PASSPORT FUNCTIONALITY
+  passportLogin: function() {
+    return axios.post("/api/users/login");
+  },
+
+  passportLogout: function() {
+    return axios.get("/api/users/logout");
+  },
+
+  passportSignup: function() {
+    return axios.post("/api/users/signup");
   }
-  
-  ,
-  getUsers: function() {
-    return axios.get("/api/auditions/users");
-  }
+// END PASSPORT FUNCTIONALITY
 };
