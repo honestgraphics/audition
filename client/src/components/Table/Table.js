@@ -137,7 +137,7 @@ export default class Table extends React.Component {
             {track.filepath}
           </td>
           <td>
-            <EditBtn /><DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
+            <EditBtn trackId={track['_id']} fetchTrack={fetchTrack}/><DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
           </td>
         </tr>)})}
       </tbody>
