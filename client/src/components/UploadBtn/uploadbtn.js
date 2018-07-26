@@ -1,8 +1,10 @@
-import React, { Component, Fragment } from 'react'
-import { uploadFile } from "aws-s3";
+import React, {
+  Component,
+  Fragment
+} from 'react'
 import axios from 'axios';
 import Spinner from '../../assets/images/Spinner.gif';
-// import { uploadFile } from '../../aws-s3';
+import api from "../../api/api"
 
 
 
@@ -29,61 +31,75 @@ class UploadBtn extends Component {
     }
   }
 
-//// METHODS
+  //// METHODS
   // handle handleFileUpload function
   handleFileUpload = (event) => {
     event.preventDefault();
+    const {
+      nativeEvent : {
+        target: {
+          files
+        }
+      }
+    } = event;
     this.setState(prevState => ({
       ...prevState,
       loading: true,
     }));
 
-
-      // make use of the aws-3 package to upload file
-      uploadFile(event.target.files[0], config)
-        .then((data) => {
-          this.setState(prevState => ({
-            ...prevState,
-            loading: false
-          }));
-          return axios.post('http://localhost:3001/api/auditions', {
-            auditionSongLink: data.location
-          });
-        }
-        )
+    const formData = new FormData();
+    formData.append('file', files[0])
+    // make use of the aws-3 package to upload file using proxy from server
+    api.uploadTrack(formData)
+      .then((data) => {
+        this.setState(prevState => ({
+          ...prevState,
+          loading: false
+        }));
+        console.log(data.location)
+        return axios.post('http://localhost:3001/api/auditions', {
+          //data.location is aws-s3's way of calling the url
+          auditionSongLink: data.location
+        })
         .then(() => {
           this.props.fetchTrack();
         })
-        .catch((error) => {
-          this.setState(prevState => ({
-            ...prevState,
-            loading: false
-          }))
-          console.log("error", error)
-        });
-
-
+      })
+      .catch((error) => {
+        this.setState(prevState => ({
+          ...prevState,
+          loading: false
+        }))
+        console.log("error", error)
+      });
   }
 
 
   render() {
-    const { loading } = this.state
-    return (
-      <div className="App">
-        <Fragment>
-          {/* Ternary stating if loading is true, then load loading gif, else  */}
-          {loading ? <img src={Spinner} alt="spinner" height="70" width="70"/> 
-          : <div className="custom-file-upload">
-              <label htmlFor="file-upload" className="custom-file-upload">
-                  <i className="fa fa-cloud-upload" />
-                  Upload
-              </label>
-              <input onChange={this.handleFileUpload} id="file-upload" type="file" />
-            </div>}
-        </Fragment>
-      </div>
-    )
+    const {
+      loading
+    } = this.state
+    return ( <div className = "App">
+      <Fragment> { /* Ternary stating if loading is true, then load loading gif, else  */ } {
+        loading ? < img src = {
+          Spinner
+        }
+        alt = "spinner"
+        height = "70"
+        width = "70" / >
+          : <div className = "custom-file-upload">
+            <label htmlFor = "file-upload"
+          className = "custom-file-upload" >
+            <i className = "fa fa-cloud-upload" />
+            Upload </label>
+            <input
+              onChange = {this.handleFileUpload}
+              id = "file-upload"
+              type = "file"
+              name="track" />
+          </div>} </Fragment> </div>
+      )
+    }
   }
-}
 
-export default UploadBtn
+  export default UploadBtn
