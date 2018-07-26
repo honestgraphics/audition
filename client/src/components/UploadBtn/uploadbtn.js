@@ -57,7 +57,7 @@ class UploadBtn extends Component {
           loading: false
         }));
         console.log(data.location)
-        return axios.post('http://localhost:3001/api/auditions', {
+        return axios.post('/api/auditions', {
           //data.location is aws-s3's way of calling the url
           auditionSongLink: data.location
         })
