@@ -1,4 +1,4 @@
-$shadow:  2px 2px 2px rgb(19, 19, 17);
+$shadow: 0 3px 6px #999, 0 3px 6px #999;
 $bigFont: 'Permanent Marker', cursive;
 
 #root, .homeCards {
@@ -7,64 +7,31 @@ $bigFont: 'Permanent Marker', cursive;
   display: block;
 }
 
-.homeCards{
-  animation: fadein 3s;
-  -webkit-animation: fadein 3s;
-}
-
-.card1, .card2, .card3, .card4 {
-  width: 50%; 
-  height: 50vh; 
-  float: left; 
+.card1,  .card2, .card3, .card4 {
+  width: 50%;
+  height: 50vh;
+  float: left;
   display: flex;
   flex-wrap: wrap;
-  text-align: center; 
+  text-align: center;
+  text-shadow: $shadow;
   position: relative;
-  color: whitesmoke;
-  background-size: 100%;
-  text-shadow: 1px 1px 1px black;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-}
-
-img {
-  // max-width: 100%;
-  max-height: 100%;
-  min-height: 100%
-}
-
-
-.card1 {
-  background-image: url(assets/images/unsplash1.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
-}
+  font-family: $bigFont; 
+  background-color: #777}
 
 
 .card2 {
-  background-image: url(assets/images/unsplash2.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
-}
+  background-color: rgb(55, 115, 245);
+   }
 
 .card3 {
-  background-image: url(assets/images/unsplash5.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
-}
+  background-color: rgb(25, 116, 116);
+ }
 
 .card4 {
-  background-image: url(assets/images/unsplash3.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
+  background-color: rgb(31, 37, 22);
 }
+
 
 .cardTitle {
   position: relative;

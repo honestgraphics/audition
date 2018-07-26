@@ -3,10 +3,6 @@
   margin: 0;
   display: block; }
 
-.homeCards {
-  animation: fadein 3s;
-  -webkit-animation: fadein 3s; }
-
 .card1, .card2, .card3, .card4 {
   width: 50%;
   height: 50vh;
@@ -14,39 +10,19 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  text-shadow: 0 3px 6px #999, 0 3px 6px #999;
   position: relative;
-  color: whitesmoke;
-  background-size: 100%;
-  text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
-
-img {
-  max-height: 100%;
-  min-height: 100%; }
-
-.card1 {
-  background-image: url(assets/images/unsplash1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  font-family: "Permanent Marker", cursive;
+  background-color: #777; }
 
 .card2 {
-  background-image: url(assets/images/unsplash2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  background-color: #3773f5; }
 
 .card3 {
-  background-image: url(assets/images/unsplash5.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  background-color: #197474; }
 
 .card4 {
-  background-image: url(assets/images/unsplash3.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  background-color: #1f2516; }
 
 .cardTitle {
   position: relative;
