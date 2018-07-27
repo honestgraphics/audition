@@ -32,7 +32,9 @@ class Manager extends React.Component {
       <Fragment>
         {/* <h1>MANAGER PAGE</h1> */}
         <Header />
+
         <Table fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
+
         <Footer />
     </Fragment>
     );

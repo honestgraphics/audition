@@ -32,7 +32,9 @@ class Database extends React.Component {
       <Fragment>
         {/* <h1>DATABASE PAGE</h1> */}
         <Header />
+
         <Table fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
+
         <Footer />
     </Fragment>
     );

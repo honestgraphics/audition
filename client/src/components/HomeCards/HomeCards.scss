@@ -1,3 +1,4 @@
+
 $shadow:  2px 2px 2px rgb(19, 19, 17);
 $bigFont: 'Permanent Marker', cursive;
 
@@ -6,6 +7,7 @@ $bigFont: 'Permanent Marker', cursive;
   margin: 0;
   display: block;
 }
+
 
 .homeCards{
   animation: fadein 3s;
@@ -45,7 +47,9 @@ img {
 }
 
 
+
 .card2 {
+
   background-image: url(assets/images/unsplash2.jpg);
   background-repeat:no-repeat;
   background-size:cover;
@@ -64,7 +68,9 @@ img {
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
+
 }
+
 
 .cardTitle {
   position: relative;
