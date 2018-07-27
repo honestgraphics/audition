@@ -1,12 +1,15 @@
 //used in table to edit a row of data
-
+// import PropTypes from 'prop-types'
 
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
-import API from "../../api/api";
+
+
 import axios from "axios";
 
+
+// import API from "../../api/api";
 
 class EditBtn extends Component {
   constructor(props) {
@@ -146,7 +149,7 @@ class EditBtn extends Component {
                         {/* <input type="text" className="form-control" value={auditionLink} placeholder={auditionLink}>{auditionLink}</input> */}
                         {/* disabled ^wasa above*/}
                         <div className="input-group-append">
-                          <button onClick={() => this.openTrack('https://auditionbucket.s3.amazonaws.com/tracks/4.wav')} className="btn btn-success">
+                          <button onClick={() => this.openTrack(this.props.track)} className="btn btn-success">
                             <i className="fas fa-play"></i>
                           </button>
                         </div>
