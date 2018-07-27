@@ -15,6 +15,7 @@ const HomeCards = () => (
           <div className="card1">
             <div className="cardTitle">
 
+
               <h1 className="mainCard">Audition!</h1>
             </div>
           </div>
@@ -27,11 +28,12 @@ const HomeCards = () => (
           </div>
           <div className="card3" >
             <div className="cardTitle">
-              <h1>About</h1>
+              <Link to=""><h1>Photo Album</h1></Link>
             </div>
           </div>
           <div className="card4" >
             <div className="cardTitle">
+
 
               <h1>Contact</h1>
             </div>

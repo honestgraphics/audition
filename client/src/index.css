@@ -261,7 +261,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   margin: 0;
   display: block; }
 
-
 .homeCards {
   animation: fadein 3s;
   -webkit-animation: fadein 3s; 
@@ -274,7 +273,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-
   position: relative;
   color: whitesmoke;
   background-size: 100%;
@@ -294,23 +292,15 @@ img {
   background-size: cover;
   background-position: center; }
 
+
 .card2 {
-  background-image: url(assets/images/unsplash2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  background-color: #3773f5; }
 
 .card3 {
-  background-image: url(assets/images/unsplash5.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  background-color: #197474; }
 
 .card4 {
-  background-image: url(assets/images/unsplash3.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  background-color: #1f2516; }
 
 
 .cardTitle {
