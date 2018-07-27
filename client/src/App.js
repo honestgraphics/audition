@@ -3,16 +3,19 @@ import React, { Redirect, Component, Fragment } from 'react'
 import {
   Router,
   Route,
+  // BrowserRouter
   // Switch
 } from 'react-router-dom'
 import LoginBox from './components/LoginBox/LoginBox'
 import { LogoutBox } from './components/LogoutBox'
-
+import Login from './pages/Login.js'
 import history from './components/Routes/history'
 import Audition from './pages/Audition.js'
 import Home from './pages/Home.js'
 import Manager from './pages/Manager.js'
 import Database from './pages/Database.js'
+import Logout from './pages/Logout';
+import SignUpBox from './components/SignUpBox/SignUpBox';
 
 
 class App extends Component {
@@ -27,6 +30,21 @@ class App extends Component {
               exact
               path="/"
               component={ Home }
+            />
+            <Route
+              exact
+              path="/login"
+              component={ Login }
+            />
+            <Route
+              exact
+              path="/logout"
+              component={ Logout }
+            />
+             <Route
+              exact
+              path="/signup"
+              component={ SignUpBox}
             />
             <Route
               exact

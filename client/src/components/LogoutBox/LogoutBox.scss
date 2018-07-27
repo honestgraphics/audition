@@ -1,0 +1,29 @@
+.bg {
+    background-color: white;
+  }
+  
+  .form-container {
+    border: 1px solid black;
+    padding: 60px 60px;
+    width: 550px ;
+    margin: 0 auto;
+    margin-top: 20vh;
+    border-radius: 5px;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(150,147,150,1);
+    -moz-box-shadow: -1px 4px 26px 11px rgba(150,147,150,1);
+    box-shadow: -1px 4px 26px 11px rgba(150,147,150,1);
+  }
+  
+  .logo {
+    width: 15%;
+    float: left;
+    vertical-align: bottom;
+  }
+  
+  .brand {
+    font-family: 'Markazi Text', serif;
+    font-size: 60px;
+    color: #5a5a5a;
+    margin-bottom: 15px;
+    vertical-align: top;
+  }

@@ -261,10 +261,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   margin: 0;
   display: block; }
 
-.homeCards {
-  animation: fadein 3s;
-  -webkit-animation: fadein 3s; }
-
 .card1, .card2, .card3, .card4 {
   width: 50%;
   height: 50vh;
@@ -276,7 +272,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000,
+ 1px -1px 0 #000,
+ -1px 1px 0 #000,
+ 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -305,6 +304,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
 
 .cardTitle {
   position: relative;
@@ -540,6 +540,32 @@ h1:hover {
 .form-container {
   border: 1px solid black;
   padding: 50px 60px;
+  margin-top: 20vh;
+  border-radius: 5px;
+  -webkit-box-shadow: -1px 4px 26px 11px #969396;
+  -moz-box-shadow: -1px 4px 26px 11px #969396;
+  box-shadow: -1px 4px 26px 11px #969396; }
+
+.logo {
+  width: 15%;
+  float: left;
+  vertical-align: bottom; }
+
+.brand {
+  font-family: 'Markazi Text', serif;
+  font-size: 60px;
+  color: #5a5a5a;
+  margin-bottom: 15px;
+  vertical-align: top; }
+
+.bg {
+  background-color: white; }
+
+.form-container {
+  border: 1px solid black;
+  padding: 60px 60px;
+  width: 550px;
+  margin: 0 auto;
   margin-top: 20vh;
   border-radius: 5px;
   -webkit-box-shadow: -1px 4px 26px 11px #969396;

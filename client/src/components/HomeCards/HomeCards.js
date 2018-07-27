@@ -14,12 +14,15 @@ const HomeCards = () => (
         {/* <div className="cards"> */}
           <div className="card1">
             <div className="cardTitle">
+
               <h1 className="mainCard">Audition!</h1>
             </div>
           </div>
           <div className="card2" >
             <div className="cardTitle">
+
               <h1>Login</h1>
+
             </div>
           </div>
           <div className="card3" >
@@ -29,6 +32,7 @@ const HomeCards = () => (
           </div>
           <div className="card4" >
             <div className="cardTitle">
+
               <h1>Contact</h1>
             </div>
           </div>
