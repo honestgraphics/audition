@@ -41,7 +41,7 @@ app.use(passport.session())
 
 
 // Passport handels user object and passing the functions in the libraries folder  
-// passport.use(new localStrategy(authentication.authenticateUser))
+passport.use(new localStrategy(authentication.authenticateUser))
 passport.serializeUser(authentication.serializeUser)
 passport.deserializeUser(authentication.deserializeUser)
 
@@ -55,23 +55,13 @@ passport.deserializeUser(authentication.deserializeUser)
 app.use(middleware.databaseHandler(models))
 
 
-app.use('/api', require('./routes/api/'));
-app.use('/auth', require('./routes/auth'))
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
 
-
-// Send every request to the React app
-// Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-
-// A route file has been set up in the routes folder, it is set to either go to a matching route
-// or to the react app if it doesn't reach any api routes.
 app.use(routes);
 
 //Initial setup for our MongoDB
