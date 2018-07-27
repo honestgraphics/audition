@@ -23,16 +23,16 @@ export default {
   },
 
 // PASSPORT FUNCTIONALITY
-  passportLogin: function() {
-    return axios.post("/api/users/login");
+  passportLogin: function(login) {
+    return axios.post("/api/users/login", login);
   },
 
   passportLogout: function() {
     return axios.get("/api/users/logout");
   },
 
-  passportSignup: function() {
-    return axios.post("/api/users/signup");
+  passportSignup: function(singUp) {
+    return axios.post("/api/users/signup", signUp);
   }
 // END PASSPORT FUNCTIONALITY
 };
