@@ -8,8 +8,9 @@ export default {
     return axios.get("/api/auditions");
   },
   // creates a new single audition
-  createAudition: function(newData){
-      return axios.post("/api/auditions", newData);
+
+  createAudition: function(audition){
+      return axios.post("/api/auditions", audition)
   },
   // Gets the Audition with the given id
   getAudition: function(id) {
@@ -44,8 +45,10 @@ export default {
 
   uploadTrack: function(newTrack) {
     return axios.post("/api/aws/", newTrack)
+  },
+
+
+  deleteTrack: function(fileName) {
+    return axios.post("/api/aws/", fileName)
   }
-
-
-
 };
