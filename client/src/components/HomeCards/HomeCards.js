@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './HomeCards.scss'
 import AboutUsModal from '../AboutUsModal/modal';
 import ContactModal from '../ContactModal/modal';

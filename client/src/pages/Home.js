@@ -1,6 +1,6 @@
 import React, {
   // Component, 
-  // Fragment 
+  Fragment 
 } from 'react'
 
 import HomeCards from '../components/HomeCards/HomeCards'

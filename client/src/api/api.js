@@ -31,7 +31,7 @@ export default {
     return axios.get("/api/users/logout");
   },
 
-  passportSignup: function(singUp) {
+  passportSignup: function(signUp) {
     return axios.post("/api/users/signup", signUp);
   }
 // END PASSPORT FUNCTIONALITY
