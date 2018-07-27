@@ -13,3 +13,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 *, ::after, ::before {
   box-sizing: border-box; }
+
+@media screen and (max-height: 800px) {
+  .footer {
+    display: none !important; } }

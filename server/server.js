@@ -55,7 +55,7 @@ passport.deserializeUser(authentication.deserializeUser)
 app.use(middleware.databaseHandler(models))
 
 
-app.use('/api', require('./routes/api/')());
+app.use('/api', require('./routes/api/'));
 app.use('/auth', require('./routes/auth'))
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

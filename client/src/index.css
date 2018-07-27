@@ -256,6 +256,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 *, ::after, ::before {
   box-sizing: border-box; }
 
+@media screen and (max-height: 800px) {
+  .footer {
+    display: none !important; } }
+
 #root, .homeCards {
   padding: 0;
   margin: 0;
@@ -263,8 +267,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 .homeCards {
   animation: fadein 3s;
-  -webkit-animation: fadein 3s; 
-}
+  -webkit-animation: fadein 3s; }
 
 .card1, .card2, .card3, .card4 {
   width: 50%;
@@ -277,10 +280,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000,
- 1px -1px 0 #000,
- -1px 1px 0 #000,
- 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -292,16 +292,23 @@ img {
   background-size: cover;
   background-position: center; }
 
-
 .card2 {
-  background-color: #3773f5; }
+  background-image: url(assets/images/unsplash2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card3 {
-  background-color: #197474; }
+  background-image: url(assets/images/unsplash5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card4 {
-  background-color: #1f2516; }
-
+  background-image: url(assets/images/unsplash3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .cardTitle {
   position: relative;

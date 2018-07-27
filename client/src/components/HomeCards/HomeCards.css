@@ -3,12 +3,9 @@
   margin: 0;
   display: block; }
 
-
 .homeCards {
   animation: fadein 3s;
-  -webkit-animation: fadein 3s; 
-}
-
+  -webkit-animation: fadein 3s; }
 
 .card1, .card2, .card3, .card4 {
   width: 50%;
@@ -17,16 +14,11 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  text-shadow: 0 3px 6px #999, 0 3px 6px #999;
   position: relative;
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000,
- 1px -1px 0 #000,
- -1px 1px 0 #000,
- 1px 1px 0 #000; 
-}
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -38,15 +30,23 @@ img {
   background-size: cover;
   background-position: center; }
 
-
 .card2 {
-  background-color: #3773f5; }
+  background-image: url(assets/images/unsplash2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card3 {
-  background-color: #197474; }
+  background-image: url(assets/images/unsplash5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .card4 {
-  background-color: #1f2516; }
+  background-image: url(assets/images/unsplash3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .cardTitle {
   position: relative;
