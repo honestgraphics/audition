@@ -17,6 +17,9 @@
   font-size: 20px;
   text-shadow: 2px 2px 2px #131311; }
 
+.nav-link:hover {
+  color: #f3f382 !important; }
+
 img.card {
   display: flex;
   justify-content: space-between;
@@ -258,10 +261,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   margin: 0;
   display: block; }
 
-.homeCards {
-  animation: fadein 3s;
-  -webkit-animation: fadein 3s; }
-
 .card1, .card2, .card3, .card4 {
   width: 50%;
   height: 50vh;
@@ -273,7 +272,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000,
+ 1px -1px 0 #000,
+ -1px 1px 0 #000,
+ 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -302,6 +304,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
 
 .cardTitle {
   position: relative;
@@ -590,6 +593,15 @@ h1:hover {
 
 .table {
   border-radius: 10px; }
+
+.table tr:nth-child(even) {
+  background-color: #f1f1f1; }
+
+.table tr:nth-child(odd) {
+  background-color: #f9f9f9; }
+
+.table tr:hover {
+  background-color: #ddd !important; }
 
 .custom-file-upload input[type="file"] {
   display: none; }

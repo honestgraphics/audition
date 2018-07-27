@@ -17,6 +17,9 @@
   font-size: 20px;
   text-shadow: 2px 2px 2px #131311; }
 
+.nav-link:hover {
+  color: #f3f382 !important; }
+
 img.card {
   display: flex;
   justify-content: space-between;

@@ -1,4 +1,6 @@
-$shadow: 0 3px 6px #999, 0 3px 6px #999;
+
+$shadow:  2px 2px 2px rgb(19, 19, 17);
+
 $bigFont: 'Permanent Marker', cursive;
 
 #root, .homeCards {
@@ -7,10 +9,17 @@ $bigFont: 'Permanent Marker', cursive;
   display: block;
 }
 
-.card1,  .card2, .card3, .card4 {
-  width: 50%;
-  height: 50vh;
-  float: left;
+
+
+.homeCards{
+  animation: fadein 3s;
+  -webkit-animation: fadein 3s;
+}
+
+.card1, .card2, .card3, .card4 {
+  width: 50%; 
+  height: 50vh; 
+  float: left; 
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -20,16 +29,26 @@ $bigFont: 'Permanent Marker', cursive;
   background-color: #777}
 
 
+
 .card2 {
-  background-color: rgb(55, 115, 245);
-   }
+
+  background-image: url(assets/images/unsplash2.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
 
 .card3 {
   background-color: rgb(25, 116, 116);
  }
 
 .card4 {
-  background-color: rgb(31, 37, 22);
+  background-image: url(assets/images/unsplash3.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+
 }
 
 

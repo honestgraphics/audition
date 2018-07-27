@@ -35,4 +35,5 @@ export default {
     return axios.post("/api/users/signup", signUp);
   }
 // END PASSPORT FUNCTIONALITY
+
 };
