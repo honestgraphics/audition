@@ -6,6 +6,7 @@ import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
 import DeleteBtn from '../DeleteBtn/deletebtn';
 
+
 export default class Table extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ export default class Table extends React.Component {
   }
   componentDidMount() {
     this.props.fetchTrack();
-    console.log("Hellow world");
+    // console.log("Hellow world");
   }
 
   openTrack = (auditionLink) => {
@@ -24,7 +25,7 @@ export default class Table extends React.Component {
   
  render() {
    const { tracks, fetchTrack } = this.props;
-   return (<div className="container">
+   return (<div className="container tableContainer">
    <div className="row">
    <div className="col-md-12">
             <div className="panel-body">
@@ -82,8 +83,9 @@ export default class Table extends React.Component {
         </tr>
       </thead>
       <tbody>
-        {tracks.map((track) => (
-        <tr>
+        {tracks.map((track, i) => {
+        return (
+        <tr key={i}>
           <td>
            {/* Let's add a submit button component later!  */}autofill
           </td>
@@ -105,9 +107,9 @@ export default class Table extends React.Component {
             {track.auditionApprovalStatus}
           </td>
           <td>
-          <Link to="#" onClick={() => this.openTrack(track.auditionSongLink)}> 
-            <i className="fas fa-play text-success"></i>
-          </Link>
+            <Link to="#" onClick={() => this.openTrack(track.auditionSongLink)}> 
+              <i className="fas fa-play text-success"></i>
+            </Link>
           </td>
           <td>
            {track.auditionId}
@@ -137,7 +139,7 @@ export default class Table extends React.Component {
           <td>
             <EditBtn /><DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
           </td>
-        </tr>))}
+        </tr>)})}
       </tbody>
     </table>
     </div>

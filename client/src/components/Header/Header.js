@@ -6,7 +6,13 @@ import { NavLink } from 'react-router-dom'
 import UploadBtn from '../UploadBtn/uploadbtn';
 import './Header.scss'
 
+
+
+
+
 const Header = ({ fetchTrack }) => (
+
+
   <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <img className="nav_logo" src={logo} alt="Logo" />
@@ -21,21 +27,20 @@ const Header = ({ fetchTrack }) => (
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
+          {/* <li className="nav-item">
             <NavLink  className="nav-link" to="/">Home</NavLink>
-          </li>
+          </li> */}
           <li className="nav-item">
-            {/* <a className="nav-link" href="#">Audition</a> */}
             <NavLink  className="nav-link" to="/audition">Audition</NavLink>
           </li>
           <li className="nav-item">
-            {/* <a className="nav-link" href="#">Manager Approval</a> */}
             <NavLink  className="nav-link" to="/Manager">Manager Approval</NavLink>
           </li>
           <li className="nav-item">
-            {/* <a  className="nav-link" href="#">Database</a> */}
-            <NavLink  className="nav-link" to="/Database">Database</NavLink>
+            <NavLink  className="nav-link" to="/Database">View All</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink  className="nav-link" to="/">Logout</NavLink>
           </li>
           <li>
           <UploadBtn fetchTrack={fetchTrack} />

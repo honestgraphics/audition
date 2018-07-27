@@ -10,6 +10,10 @@ import Footer from '../components/Footer/Footer'
 import api from "../api/api"
 
 
+
+
+
+
 class Audition extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +35,7 @@ class Audition extends React.Component {
   render() {
     return (
       <Fragment>
-        {/* <h1>AUDITION PAGE</h1> */}
+        {/* <h1 style={sectionStyle}>AUDITION PAGE</h1> */}
         <Header fetchTrack={this.fetchTrack} />
         <Table fetchTrack={this.fetchTrack} tracks={this.state.tracks} />
         <Footer />
