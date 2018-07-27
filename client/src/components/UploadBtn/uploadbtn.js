@@ -1,8 +1,7 @@
 import React, {
   Component,
   Fragment
-} from 'react'
-import axios from 'axios';
+} from 'react';
 import Spinner from '../../assets/images/Spinner.gif';
 import api from "../../api/api"
 
@@ -11,15 +10,6 @@ import api from "../../api/api"
 // import PropTypes from 'prop-types'
 
 import './uploadbtn.scss';
-
-// Aws config object that contains the bucket info via .env file
-const config = {
-  bucketName: process.env.REACT_APP_BUCKET_NAME,
-  dirName: process.env.REACT_APP_DIR_NAME,
-  region: process.env.REACT_APP_REGION,
-  accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
-  secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY
-};
 
 // create stateful component for upload button
 class UploadBtn extends Component {
@@ -48,20 +38,22 @@ class UploadBtn extends Component {
     }));
 
     const formData = new FormData();
-    formData.append('file', files[0])
+    formData.append('file', files[0]);
     // make use of the aws-3 package to upload file using proxy from server
     api.uploadTrack(formData)
-      .then((data) => {
-        this.setState(prevState => ({
-          ...prevState,
-          loading: false
-        }));
-        console.log(data.location)
-        return axios.post('/api/auditions', {
+      .then(({ data }) => {
+        console.log("LOL", data);
+        return api.createAudition({
           //data.location is aws-s3's way of calling the url
-          auditionSongLink: data.location
+          auditionSongLink: data.Location,
+          filepath: data.Key
         })
-        .then(() => {
+        .then((response) => {
+          console.log(response.data);
+          this.setState(prevState => ({
+            ...prevState,
+            loading: false
+          }));
           this.props.fetchTrack();
         })
       })

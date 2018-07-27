@@ -3,7 +3,7 @@ import React, {
   Fragment 
 } from 'react'
 
-import axios from 'axios';
+// import axios from 'axios';
 import Header from '../components/Header/Header'
 import Table from '../components/Table/Table'
 import Footer from '../components/Footer/Footer'
@@ -18,7 +18,6 @@ class Audition extends React.Component {
     }
   }
   fetchTrack = () => {
-    console.log('hhhh')
     api.getAuditions()
     .then((res) => {
       const { data } = res;
