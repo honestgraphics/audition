@@ -1,11 +1,11 @@
 import React from 'react';
 // import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
 import DeleteBtn from '../DeleteBtn/deletebtn';
-
+// import api from "../../api/api"
 
 export default class Table extends React.Component {
   constructor(props) {
@@ -15,8 +15,8 @@ export default class Table extends React.Component {
     }
   }
   componentDidMount() {
+    // bring in fetchTrack property from Table.js
     this.props.fetchTrack();
-    console.log("Hellow world");
   }
 
   openTrack = (auditionLink) => {
@@ -107,9 +107,9 @@ export default class Table extends React.Component {
             {track.auditionApprovalStatus}
           </td>
           <td>
-            <Link to="#" onClick={() => this.openTrack(track.auditionSongLink)}> 
+            <button onClick={() => this.openTrack(track.auditionSongLink)}> 
               <i className="fas fa-play text-success"></i>
-            </Link>
+            </button>
           </td>
           <td>
            {track.auditionId}
@@ -137,7 +137,8 @@ export default class Table extends React.Component {
             {track.filepath}
           </td>
           <td>
-            <EditBtn /><DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
+            <EditBtn track={track.auditionSongLink}/>
+            <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
           </td>
         </tr>)})}
       </tbody>
