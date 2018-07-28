@@ -1,6 +1,7 @@
 const AWS = require("aws-sdk");
 const Crypto = require("crypto-js");
 require("dotenv").config();
+const uuidv4 = require('uuid/v4')
 
 // Aws config object that contains the bucket info via .env file
 const config = {
@@ -38,8 +39,9 @@ const uploadToS3 = (file) => {
   const s3Bucket = new AWS.S3(config);
   const params = {
     Bucket: config.Bucket,
-    Key: file.name,
-    Body: file.data
+    Key: `${uuidv4()}_${file.name}`,
+    Body: file.data,
+    ACL: 'public-read'
   }
 
   return new Promise((resolve, reject) => {
@@ -55,6 +57,32 @@ const uploadToS3 = (file) => {
   });
 }
 
+const deleteFromS3 = (key) => {
+  return new Promise((resolve, reject) => {
+    const s3Bucket = new AWS.S3(config);
+  const params = {
+    Bucket: config.Bucket,
+    Key:key,
+  }
+  
+  s3Bucket.deleteObject(params, function(err, data) {
+       if (err) {
+         console.log(err, err.stack); // an error occurred
+         reject(err)
+       }
+       else    {
+          console.log(data);           // successful response
+          resolve(data)
+        }
+         /*
+       data = {
+       }
+       */
+     });
+  })
+}
+
+/*
 const deleteFile = async (fileName, config) => {
   const fd = new FormData();
   const url = `https://${config.Bucket}.s3-${
@@ -86,6 +114,7 @@ const deleteFile = async (fileName, config) => {
       fileName: fileName
   });
 }
+*/
 
 module.exports = {
   upload: function(req, res) {
@@ -103,7 +132,8 @@ module.exports = {
   },
   remove: function(req, res) {
     console.log("delete is here")
-  }
+  },
+  delete: deleteFromS3
   //api for delete functionality for aws
   // delete: function(req, res) {
   //   deleteFile(req.body, config)

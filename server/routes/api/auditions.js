@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const auditionService = require("../../service/auditionService");
+const awsService = require("../../service/awsService");
 
 // Matches with "/api/auditions"
 router.route("/")
@@ -11,6 +12,9 @@ router
   .route("/:id")
   .get(auditionService.findById)
   .put(auditionService.update)
-  .delete(auditionService.remove);
+  .delete(async (req, res) => {
+    let data = await awsService.delete(req.query.filePath)
+    auditionService.remove(req, res)   
+  });
 
 module.exports = router;
