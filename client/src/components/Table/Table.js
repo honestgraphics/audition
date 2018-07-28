@@ -139,7 +139,11 @@ export default class Table extends React.Component {
             {track.album}
           </td>
           <td>
-            {track.filepath.split("_")[1]}
+          {track.filepath
+          ?  track.filepath.split("_")[1]
+          : ""}
+
+            {/* {track.filepath.split("_")[1]} */}
           </td>
           <td>
             <EditBtn track={track.auditionSongLink} mongoId={track._id}/>
