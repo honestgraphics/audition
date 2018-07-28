@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
-// import S3Client, { uploadFile, deleteFile } from '../../../src'
 
 
 
@@ -15,7 +14,7 @@ class DeleteBtn extends Component {
 
   deleteTrack = () => {
     const { trackId, fetchTrack } = this.props;
-    Axios.delete(`http://localhost:3001/api/auditions/${trackId}`)
+    Axios.delete(`/api/auditions/${trackId}`)
     .then((response) => {
       fetchTrack();
       console.log(response, 'track deleted successfully');

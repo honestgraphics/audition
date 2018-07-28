@@ -22,7 +22,6 @@ class Audition extends React.Component {
     }
   }
   fetchTrack = () => {
-    console.log('hhhh')
     api.getAuditions()
     .then((res) => {
       const { data } = res;

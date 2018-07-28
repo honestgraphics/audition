@@ -2,24 +2,20 @@ import React, {
   Component,
   Fragment
 } from 'react';
-import Spinner from '../../assets/images/Spinner.gif';
 import api from "../../api/api"
-
-
-
 // import PropTypes from 'prop-types'
 
-import './uploadbtn.scss';
+import './modalplaybtn.scss';
 
-// create stateful component for upload button
-class UploadBtn extends Component {
+// create stateful component for modal play button
+class ModalPlayBtn extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     loading: false,
+  //   }
+  // }
 
   //// METHODS
   // handle handleFileUpload function

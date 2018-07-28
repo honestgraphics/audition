@@ -14,11 +14,15 @@ const localStrategy = require('passport-local').Strategy
 const authentication = require('./libraries/authentication')(connection)
 const middleware = require('./libraries/middleware')
 
+const fileUpload = require('express-fileupload');
+
+
 //requiring dotenv so we can use a .env file
 require("dotenv").config();
 
 //setting port variable
 const PORT = process.env.PORT || 3001;
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 //setting express variable
 const app = express();
@@ -27,6 +31,7 @@ app.use(cors()); //enabled cors
 //telling express to use bodyparser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 //session give you the ability to mange users by using coockies or JWT
 app.use(session({
@@ -53,6 +58,10 @@ passport.deserializeUser(authentication.deserializeUser)
 
 //configure custom database middleware to attach connection to all request objects
 app.use(middleware.databaseHandler(models))
+
+
+
+app.use(fileUpload());
 
 
 
