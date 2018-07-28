@@ -8,7 +8,6 @@ export default {
     return axios.get("/api/auditions");
   },
   // creates a new single audition
-
   createAudition: function(audition){
       return axios.post("/api/auditions", audition)
   },
@@ -26,6 +25,7 @@ export default {
   },
 
 
+
 // PASSPORT FUNCTIONALITY
   passportLogin: function(login) {
     return axios.post("/api/users/login", login);
@@ -39,7 +39,6 @@ export default {
     return axios.post("/api/users/signup", signUp);
   },
 // END PASSPORT FUNCTIONALITY
-
 
   //// AWS FRONT END ROUTES:
 

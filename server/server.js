@@ -5,7 +5,6 @@ const routes = require("./routes")
 const bodyParser = require("body-parser");
 const cors = require('cors');
 
-
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/audition'
 const connection = mongoose.createConnection(connectionString)
 const models = require('./models')(connection)
@@ -15,8 +14,8 @@ const localStrategy = require('passport-local').Strategy
 const authentication = require('./libraries/authentication')(connection)
 const middleware = require('./libraries/middleware')
 
-
 const fileUpload = require('express-fileupload');
+
 
 //requiring dotenv so we can use a .env file
 require("dotenv").config();
@@ -32,6 +31,7 @@ app.use(cors()); //enabled cors
 //telling express to use bodyparser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 //session give you the ability to mange users by using coockies or JWT
 app.use(session({
@@ -62,6 +62,7 @@ app.use(middleware.databaseHandler(models))
 
 
 app.use(fileUpload());
+
 
 
 // Serve up static assets (usually on heroku)

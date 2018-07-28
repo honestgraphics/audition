@@ -1,4 +1,5 @@
 const auditionRoutes = require("./auditions");
+const awsRoutes = require("./aws");
 
 const testRoutes = require("./test");
 const userRoutes = require("./user")

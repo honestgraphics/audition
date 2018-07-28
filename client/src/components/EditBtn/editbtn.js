@@ -5,9 +5,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
 
-
 import axios from "axios";
-
 
 // import API from "../../api/api";
 
