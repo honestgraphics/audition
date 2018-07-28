@@ -16,7 +16,7 @@ class EditBtn extends Component {
     this.state = {
       isOpen: false,
       track: {
-        _id: this.props.mongoId,
+        _id: '',
         songTitle: '',
         auditionId: '',
         auditionLink: 'http://fb.com',
@@ -112,8 +112,11 @@ class EditBtn extends Component {
   }
 
   render() {
+    console.log("EDIT BUTTON PROPS ***********************");
+    console.log(this.props);
+    this.state._id = this.props.mongoId;
     const {
-      id,
+      _id,
       auditionId,
       songTitle,
       // auditionLink,

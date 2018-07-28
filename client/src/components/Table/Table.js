@@ -87,10 +87,13 @@ export default class Table extends React.Component {
       <tbody>
         {tracks.map((track, i) => {
           console.log(track);
+          console.log("TRACK STUFF HERE *(**************************");
+          console.log(track._id);
         return (
+          
         <tr key={i}>
           <td>
-           {/* Let's add a submit button component later!  */}autofill
+            autofill
           </td>
           <td>
             {track.auditionedBy}
@@ -139,7 +142,7 @@ export default class Table extends React.Component {
             {track.filepath.split("_")[1]}
           </td>
           <td>
-            <EditBtn track={track.auditionSongLink} mongoId={track['_id']}/>
+            <EditBtn track={track.auditionSongLink} mongoId={track._id}/>
             <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} filePath={track.filepath} />
           </td>
         </tr>)})}
