@@ -26,6 +26,7 @@ export default class Table extends React.Component {
   
  render() {
    const { tracks, fetchTrack } = this.props;
+   console.log("Tracks from table being sent down:"+tracks);
    return (<div className="container tableContainer">
    <div className="row">
    <div className="col-md-12">
@@ -85,6 +86,7 @@ export default class Table extends React.Component {
       </thead>
       <tbody>
         {tracks.map((track, i) => {
+          console.log(track);
         return (
         <tr key={i}>
           <td>
@@ -137,7 +139,7 @@ export default class Table extends React.Component {
             {track.filepath.split("_")[1]}
           </td>
           <td>
-            <EditBtn track={track.auditionSongLink}/>
+            <EditBtn track={track.auditionSongLink} mongoId={track['_id']}/>
             <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} filePath={track.filepath} />
           </td>
         </tr>)})}

@@ -16,7 +16,7 @@ class EditBtn extends Component {
     this.state = {
       isOpen: false,
       track: {
-        id: '',
+        _id: this.props.mongoId,
         songTitle: '',
         auditionId: '',
         auditionLink: 'http://fb.com',
@@ -57,7 +57,7 @@ class EditBtn extends Component {
     event.preventDefault();
     console.log("inside update track")
     // variables in react recast to model names in Audition.js
-    let id = this.state.id;
+    let _id = this.state._id;
     let auditionId = this.state.auditionId;
     let songTitle = this.state.songTitle;
     // let auditionLink = this.state.auditionLink;
@@ -67,7 +67,7 @@ class EditBtn extends Component {
     let filepath = this.state.filepath;
     let recordLabel = this.state.recordLabel;
     let artist = this.state.artist;
-    let formData = {id, songTitle, auditionId, album, songCategory, ISRC, filepath, recordLabel, artist }
+    let formData = {_id, songTitle, auditionId, album, songCategory, ISRC, filepath, recordLabel, artist }
     console.log(typeof formData)
     console.log(formData)
 
@@ -75,7 +75,7 @@ class EditBtn extends Component {
 
     // THIS WILL NOT WORK WITHOUT A WAY TO PUT THE ID FROM THE DB ENTRY 
     // ITSELF INTO THIS. 
-    axios.put("/api/auditions/"+id, formData).then(res => {
+    axios.put("/api/auditions/"+_id, formData).then(res => {
       console.log(res, "unique")});
 
 
@@ -207,11 +207,11 @@ class EditBtn extends Component {
                         <label htmlFor="album">Album Name</label>
                         <input value={this.state.album} name="album"className="form-control" id="albumTitle"  onChange={this.handleChange} />
                       </div>
-                      <div className="col">
-                        {/* File Path Input */}
+                      {/* <div className="col">
+                       
                         <label htmlFor="filepath">File Path</label>
                         <input value={this.state.filepath} name="filepath" className="form-control" id="filePath"  onChange={this.handleChange} />
-                        </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
