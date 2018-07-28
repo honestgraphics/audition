@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "audition",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Audition!",
   "main": "server/server.js",
   "scripts": {
     "server": "node server/server.js",

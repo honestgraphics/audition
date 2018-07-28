@@ -115,18 +115,18 @@ class EditBtn extends Component {
     console.log("EDIT BUTTON PROPS ***********************");
     console.log(this.props);
     this.state._id = this.props.mongoId;
-    const {
-      _id,
-      auditionId,
-      songTitle,
+    // const {
+      // _id, //commented out due to fact that react gave warning stating that it was not used
+      // auditionId, //commented out due to fact that react gave warning stating that it was not used
+      // songTitle, //commented out due to fact that react gave warning stating that it was not used
       // auditionLink,
-      album,
-      songCategory,
-      ISRC,
-      filepath,
-      recordLabel,
-      artist
-    } = this.state;
+      // album, //commented out due to fact that react gave warning stating that it was not used
+      // songCategory, //commented out due to fact that react gave warning stating that it was not used
+      // ISRC, //commented out due to fact that react gave warning stating that it was not used
+      // filepath, //commented out due to fact that react gave warning stating that it was not used
+      // recordLabel, //commented out due to fact that react gave warning stating that it was not used
+      // artist //commented out due to fact that react gave warning stating that it was not used
+    // } = this.state;
     return (
       <Fragment>
         <Link to="#" onClick={this.toggleModal}>
