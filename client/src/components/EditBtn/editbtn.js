@@ -55,21 +55,25 @@ class EditBtn extends Component {
   updateTrack = (event) => {
     event.preventDefault();
     console.log("inside update track")
+    // variables in react recast to model names in Audition.js
     let id = this.state.id;
     let songTitle = this.state.songTitle;
     // let auditionLink = this.state.auditionLink;
-    let albumTitle = this.state.albumTitle;
-    let category = this.state.category;
-    let isrc = this.state.isrc;
-    let filePath = this.state.filePath;
+    let album = this.state.albumTitle;
+    let songCategory = this.state.category;
+    let ISRC = this.state.isrc;
+    let filepath = this.state.filePath;
     let recordLabel = this.state.recordLabel;
-    let songArtist = this.state.songArtist;
-    let formData = {id, songTitle, albumTitle, category, isrc, filePath, recordLabel, songArtist }
+    let artist = this.state.songArtist;
+    let formData = {auditionId, songTitle, album, songCategory, ISRC, filepath, recordLabel, artist }
     console.log(typeof formData)
     console.log(formData)
 
 
-    axios.post("/api/auditions/", formData).then(res => {
+
+    // THIS WILL NOT WORK WITHOUT A WAY TO PUT THE ID FROM THE DB ENTRY 
+    // ITSELF INTO THIS. 
+    axios.put("/api/auditions/"+auditionId, formData).then(res => {
       console.log(res, "unique")});
 
 

@@ -32,7 +32,7 @@ class LoginBox extends React.Component {
     const formData = `username=${username}&password=${password}`;
 
 
-axios.post('/login', formData)
+    axios.post('/login', formData)
 
   }
 
