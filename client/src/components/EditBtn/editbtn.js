@@ -213,7 +213,7 @@ class EditBtn extends Component {
                       {/* <div className="col">
                        
                         <label htmlFor="filepath">File Path</label>
-                        <input value={this.state.filepath} name="filepath" className="form-control" id="filePath"  onChange={this.handleChange} />
+                        <input value={this.state.filepath} name="filepath" className="form-control" id="filepath"  onChange={this.handleChange} />
                       </div> */}
                     </div>
                   </div>
