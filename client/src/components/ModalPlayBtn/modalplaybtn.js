@@ -3,10 +3,10 @@ import React, {
   Fragment
 } from 'react';
 import Sound from 'react-sound'
-import './playbtn.scss';
+import './modalplaybtn.scss';
 
 // create stateful component for modal play button
-class PlayBtn extends Component {
+class ModalPlayBtn extends Component {
  constructor(props) {
    super(props);
 
@@ -28,16 +28,16 @@ class PlayBtn extends Component {
         loop={true} autoLoad={true}/>
         
 
-      <button className="playBtn" onClick={() => {
+      <button className="btn btn-primary btn-lg btn-block" onClick={() => {
         let playSong = this.state.playSong ? null : auditionSongLink
         this.setState({
           playSong 
         })
       }}> 
-        <i className="fas fa-play text-success"></i>
+        <i className="fas fa-play text-success play-icon"></i>
       </button>
     </Fragment>
   }
 }
 
-  export default PlayBtn;
+  export default ModalPlayBtn;

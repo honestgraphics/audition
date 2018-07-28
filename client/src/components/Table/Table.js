@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types'
 // import { Link } from 'react-router-dom';
-import PlayBtn from '../PlayBtn/playbtn';
+import TablePlayBtn from '../TablePlayBtn/tableplaybtn';
 import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
 import DeleteBtn from '../DeleteBtn/deletebtn';
@@ -88,9 +88,9 @@ export default class Table extends React.Component {
       </thead>
       <tbody>
         {tracks.map((track, i) => {
-          console.log(track);
+          console.log('track', track);
           console.log("TRACK STUFF HERE *(**************************");
-          console.log(track._id);
+          console.log(track.filepath);
         return (
           
         <tr key={i}>
@@ -115,7 +115,7 @@ export default class Table extends React.Component {
             {track.auditionApprovalStatus}
           </td>
           <td>
-             <PlayBtn auditionSongLink={track.auditionSongLink}/>
+             <TablePlayBtn auditionSongLink={track.auditionSongLink}/>
               
           </td>
           <td>
