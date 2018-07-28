@@ -4,7 +4,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
-
+import PlayBtn from '../PlayBtn/playbtn';
 import axios from "axios";
 
 // import API from "../../api/api";
@@ -136,7 +136,7 @@ class EditBtn extends Component {
                 </div>
                 {/* Modal Body */}
                 <div className="modal-body">
-                  <form>
+                  <div>
                     {/* Modal Row 1 */}
                     <div className="form-row">
                       <div className="col">
@@ -147,9 +147,10 @@ class EditBtn extends Component {
                         {/* <input type="text" className="form-control" value={auditionLink} placeholder={auditionLink}>{auditionLink}</input> */}
                         {/* disabled ^wasa above*/}
                         <div className="input-group-append">
-                          <button onClick={() => this.openTrack(this.props.track)} className="btn btn-success">
+                          {/* <button onClick={() => this.openTrack(this.props.track)} className="btn btn-success">
                             <i className="fas fa-play"></i>
-                          </button>
+                          </button> */}
+                          <PlayBtn auditionSongLink={this.props.track}/>
                         </div>
                       </div>
                     </div>
@@ -205,7 +206,7 @@ class EditBtn extends Component {
                         <input value={this.state.filePath} name="filePath" className="form-control" id="filePath" value={filePath} onChange={this.handleChange} />
                         </div>
                     </div>
-                  </form>
+                  </div>
                 </div>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" onClick={this.toggleModal} data-dismiss="modal">Close</button>

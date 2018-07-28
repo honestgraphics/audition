@@ -13,8 +13,8 @@ class DeleteBtn extends Component {
   // }
 
   deleteTrack = () => {
-    const { trackId, fetchTrack } = this.props;
-    Axios.delete(`/api/auditions/${trackId}`)
+    const { trackId, fetchTrack, filePath } = this.props;
+    Axios.delete(`/api/auditions/${trackId}?filePath=${filePath}`)
     .then((response) => {
       fetchTrack();
       console.log(response, 'track deleted successfully');

@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types'
 // import { Link } from 'react-router-dom';
-
+import PlayBtn from '../PlayBtn/playbtn';
 import './Table.scss'
 import EditBtn from '../EditBtn/editbtn';
 import DeleteBtn from '../DeleteBtn/deletebtn';
@@ -108,9 +108,8 @@ export default class Table extends React.Component {
             {track.auditionApprovalStatus}
           </td>
           <td>
-            <button onClick={() => this.openTrack(track.auditionSongLink)}> 
-              <i className="fas fa-play text-success"></i>
-            </button>
+             <PlayBtn auditionSongLink={track.auditionSongLink}/>
+              
           </td>
           <td>
            {track.auditionId}
@@ -135,11 +134,11 @@ export default class Table extends React.Component {
             {track.album}
           </td>
           <td>
-            {track.filepath}
+            {track.filepath.split("_")[1]}
           </td>
           <td>
             <EditBtn track={track.auditionSongLink}/>
-            <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} />
+            <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} filePath={track.filepath} />
           </td>
         </tr>)})}
       </tbody>
