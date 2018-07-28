@@ -2,10 +2,8 @@ import React, {
   Component,
   Fragment
 } from 'react';
-import api from "../../api/api"
-// import PropTypes from 'prop-types'
 import Sound from 'react-sound'
-// import './modalplaybtn.scss';
+import './playbtn.scss';
 
 // create stateful component for modal play button
 class PlayBtn extends Component {
