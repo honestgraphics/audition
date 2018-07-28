@@ -7,7 +7,8 @@ const cors = require('cors');
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/audition'
 const connection = mongoose.createConnection(connectionString)
-const models = require('./models')(connection)
+const models = require('./models')
+// (connection)
 const session = require('express-session')
 const passport = require('passport')
 const localStrategy = require('passport-local').Strategy
