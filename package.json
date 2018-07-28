@@ -1,7 +1,7 @@
 {
   "name": "audition",
   "version": "1.0.0",
-  "description": "Audition!",
+  "description": "Audition App",
   "main": "server/server.js",
   "scripts": {
     "server": "node server/server.js",

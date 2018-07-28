@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './HomeCards.scss'
 // import AboutUsModal from '../AboutUsModal/modal';
 // import ContactModal from '../ContactModal/modal';
@@ -14,12 +14,12 @@ const HomeCards = () => (
         {/* <div className="cards"> */}
           <div className="card1">
             <div className="cardTitle">
-              <h1 className="mainCard">Audition!</h1>
+              <Link className="homeLinks" to='/audition'><h1 className="mainCard">Audition!</h1></Link>
             </div>
           </div>
           <div className="card2" >
             <div className="cardTitle">
-              <h1>Login</h1>
+            <Link className="homeLinks" to='/login'><h1>Login</h1></Link>
             </div>
           </div>
           <div className="card3" >
