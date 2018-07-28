@@ -42,7 +42,7 @@ class UploadBtn extends Component {
     // make use of the aws-3 package to upload file using proxy from server
     api.uploadTrack(formData)
       .then(({ data }) => {
-        console.log("LOL", data);
+        console.log("upload button data", data);
         return api.createAudition({
           //data.location is aws-s3's way of calling the url
           auditionSongLink: data.Location,
