@@ -3,6 +3,9 @@
   margin: 0;
   display: block; }
 
+.homeLinks {
+  text-decoration: none; }
+
 .homeCards {
   animation: fadein 3s;
   -webkit-animation: fadein 3s; }

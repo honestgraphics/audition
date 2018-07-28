@@ -4,7 +4,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
-import PlayBtn from '../PlayBtn/playbtn';
+import ModalPlayBtn from '../ModalPlayBtn/modalplaybtn';
 import axios from "axios";
 
 // import API from "../../api/api";
@@ -78,7 +78,7 @@ class EditBtn extends Component {
     axios.put("/api/auditions/"+_id, formData).then(res => {
       console.log(res, "unique")});
 
-
+    window.location.reload();
     // this.setState(prevState => ({
     //   ...prevState,
     //   [event.target.id]: event.target.value
@@ -114,8 +114,9 @@ class EditBtn extends Component {
   render() {
     console.log("EDIT BUTTON PROPS ***********************");
     console.log(this.props);
+    //componentDidMount then setState may clear up error about not mutating state directly here?
     this.state._id = this.props.mongoId;
-    // const {
+    const {
       // _id, //commented out due to fact that react gave warning stating that it was not used
       // auditionId, //commented out due to fact that react gave warning stating that it was not used
       // songTitle, //commented out due to fact that react gave warning stating that it was not used
@@ -123,10 +124,10 @@ class EditBtn extends Component {
       // album, //commented out due to fact that react gave warning stating that it was not used
       // songCategory, //commented out due to fact that react gave warning stating that it was not used
       // ISRC, //commented out due to fact that react gave warning stating that it was not used
-      // filepath, //commented out due to fact that react gave warning stating that it was not used
+      filepath,
       // recordLabel, //commented out due to fact that react gave warning stating that it was not used
       // artist //commented out due to fact that react gave warning stating that it was not used
-    // } = this.state;
+    } = this.state;
     return (
       <Fragment>
         <Link to="#" onClick={this.toggleModal}>
@@ -149,20 +150,17 @@ class EditBtn extends Component {
                   <div>
                     {/* Modal Row 1 */}
                     <div className="form-row">
-                      <div className="col">
-                        {/* Audition Link Input (disabled bc filled in by upload button) */}
-                        <label htmlFor="auditionLink">Audition Link</label>
-                      </div>
-                      <div className="input-group mb-3">
+                      
+                      {/*<div className="input-group mb-3">*/}
                         {/* <input type="text" className="form-control" value={auditionLink} placeholder={auditionLink}>{auditionLink}</input> */}
                         {/* disabled ^wasa above*/}
-                        <div className="input-group-append">
+                        {/*<div className="input-group-append">*/}
                           {/* <button onClick={() => this.openTrack(this.props.track)} className="btn btn-success">
                             <i className="fas fa-play"></i>
                           </button> */}
-                          <PlayBtn auditionSongLink={this.props.track}/>
-                        </div>
-                      </div>
+                          <ModalPlayBtn auditionSongLink={this.props.track}/>
+                        {/* </div> */}
+                      
                     </div>
                     {/* Modal Row 2 */}
                     <div className="form-row">
@@ -219,7 +217,7 @@ class EditBtn extends Component {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" onClick={this.toggleModal} data-dismiss="modal">Close</button>
+                  {/* <button type="button" className="btn btn-secondary" onClick={this.toggleModal} data-dismiss="modal">Close</button> */}
                     <button type="submit" className="btn btn-primary" data-dismiss="modal" onClick= {this.updateTrack} >Save changes</button>
                   {/* disabled={!auditionLink} was in button above */}
                 
