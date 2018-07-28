@@ -5,7 +5,7 @@ const testRoutes = require("./test");
 const userRoutes = require("./user")
 const express = require('express');
 const router = require("express").Router();
-const awsRoutes = require("./aws");
+
 
 
 router.use("/test", testRoutes);
