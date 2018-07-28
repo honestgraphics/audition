@@ -10,7 +10,7 @@ models.model('User').create([
         email: 'admin@test.com',
         password: 'password',
         isSignedIn: false
-    },
+    }, 
     {
         firstname: 'Tony',
         lastname: 'Hill',

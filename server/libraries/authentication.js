@@ -14,10 +14,14 @@ module.exports = function(connection){
         //  callback(null, user) - This is a successful login attempt.
         //The callback follows node function conventions, taking an error as the first parameter and data as the second.
         authenticateUser: function(username, password, done){
-            connection.model('User').findOne({username})
+            console.log("in authenticate user in authentication.js")
+            console.log(username)
+            connection.model('User').findOne({email: username})
             .exec()
             .then(user=>{
-                if(user.password !== password){
+                console.log('authenticating the user function ################');
+                if(user && user.password !== password){
+                    console.log(user)
                     //You can replace null with 'Invalid Password'
                     done(null, false)
                 }

@@ -13,7 +13,7 @@ class SignUpBox extends React.Component {
    this.state = {
         firstname: '',
         lastname: '',
-        email: '',
+        username: '',
         password: '',
         confirmpassword: ''
   };
@@ -39,7 +39,7 @@ class SignUpBox extends React.Component {
 handleSubmit(event) {
   event.preventDefault();
   // alert('I get here process form sign up box ')
-  let username = this.state.email;
+  let username = this.state.username;
   let firstname = this.state.firstname;
   let lastname = this.state.lastname;
   let password = this.state.password;
@@ -51,7 +51,7 @@ handleSubmit(event) {
 
   axios.post('/api/users/signup', userFormData).then( function(res){
     console.log('this is the axios response: ' , res)
-    res.render('registerd OK');
+    // res.render('registerd OK');
   }); 
 
 }
@@ -84,7 +84,7 @@ handleSubmit(event) {
             <label htmlFor="exampleDropdownFormEmail2">Email</label>
             <input 
             onChange={this.handleChange}
-                name="email" value= {this.state.username}
+                name="username" value= {this.state.username}
                 type="text" className="form-control" id="SignupEmail" placeholder="email@example.com" />
           </div>
           <div className="form-group">

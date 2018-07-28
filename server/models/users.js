@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
-module.exports = function(connection){
+
+
+
+const User = function(connection){
     const UserSchema = new mongoose.Schema({
         
         firstname:  {
@@ -10,7 +13,7 @@ module.exports = function(connection){
             type: String,
             default: ''
         },
-        email: {
+        username: {
             type: String,
             default: ''
         },
@@ -31,3 +34,8 @@ module.exports = function(connection){
     
     connection.model('User', UserSchema)
 }
+
+
+// const Book = mongoose.model("Book", bookSchema);
+
+module.exports = User;
