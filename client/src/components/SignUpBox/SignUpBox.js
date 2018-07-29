@@ -46,11 +46,22 @@ handleSubmit(event) {
   let confirmpassword = this.state.confirmpassword
   let userFormData = {username,password,firstname,lastname,confirmpassword};
 
-  console.log(typeof userFormData);
-  console.log(userFormData);
+  // console.log(typeof userFormData);
+  // console.log(userFormData);
 
-  axios.post('/api/users/signup', userFormData).then( function(res){
-    console.log('this is the axios response: ' , res)
+  axios.post('/api/users/signup', userFormData).then((error, data) =>{
+
+    console.log('this is the axios response: ' , error)
+    // if(res.body.username !== this.state.username){
+    //   res.render('User already registered');
+    //   this.props.history.push('/signup')
+    // }else{
+    //   res.render('registration successfull')
+    //   this.props.history.push("/login")
+    // }
+    // redirect here
+    // console.log(this)
+    
     // res.render('registerd OK');
   }); 
 

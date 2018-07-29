@@ -38,7 +38,8 @@ router.post('/signup',function (req, res) {
                     confirmpassword: req.body.confirmpassword
                 }, (error, done)=>{
                     if(error){ console.log(error)}
-                    res.send('user registered');
+                    res.sendStatus(200);
+                
                 });
         }
     }
