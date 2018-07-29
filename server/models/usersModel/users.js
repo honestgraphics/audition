@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 
-
-
 const User = function(connection){
     const UserSchema = new mongoose.Schema({
         
@@ -34,8 +32,5 @@ const User = function(connection){
     
     connection.model('User', UserSchema)
 }
-
-
-// const Book = mongoose.model("Book", bookSchema);
 
 module.exports = User;

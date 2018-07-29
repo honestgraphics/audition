@@ -77,7 +77,7 @@ export default class Table extends React.Component {
             Album
           </th>
           <th className="responsive-visibility" scope="col">
-            File Path
+            File Name
           </th>
           <th className="responsive-visibility" scope="col">
             Edit & Delete

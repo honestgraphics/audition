@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/audition' 
 const connection = mongoose.createConnection(connectionString)
-const models = require('../models')(connection)
+const models = require('../models/auditionModel')(connection)
 
 models.model('User').create([
     {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-module.exports = (connection)=>{
+// module.exports = (connection)=>{
 
 
 const auditionSchema = new Schema({
@@ -44,6 +44,6 @@ const auditionSchema = new Schema({
 
 });
 
- connection.model("Audition", auditionSchema);
-}
-// module.exports = Audition;
+ const Audition = mongoose.model("Audition", auditionSchema);
+// }
+module.exports = Audition;

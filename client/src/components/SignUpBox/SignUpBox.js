@@ -49,20 +49,19 @@ handleSubmit(event) {
   // console.log(typeof userFormData);
   // console.log(userFormData);
 
-  axios.post('/api/users/signup', userFormData).then((error, data) =>{
+  axios.post('/api/users/signup', userFormData).then((res, data) =>{
 
-    console.log('this is the axios response: ' , error)
-    // if(res.body.username !== this.state.username){
-    //   res.render('User already registered');
-    //   this.props.history.push('/signup')
-    // }else{
-    //   res.render('registration successfull')
-    //   this.props.history.push("/login")
-    // }
-    // redirect here
-    // console.log(this)
+    console.log('this is the axios response: ' , res)
+    if(res.body.username !== this.state.username){
+      res.render('User already registered');
+      this.props.history.push('/signup')
+    }else{
+      res.render('registration successfull')
+      this.props.history.push("/login")
+    }
+   
     
-    // res.render('registerd OK');
+    res.render('registerd OK');
   }); 
 
 }

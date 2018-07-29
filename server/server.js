@@ -7,8 +7,8 @@ const cors = require('cors');
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/audition'
 const connection = mongoose.createConnection(connectionString)
-const models = require('./models')(connection)
-
+const userModel = require('./models/usersModel')(connection)
+const model = require('./models/auditionModel');
 // (connection)
 const session = require('express-session')
 const passport = require('passport')
@@ -53,13 +53,8 @@ passport.serializeUser(authentication.serializeUser)
 passport.deserializeUser(authentication.deserializeUser)
 
 
-
-// passport.use('local-signup', localSignupStrategy);
-// passport.use('local-login', localLoginStrategy);
-
-
 //configure custom database middleware to attach connection to all request objects
-app.use(middleware.databaseHandler(models))
+app.use(middleware.databaseHandler(userModel))
 
 
 
