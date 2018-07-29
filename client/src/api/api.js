@@ -36,6 +36,7 @@ export default {
   },
 
   passportSignup: function(signUp) {
+    console.log("inside passport Signup")
     return axios.post("/api/users/signup", signUp);
   },
 // END PASSPORT FUNCTIONALITY

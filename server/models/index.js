@@ -1,7 +1,7 @@
 // (connection) =>
 
-module.exports = {
-  Audition: require("./audition")
-  // require('./users')(connection)
-  // return connection
+module.exports = (connection)=>{
+  require("./audition")(connection)
+  require('./users')(connection)
+   return connection
 }

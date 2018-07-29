@@ -2,41 +2,69 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 // import { Link } from 'react-router-dom'
 import logo from '../../assets/images/auditionlogo.png';
-import GoogleBtn from "../Google+/googleBtn"
+// import GoogleBtn from "../Google+/googleBtn"
 import axios from 'axios'
 import './SignUpBox.css'
+import '../../api/api.js'
 
 class SignUpBox extends React.Component {
- constructor (){
-   super();
+ constructor (props){
+   super(props);
    this.state = {
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    confirmpassword: ''
-  }
+        firstname: '',
+        lastname: '',
+        username: '',
+        password: '',
+        confirmpassword: ''
+  };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
  }
+ 
 
 
-  handleInputChange = event => {
+  handleChange = event => {
+    // console.log(this.state)
+    // alert('sup')
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
       [name]: value
+      
     });
+    console.log(value)
   };
 
 //make handle submit axios to login 
-processForm(event) {
+handleSubmit(event) {
   event.preventDefault();
+  // alert('I get here process form sign up box ')
+  let username = this.state.username;
+  let firstname = this.state.firstname;
+  let lastname = this.state.lastname;
+  let password = this.state.password;
+  let confirmpassword = this.state.confirmpassword
+  let userFormData = {username,password,firstname,lastname,confirmpassword};
 
-  const username = this.state.user.username;
-  const password = this.state.user.password;
-  const formData = `username=${username}&password=${password}`;
+  // console.log(typeof userFormData);
+  // console.log(userFormData);
 
-axios.post('/login', formData)
-// console.log(formData)
+  axios.post('/api/users/signup', userFormData).then((error, data) =>{
+
+    console.log('this is the axios response: ' , error)
+    // if(res.body.username !== this.state.username){
+    //   res.render('User already registered');
+    //   this.props.history.push('/signup')
+    // }else{
+    //   res.render('registration successfull')
+    //   this.props.history.push("/login")
+    // }
+    // redirect here
+    // console.log(this)
+    
+    // res.render('registerd OK');
+  }); 
+
 }
   render (){
 
@@ -45,20 +73,20 @@ axios.post('/login', formData)
     <div className="row">
       <div className="col-md-4 col-sm-4 col-xs-12"></div>
       <div className="col-md-4 col-sm-4 col-xs-12">
-        <form className="form-container" action="/login">
+        <form className="form-container">
           <img className="logo" src={logo} alt="Logo" />
           <h3 className="brand">Audition</h3>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormEmail2">First Name</label>
             <input type="Name" 
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
             name="firstname" value= {this.state.firstname}
             className="form-control" id="SignupFirstName" placeholder="First Name" />
           </div>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormEmail2">Last Name</label>
             <input 
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
             name="lastname" value= {this.state.lastname}
             type="text" className="form-control" id="SignupLasttName" placeholder="Last Name" />
           </div>
@@ -66,27 +94,27 @@ axios.post('/login', formData)
           <div className="form-group">
             <label htmlFor="exampleDropdownFormEmail2">Email</label>
             <input 
-            onChange={this.handleInputChange}
-                name="email" value= {this.state.username}
+            onChange={this.handleChange}
+                name="username" value= {this.state.username}
                 type="text" className="form-control" id="SignupEmail" placeholder="email@example.com" />
           </div>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormPassword2">Password</label>
             <input 
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
                 name="password" value= {this.state.password}
                 type="text" className="form-control" id="SignupPassword" placeholder="Password" />
           </div>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormPassword2">Confirm Password</label>
             <input 
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
                 name="confirmpassword" value= {this.state.confirmpassword}
                 type="text" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
           </div>
          
-          <button type="submit" value="Log In" className="btn btn-success btn-block">Sign up{this.state.handleInputChange}</button>
-          <GoogleBtn />
+          <button type="submit"  className="btn btn-success btn-block" onClick={this.handleSubmit}>Sign up</button>
+          {/* <GoogleBtn /> */}
         </form>
       </div>
       <div className="col-md-4 col-sm-4 col-xs-12"></div>

@@ -1,13 +1,14 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const routes = require("./routes")
 const bodyParser = require("body-parser");
+const routes = require("./routes");
 const cors = require('cors');
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/audition'
 const connection = mongoose.createConnection(connectionString)
-const models = require('./models')
+const models = require('./models')(connection)
+
 // (connection)
 const session = require('express-session')
 const passport = require('passport')
