@@ -15,19 +15,20 @@ import LogoutBox from './components/ForPassport/LogoutBox/logoutbox';
 import SignUpBox from './components/ForPassport/SignUpBox/signupbox';
 import history from './components/ForPassport/Routes/history';
 //import pages
-import Login from './pages/login';
-import Logout from './pages/logout';
-import Audition from './pages/audition.js';
-import Home from './pages/home.js';
-import Manager from './pages/manager.js';
-import Database from './pages/database.js';
-import {withCookies, Cookies} from 'react-cookie'
 
+import LoginPage from './pages/login';
+import LogoutPage from './pages/logout';
+import AuditionPage from './pages/audition.js';
+import HomePage from './pages/home.js';
+import ManagerPage from './pages/manager.js';
+import DatabasePage from './pages/database.js';
+import {withCookies, Cookies} from 'react-cookie'
 
 // let isAuthenticated = false
 const PrivateRoute = withCookies(({component: Component, cookies: cookies, ...rest}) => {
- // console.log(cookies.get('connect.sid'))
-  let isAuthenticated = cookies.get('connect.sid')
+  // console.log(cookies.get('connect.sid'))
+   let isAuthenticated = cookies.get('connect.sid')
+
 
   return <Route {...rest} render={ props => (
     isAuthenticated ? (<Component {...props}/>) 
@@ -49,17 +50,17 @@ class App extends Component {
             <Route
               exact
               path="/"
-              component={ Home }
+              component={ HomePage }
             />
             <Route
               exact
               path="/login"
-              component={ Login }
+              component={ LoginPage }
             />
             <Route
               exact
               path="/logout"
-              component={ Logout }
+              component={ LogoutPage }
             />
              <Route
               exact
@@ -69,17 +70,17 @@ class App extends Component {
             <PrivateRoute
               exact
               path="/audition"
-              component={ Audition }
+              component={ AuditionPage }
             />
             <PrivateRoute
               exact
               path="/manager"
-              component={ Manager }
+              component={ ManagerPage }
             />
             <PrivateRoute
               exact
               path="/database"
-              component={ Database }
+              component={ DatabasePage }
             />
           </Switch> 
         </Router>
