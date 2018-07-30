@@ -33,8 +33,8 @@ models.model('User').create([
         isSignedIn: false
     },
 ]).then(data=>{
-    console.log('Users created!')
+    // console.log('Users created!')
 })
 .catch(err=>{
-    console.log(err)
+    // console.log(err)
 })

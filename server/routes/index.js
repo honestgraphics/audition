@@ -9,7 +9,7 @@ router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
-  console.log('sending html file **************', req.path)
+  // console.log('sending html file **************', req.path)
   res.sendFile(path.join(process.cwd(), "./client/build/index.html"));
 });
 

@@ -8,14 +8,14 @@ module.exports = function(){
     const Router = express.Router()
     //Allows the user to log into the application. Note, we're using the provided middleware from passport.
     Router.post('/login', passport.authenticate('local',{ failureRedirect: '/login' }), function(req, res){
-        console.log('inside the post route local.js')
+        // console.log('inside the post route local.js')
         res.json(req.user)
         res.redirect('/audition');
     })
     //Allows the user to log out.
     Router.get('/logout', function(req, res){
         debugger
-        console.log('111@#$@#$@#$@#$ LOGOUT')
+        // console.log('111@#$@#$@#$@#$ LOGOUT')
     //Passport attaches a helpful logout() function on the request object that we can use.
         req.logout();
         req.session.destroy(err => {
@@ -27,7 +27,7 @@ module.exports = function(){
         })
     })
     Router.post('./signup' ,passport.authenticate('local' , function(req, res) {
-        console.log(req.user)
+        // console.log(req.user)
         res.render('successfully Registered');
         // res.json(req.user);
     }))

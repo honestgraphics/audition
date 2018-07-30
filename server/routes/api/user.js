@@ -13,7 +13,7 @@ router.post('/login', passport.authenticate('local', { successRedirect: '/auditi
     if (!req.user) {
         throw new Error('user null');
       }
-    console.log('inside the post route local.js')
+    // console.log('inside the post route local.js')
     res.json(req.user)
 });
 
@@ -21,7 +21,7 @@ router.post('/login', passport.authenticate('local', { successRedirect: '/auditi
 //Allows the user to log out.
 router.get('/logout', function (req, res) {
     debugger
-    console.log('@#$@#$@#$@#$ LOGOUT')
+    // console.log('@#$@#$@#$@#$ LOGOUT')
     //Passport attaches a helpful logout() function on the request object that we can use.
     req.logout();
     req.session.destroy(err => {
@@ -34,13 +34,13 @@ router.get('/logout', function (req, res) {
 });
 router.post('/signup',function (req, res) {
 
-    console.log("in sign up***********************")
+    // console.log("in sign up***********************")
     req.connection.model('User').findOne( {username: req.body.username})
     .exec()
     .then( (user)=>{
         if(user){
             res.send('User already exist');
-            res.redirect('/login');
+            // res.redirect('/login');
         }else{
             req.connection.model('User')
             .create({username: req.body.username, 
@@ -57,7 +57,7 @@ router.post('/signup',function (req, res) {
     }
         
     )
-    console.log(req.body)
+    // console.log(req.body)
     // res.json(req.user);
     // res.json(req.user);
     

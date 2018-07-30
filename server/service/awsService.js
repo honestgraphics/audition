@@ -47,10 +47,10 @@ const uploadToS3 = (file) => {
   return new Promise((resolve, reject) => {
     s3Bucket.upload(params, function(error, data) {
       if (error) {
-        console.log('Failed to upload file to S3 bucket', error);
+        // console.log('Failed to upload file to S3 bucket', error);
         reject(error);
       } else {
-        console.log('Upload was successful.');
+        // console.log('Upload was successful.');
         resolve(data);
       }
     });
@@ -71,7 +71,7 @@ const deleteFromS3 = (key) => {
          reject(err)
        }
        else    {
-          console.log(data);           // successful response
+          // console.log(data);           // successful response
           resolve(data)
         }
          /*
@@ -125,13 +125,13 @@ module.exports = {
     .catch((error) => { console.log(error); });
   }, 
   findById: function(req, res) {
-    console.log("findById is here")
+    // console.log("findById is here")
   },
   update: function(req, res) {
-    console.log("update is here")
+    // console.log("update is here")
   },
   remove: function(req, res) {
-    console.log("delete is here")
+    // console.log("delete is here")
   },
   delete: deleteFromS3
   //api for delete functionality for aws
