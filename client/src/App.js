@@ -6,24 +6,28 @@ import {
   Redirect,
   Switch
   // BrowserRouter
-} from 'react-router-dom'
-import LoginBox from './components/LoginBox/LoginBox'
-import { LogoutBox } from './components/LogoutBox'
-import Login from './pages/Login.js'
-import history from './components/Routes/history'
-import Audition from './pages/Audition.js'
-import Home from './pages/Home.js'
-import Manager from './pages/Manager.js'
-import Database from './pages/Database.js'
-import Logout from './pages/Logout';
-import SignUpBox from './components/SignUpBox/SignUpBox';
+
+  // Switch
+} from 'react-router-dom';
+// imports for passport
+import LoginBox from './components/ForPassport/LoginBox/loginbox';
+import LogoutBox from './components/ForPassport/LogoutBox/logoutbox';
+import SignUpBox from './components/ForPassport/SignUpBox/signupbox';
+import history from './components/ForPassport/Routes/history';
+//import pages
+import LoginPage from './pages/login';
+import LogoutPage from './pages/logout';
+import AuditionPage from './pages/audition.js';
+import HomePage from './pages/home.js';
+import ManagerPage from './pages/manager.js';
+import DatabasePage from './pages/database.js';
 import {withCookies, Cookies} from 'react-cookie'
 
 // let isAuthenticated = false
-
 const PrivateRoute = withCookies(({component: Component, cookies: cookies, ...rest}) => {
- // console.log(cookies.get('connect.sid'))
-  let isAuthenticated = cookies.get('connect.sid')
+  // console.log(cookies.get('connect.sid'))
+   let isAuthenticated = cookies.get('connect.sid')
+
 
   return <Route {...rest} render={ props => (
     isAuthenticated ? (<Component {...props}/>) 
@@ -45,17 +49,17 @@ class App extends Component {
             <Route
               exact
               path="/"
-              component={ Home }
+              component={ HomePage }
             />
             <Route
               exact
               path="/login"
-              component={ Login }
+              component={ LoginPage }
             />
             <Route
               exact
               path="/logout"
-              component={ Logout }
+              component={ LogoutPage }
             />
              <Route
               exact
@@ -65,17 +69,17 @@ class App extends Component {
             <PrivateRoute
               exact
               path="/audition"
-              component={ Audition }
+              component={ AuditionPage }
             />
             <PrivateRoute
               exact
               path="/manager"
-              component={ Manager }
+              component={ ManagerPage }
             />
             <PrivateRoute
               exact
               path="/database"
-              component={ Database }
+              component={ DatabasePage }
             />
           </Switch> 
         </Router>

@@ -20,9 +20,17 @@ router.post('/login', passport.authenticate('local', { successRedirect: '/auditi
 
 //Allows the user to log out.
 router.get('/logout', function (req, res) {
+    debugger
+    console.log('@#$@#$@#$@#$ LOGOUT')
     //Passport attaches a helpful logout() function on the request object that we can use.
     req.logout();
-    res.json({ success: true })
+    req.session.destroy(err => {
+        if(err) {
+            return res.status(400).send(err.message)
+        }
+
+        res.status(200).clearCookie('connect.sid', {path: '/'}).json({success:true})
+    })
 });
 router.post('/signup',function (req, res) {
 

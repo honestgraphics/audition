@@ -13,8 +13,8 @@ router
   .get(auditionService.findById)
   .put(auditionService.update)
   .delete(async (req, res) => {
-    let data = await awsService.delete(req.query.filePath)
-    auditionService.remove(req, res)   
+    let data = await awsService.delete(req.query.filepath)
+    auditionService.remove(req, res)
   });
 
 module.exports = router;
