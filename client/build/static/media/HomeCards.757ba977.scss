@@ -11,6 +11,12 @@
   animation: fadein 3s;
   -webkit-animation: fadein 3s; }
 
+  // .homeCards :hover{
+  //   transition: all .4s ease-in-out; 
+  //   transform: scale(1.1);
+    
+  // }
+
 .card1, .card2, .card3, .card4 {
   width: 50%;
   height: 50vh;
@@ -72,7 +78,14 @@ h1 {
 
 h1:hover {
   color: #f3f382;
-  font-size: 9.5vw; }
+  font-size: 9.5vw;
+// text-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
 
 @keyframes fadein {
   from {

@@ -109,7 +109,8 @@ handleSubmit(event) {
                 type="text" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
           </div>
          
-          <button type="submit"  className="btn btn-success btn-block" onClick={this.handleSubmit}>Sign up</button>
+          <button type="submit"  className="btn btn-success btn-block" 
+          onClick={this.handleSubmit}>Sign up</button>
           {/* <GoogleBtn /> */}
         </form>
       </div>

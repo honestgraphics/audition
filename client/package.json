@@ -17,7 +17,8 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.14",
-    "react-sound": "^1.2.0"
+    "react-sound": "^1.2.0",
+    "react-validation": "^3.0.7"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
