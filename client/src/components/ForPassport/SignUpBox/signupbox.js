@@ -2,8 +2,7 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 // import { Link } from 'react-router-dom'
 import axios from 'axios'
-import './SignUpBox.css'
-import '../../api/api.js'
+import '../../../api/api.js'
 import logo from '../../../assets/images/auditionlogo.png';
 
 

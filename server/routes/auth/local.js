@@ -14,9 +14,17 @@ module.exports = function(){
     })
     //Allows the user to log out.
     Router.get('/logout', function(req, res){
-        //Passport attaches a helpful logout() function on the request object that we can use.
+        debugger
+        console.log('111@#$@#$@#$@#$ LOGOUT')
+    //Passport attaches a helpful logout() function on the request object that we can use.
         req.logout();
-        res.json({success: true})
+        req.session.destroy(err => {
+            if(err) {
+                return res.status(400).send(err.message)
+            }
+
+            res.status(200).clearCookie('connect.sid', {path: '/'}).json({success:true})
+        })
     })
     Router.post('./signup' ,passport.authenticate('local' , function(req, res) {
         console.log(req.user)

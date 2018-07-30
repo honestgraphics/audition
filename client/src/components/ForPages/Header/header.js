@@ -34,7 +34,7 @@ const Header = ({ fetchTrack }) => (
             <NavLink  className="nav-link" to="/Database">View All</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/">Logout</NavLink>
+            <NavLink  className="nav-link" to="/logout">Logout</NavLink>
           </li>
           <li>
           <UploadBtn fetchTrack={fetchTrack} />
