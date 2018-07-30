@@ -2,7 +2,7 @@ import React, {
     // Component, 
     // Fragment 
   } from 'react';
-import LogoutBox from '../components/ForPassport/LogoutBox/logoutbox';
+// import LogoutBox from '../components/ForPassport/LogoutBox/logoutbox';
 import axios from 'axios'
 
 class LogoutPage extends React.Component {
