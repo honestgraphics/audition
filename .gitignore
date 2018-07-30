@@ -23,6 +23,9 @@ coverage
 # trash folder on jeannie's desktop
 trash/
 
+# ignore build folder
+client/build/
+
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
