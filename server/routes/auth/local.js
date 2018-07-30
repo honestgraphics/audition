@@ -26,7 +26,8 @@ module.exports = function(){
 
     app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }),
     function(req, res) {
-    res.redirect('/audition');
+        res.send(200)
+    //res.redirect('/audition');
   });
 
 

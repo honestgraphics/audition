@@ -6,6 +6,7 @@ import logo from '../../assets/images/auditionlogo.png';
 import axios from 'axios'
 import './LoginBox.scss'
 import '../../api/api.js'
+import {withRouter} from 'react-router'
 
 class LoginBox extends React.Component {
 
@@ -45,9 +46,21 @@ class LoginBox extends React.Component {
 
     if(username === '' && password === ''){ 
       alert('invalid username or password');
+      return;
     }
 
+    // console.log(typeof userFormData);
+    // console.log(userFormData);
   
+    axios.post('/api/users/login', userFormData)
+    .then((res) =>{
+      window.isAuthenticated = true
+      // console.log('this is the axios response: ' , res.data)
+        this.props.history.push("/audition")
+    }) 
+    .catch(err=> {
+      window.isAuthenticated = false
+    })
 
   }
 
@@ -95,4 +108,4 @@ return (
 } 
 }
 
-export default LoginBox
+export default withRouter(LoginBox)

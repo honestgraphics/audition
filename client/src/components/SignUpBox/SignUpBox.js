@@ -54,14 +54,16 @@ handleSubmit(event) {
     // console.log('this is the axios response: ' , res.data)
     if(res.data === 'User already exist'){
       alert('User already exist')
+      window.isAuthenticated = false;
       this.props.history.push('/login')
     }else{
       alert('registration successfull')
-      this.props.history.push("/login")
+      window.isAuthenticated = true;
+      this.props.history.push("/audition")
     }
   }); 
-
-}
+  }
+  
   render (){
 
     return (

@@ -30,6 +30,9 @@ class Audition extends React.Component {
         tracks: data
       }));
     })
+    .catch(err => {
+      debugger
+    })
   }
   render() {
     return (
