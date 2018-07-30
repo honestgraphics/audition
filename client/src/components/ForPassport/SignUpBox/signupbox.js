@@ -28,7 +28,7 @@ class SignUpBox extends React.Component {
       [name]: value
       
     });
-    console.log(value)
+    // console.log(value)
   };
 
 //make handle submit axios to login 

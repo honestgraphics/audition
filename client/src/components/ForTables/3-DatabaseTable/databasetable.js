@@ -29,7 +29,7 @@ export default class Table extends React.Component {
  render() {
    const { tracks, fetchTrack } = this.props;
 
-   console.log("Tracks from table being sent down:"+tracks);
+  //  console.log("Tracks from table being sent down:"+tracks);
    return (<div className="tableContainer">
    <div className="row">
    <div className="col-lg-1"></div>
@@ -90,9 +90,9 @@ export default class Table extends React.Component {
       </thead>
       <tbody>
         {tracks.map((track, i) => {
-          console.log('track', track);
-          console.log("TRACK STUFF HERE *(**************************");
-          console.log(track.filepath);
+          // console.log('track', track);
+          // console.log("TRACK STUFF HERE *(**************************");
+          // console.log(track.filepath);
         return (
           
         <tr key={i}>
@@ -118,7 +118,6 @@ export default class Table extends React.Component {
           </td>
           <td>
              <TablePlayBtn auditionSongLink={track.auditionSongLink}/>
-              
           </td>
           <td>
            {track.auditionId}

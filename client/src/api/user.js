@@ -4,7 +4,7 @@ const passport = require('passport');
 const router = new express.Router();
 
 router.post('/signup', (req, res, next) => {
-    console.log(req, res, next)
+    // console.log(req, res, next)
 
     return passport.authenticate('local-signup', (err) => {
       if (err) {
@@ -21,7 +21,7 @@ router.post('/signup', (req, res, next) => {
   });
 
   router.post('/login', (req, res, next) => {
-    console.log(req, res, next)
+    // console.log(req, res, next)
     return passport.authenticate('local-login', (err, token, userData) => {
       if (err) {
         if (err.name === 'IncorrectCredentialsError') {

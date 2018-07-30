@@ -39,7 +39,7 @@ class EditBtn extends Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
-    console.log('got here');
+    // console.log('got here');
   }
 
   handleChange = event => {
@@ -61,7 +61,7 @@ class EditBtn extends Component {
   
   updateTrack = (event) => {
     event.preventDefault();
-    console.log("inside update track")
+    // console.log("inside update track")
     // variables in react recast to model names in Audition.js
     let _id = this.state._id;
     let auditionId = this.state.auditionId;
@@ -74,13 +74,13 @@ class EditBtn extends Component {
     let recordLabel = this.state.recordLabel;
     let artist = this.state.artist;
     let formData = {_id, songTitle, auditionId, album, songCategory, ISRC, filepath, recordLabel, artist }
-    console.log(typeof formData)
-    console.log(formData)
+    // console.log(typeof formData)
+    // console.log(formData)
 
     // THIS WILL NOT WORK WITHOUT A WAY TO PUT THE ID FROM THE DB ENTRY 
     // ITSELF INTO THIS. 
     axios.put("/api/auditions/"+_id, formData).then(res => {
-      console.log(res, "unique")
+      // console.log(res, "unique")
       this.setState({updateTable: true})
       window.location.reload();
 
@@ -119,8 +119,8 @@ class EditBtn extends Component {
   }
 
   render() {
-    console.log("EDIT BUTTON PROPS ***********************");
-    console.log(this.props);
+    // console.log("EDIT BUTTON PROPS ***********************");
+    // console.log(this.props);
     // componentDidMount then setState may clear up error about not mutating state directly here?
     // this.setState({_id: this.props.mongoId });
     // const {

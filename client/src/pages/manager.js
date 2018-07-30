@@ -17,7 +17,7 @@ class ManagerPage extends React.Component {
     }
   }
   fetchTrack = () => {
-    console.log('hhhh')
+    // console.log('hhhh')
     axios.get('http://localhost:3001/api/auditions')
     .then((res) => {
       const { data } = res;

@@ -32,14 +32,14 @@ class UploadBtn extends Component {
     // make use of the aws-3 package to upload file using proxy from server
     api.uploadTrack(formData)
       .then(({ data }) => {
-        console.log("upload button data", data);
+        // console.log("upload button data", data);
         return api.createAudition({
           //data.location is aws-s3's way of calling the url
           auditionSongLink: data.Location,
           filepath: data.Key
         })
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           this.setState(prevState => ({
             ...prevState,
             loading: false
@@ -52,7 +52,7 @@ class UploadBtn extends Component {
           ...prevState,
           loading: false
         }))
-        console.log("error", error)
+        // console.log("error", error)
       });
   }
 

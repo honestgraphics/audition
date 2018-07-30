@@ -32,7 +32,7 @@ class LoginBox extends React.Component {
     this.setState({
       [name]: value
     });
-    console.log(value)
+    // console.log(value)
   };
 
   handleSubmit(event) {

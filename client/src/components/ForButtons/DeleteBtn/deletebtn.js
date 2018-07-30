@@ -10,7 +10,7 @@ class DeleteBtn extends Component {
     Axios.delete(`/api/auditions/${trackId}?filepath=${filepath}`)
     .then((response) => {
       fetchTrack();
-      console.log(response, 'track deleted successfully');
+      // console.log(response, 'track deleted successfully');
     })
     .catch((error) => console.log(error));
   }
