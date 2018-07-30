@@ -14,7 +14,7 @@ router
   .put(auditionService.update)
   .delete(async (req, res) => {
     let data = await awsService.delete(req.query.filepath)
-    auditionService.remove(req, res)   
+    auditionService.remove(req, res)
   });
 
 module.exports = router;

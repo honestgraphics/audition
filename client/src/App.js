@@ -1,21 +1,22 @@
 import React, { Redirect, Component, Fragment } from 'react'
-// import PropTypes from 'prop-types'
 import {
   Router,
   Route,
   // BrowserRouter
   // Switch
-} from 'react-router-dom'
-import LoginBox from './components/LoginBox/LoginBox'
-import { LogoutBox } from './components/LogoutBox'
-import Login from './pages/Login.js'
-import history from './components/Routes/history'
-import Audition from './pages/Audition.js'
-import Home from './pages/Home.js'
-import Manager from './pages/Manager.js'
-import Database from './pages/Database.js'
-import Logout from './pages/Logout';
-import SignUpBox from './components/SignUpBox/SignUpBox';
+} from 'react-router-dom';
+// imports for passport
+import LoginBox from './components/ForPassport/LoginBox/loginbox';
+import LogoutBox from './components/ForPassport/LogoutBox/logoutbox';
+import SignUpBox from './components/ForPassport/SignUpBox/signupbox';
+import history from './components/ForPassport/Routes/history';
+//import pages
+import Login from './pages/login';
+import Logout from './pages/logout';
+import Audition from './pages/audition.js';
+import Home from './pages/home.js';
+import Manager from './pages/manager.js';
+import Database from './pages/database.js';
 
 
 class App extends Component {

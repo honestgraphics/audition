@@ -1,22 +1,22 @@
 import React, {
-    // Component, 
-    // Fragment 
-  } from 'react'
+  // Component, 
+  // Fragment 
+} from 'react';
+import LoginBox from '../components/ForPassport/LoginBox/loginbox';
   
-import LoginBox from '../components/LoginBox/LoginBox';
-  
-  class Login extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        
-      }
-    }
-    render() {
-      return (
-          <LoginBox />
-      );
+
+class LoginPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
     }
   }
-  
-  export default Login;
+  render() {
+    return (
+        <LoginBox />
+    );
+  }
+}
+
+export default LoginPage;

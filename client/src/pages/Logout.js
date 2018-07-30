@@ -1,22 +1,22 @@
 import React, {
     // Component, 
     // Fragment 
-  } from 'react'
+  } from 'react';
+import LogoutBox from '../components/ForPassport/LogoutBox/logoutbox';
   
-import LogoutBox from '../components/LogoutBox/LogoutBox';
-  
-  class Logout extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        
-      }
-    }
-    render() {
-      return (
-          <LogoutBox />
-      );
+
+class LogoutPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
     }
   }
-  
-  export default Logout;
+  render() {
+    return (
+        <LogoutBox />
+    );
+  }
+}
+
+export default LogoutPage;

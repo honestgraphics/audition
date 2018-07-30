@@ -1,12 +1,30 @@
-@import './components/Header/Header.scss';
-@import './components/Footer/Footer.scss';
-@import './components/HomeCards/HomeCards.scss';
-@import './components/LoginBox/LoginBox.scss';
-@import './components/LogoutBox/LogoutBox.scss';
-@import './components/Table/Table.scss';
-@import './components/UploadBtn/uploadbtn.scss';
-@import './components/EditBtn/editbtn.scss';
-@import './components/Modal/modal.scss';
+// IMPORT OF ALL SCSS ACROSS APP:
+// For Buttons
+@import './components/ForButtons/DeleteBtn/deletebtn.scss';
+@import './components/ForButtons/EditBtn/editbtn.scss';
+@import './components/ForButtons/ModalPlayBtn/modalplaybtn.scss';
+@import './components/ForButtons/TablePlayBtn/tableplaybtn.scss';
+@import './components/ForButtons/UploadBtn/uploadbtn.scss';
+// For Modals
+@import './components/1-AssocModal/assocmodal.scss';
+@import './components/2-ManagerModal/managermodal.scss';
+@import './components/3-DatabaseModal/databasemodal.scss';
+// For Pages
+@import './components/ForPages/About/about.scss';
+@import './components/ForPages/Contact/contact.scss';
+@import './components/ForPages/Footer/Footer.scss';
+@import './components/ForPages/Header/Header.scss';
+@import './components/ForPages/Home/home.scss';
+// For Passport
+@import './components/ForPassport/GoogleBtn/googlebtn.scss';
+@import './components/ForPassport/LoginBox/loginbox.scss';
+@import './components/ForPassport/LogoutBox/logoutbox.scss';
+@import './components/ForPassport/SignUpBox/signupbox.scss';
+// For Tables
+@import './components/ForTables/1-AssocTable/assoctable.scss';
+@import './components/ForTables/2-ManagerTable/managertable.scss';
+@import './components/ForTables/3-DatabaseTable/databasetable.scss';
+
 
 .App {
   text-align: center;

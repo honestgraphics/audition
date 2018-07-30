@@ -1,20 +1,15 @@
-import React, {
+import React, { 
   // Component, 
   Fragment 
-} from 'react'
-
-// import axios from 'axios';
-import Header from '../components/Header/Header'
-import Table from '../components/Table/Table'
-import Footer from '../components/Footer/Footer'
-import api from "../api/api"
-
+} from 'react';
+import api from "../api/api";
+// import components
+import Header from '../components/ForPages/Header/header';
+import AssocTable from '../components/ForTables/1-AssocTable/assoctable';
+import Footer from '../components/ForPages/Footer/footer';
 
 
-
-
-
-class Audition extends React.Component {
+class AuditionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,11 +31,11 @@ class Audition extends React.Component {
       <Fragment>
         {/* <h1 style={sectionStyle}>AUDITION PAGE</h1> */}
         <Header fetchTrack={this.fetchTrack} />
-        <Table fetchTrack={this.fetchTrack} tracks={this.state.tracks} />
+        <AssocTable fetchTrack={this.fetchTrack} tracks={this.state.tracks} />
         <Footer />
     </Fragment>
     );
   }
 }
 
-export default Audition;
+export default AuditionPage;
