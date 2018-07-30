@@ -99,7 +99,7 @@ export default class Table extends React.Component {
           
         <tr key={i}>
           <td>
-            autofill
+            <input className="submitcheckbox" type="checkbox" value="" aria-label="Checkbox for following text input"/>
           </td>
           <td>
             {track.auditionedBy}
@@ -114,8 +114,7 @@ export default class Table extends React.Component {
             {track.managerDateSubmitted}
           </td>
           <td>
-            {/* Let's add a checkbox component later where we can pass a true/false value. 
-             Until then we can drop a boolean in the table*/}
+            <input type="checkbox" value="" aria-label="Checkbox for following text input"/>
             {track.auditionApprovalStatus}
           </td>
           <td>
@@ -148,8 +147,6 @@ export default class Table extends React.Component {
           {track.filepath
           ?  track.filepath.split("_")[1]
           : ""}
-
-            {/* {track.filepath.split("_")[1]} */}
           </td>
           <td>
             <EditBtn track={track.auditionSongLink} mongoId={track._id} updateTableMethod={this.state.updateTable}/>
