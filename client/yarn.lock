@@ -5373,6 +5373,10 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
+react-moment@^0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.7.9.tgz#fc6b5bf8952d27f134a42abfd7f42df2c839c1d7"
+
 react-router-dom@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
