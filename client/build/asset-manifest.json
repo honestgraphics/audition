@@ -1,23 +1,13 @@
 {
-  "main.css": "static/css/main.fdf9396d.css",
-  "main.css.map": "static/css/main.fdf9396d.css.map",
-  "main.js": "static/js/main.addfbf49.js",
-  "main.js.map": "static/js/main.addfbf49.js.map",
-  "static\\media\\Footer.scss": "static/media/Footer.f0203acc.scss",
-  "static\\media\\Header.scss": "static/media/Header.fcacbce0.scss",
-  "static\\media\\HomeCards.scss": "static/media/HomeCards.7b09c627.scss",
-  "static\\media\\LoginBox.scss": "static/media/LoginBox.6425eb50.scss",
-  "static\\media\\LogoutBox.scss": "static/media/LogoutBox.0ec897df.scss",
+  "main.css": "static/css/main.56582ba3.css",
+  "main.css.map": "static/css/main.56582ba3.css.map",
+  "main.js": "static/js/main.4f92cb07.js",
+  "main.js.map": "static/js/main.4f92cb07.js.map",
   "static\\media\\Spinner.gif": "static/media/Spinner.8b2b765f.gif",
-  "static\\media\\Table.scss": "static/media/Table.0aa1f873.scss",
   "static\\media\\auditionlogo.png": "static/media/auditionlogo.cfabe37d.png",
   "static\\media\\background.png": "static/media/background.d808fef0.png",
-  "static\\media\\modal.scss": "static/media/modal.6e1d6324.scss",
-  "static\\media\\modalplaybtn.scss": "static/media/modalplaybtn.83624298.scss",
-  "static\\media\\tableplaybtn.scss": "static/media/tableplaybtn.d41d8cd9.scss",
   "static\\media\\unsplash1.jpg": "static/media/unsplash1.0d5e9528.jpg",
   "static\\media\\unsplash2.jpg": "static/media/unsplash2.bf7d5049.jpg",
   "static\\media\\unsplash3.jpg": "static/media/unsplash3.3f618e9b.jpg",
-  "static\\media\\unsplash5.jpg": "static/media/unsplash5.2bd1f3de.jpg",
-  "static\\media\\uploadbtn.scss": "static/media/uploadbtn.1e2e8982.scss"
+  "static\\media\\unsplash5.jpg": "static/media/unsplash5.2bd1f3de.jpg"
 }

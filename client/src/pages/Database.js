@@ -1,15 +1,15 @@
 import React, {
   // Component, 
   Fragment 
-} from 'react'
-
+} from 'react';
 import axios from 'axios';
-import Header from '../components/Header/Header'
-import Table from '../components/Table/Table'
-import Footer from '../components/Footer/Footer'
+// import components
+import Header from '../components/ForPages/Header/header';
+import DatabaseTable from '../components/ForTables/3-DatabaseTable/databasetable';
+import Footer from '../components/ForPages/Footer/footer';
 
 
-class Database extends React.Component {
+class DatabasePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,8 +17,7 @@ class Database extends React.Component {
     }
   }
   fetchTrack = () => {
-    console.log('hhhh')
-    axios.get('http://localhost:3001/api/auditions')
+    axios.get('/api/auditions')
     .then((res) => {
       const { data } = res;
       this.setState(prevState => ({
@@ -30,15 +29,12 @@ class Database extends React.Component {
   render() {
     return (
       <Fragment>
-        {/* <h1>DATABASE PAGE</h1> */}
         <Header />
-
-        <Table fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
-
+        <DatabaseTable fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
         <Footer />
     </Fragment>
     );
   }
 }
 
-export default Database;
+export default DatabasePage;

@@ -1,22 +1,22 @@
 import React, {
     // Component, 
     Fragment 
-  } from 'react'
+  } from 'react';
+// import components
+import SignUpBox from '../components/ForPassport/SignUpBox/signupbox';
   
-import SignUpBox from '../components/SignUpBox/SignUpBox';
-  
-  class Signup extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        
-      }
-    }
-    render() {
-      return (
-          <SignUpBox />
-      );
+
+class SignupPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
     }
   }
-  
-  export default Signup;
+  render() {
+    return (
+        <SignUpBox />
+    );
+  }
+}
+
+export default SignupPage;

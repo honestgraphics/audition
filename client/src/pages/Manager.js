@@ -1,15 +1,15 @@
 import React, {
   // Component, 
   Fragment 
-} from 'react'
-
+} from 'react';
 import axios from 'axios';
-import Header from '../components/Header/Header'
-import Table from '../components/Table/Table'
-import Footer from '../components/Footer/Footer'
+// import components
+import Header from '../components/ForPages/Header/header';
+import ManagerTable from '../components/ForTables/2-ManagerTable/managertable';
+import Footer from '../components/ForPages/Footer/footer';
 
 
-class Manager extends React.Component {
+class ManagerPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,17 +30,12 @@ class Manager extends React.Component {
   render() {
     return (
       <Fragment>
-        {/* <h1>MANAGER PAGE</h1> */}
         <Header />
-
-
-        <Table fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
-
-
+        <ManagerTable fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
         <Footer />
-    </Fragment>
+      </Fragment>
     );
   }
 }
 
-export default Manager;
+export default ManagerPage;

@@ -1,11 +1,11 @@
 import React, {
   // Component, 
   Fragment 
-} from 'react'
+} from 'react';
+import Home from '../components/ForPages/Home/home';
 
-import HomeCards from '../components/HomeCards/HomeCards'
 
-class Home extends React.Component {
+class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,11 +15,10 @@ class Home extends React.Component {
   render() {
     return (
       <Fragment>
-        {/* <h1>HOME PAGE</h1> */}
-        <HomeCards />
+        <Home />
       </Fragment>
     );
   }
 }
 
-export default Home;
+export default HomePage;
