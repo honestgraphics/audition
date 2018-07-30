@@ -1,6 +1,6 @@
 {
   "name": "audition",
-  "homepage": "https://quiet-sands-18398.herokuapp.com/",
+  "homepage": "https://uncauditionapp.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",

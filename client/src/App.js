@@ -1,4 +1,7 @@
-import React, { Component, Fragment } from 'react'
+import React, {
+  Component
+  // Fragment 
+} from 'react';
 // import PropTypes from 'prop-types'
 import {
   Router,
@@ -6,7 +9,6 @@ import {
   Redirect,
   Switch
   // BrowserRouter
-
   // Switch
 } from 'react-router-dom';
 // imports for passport
@@ -21,9 +23,13 @@ import AuditionPage from './pages/audition.js';
 import HomePage from './pages/home.js';
 import ManagerPage from './pages/manager.js';
 import DatabasePage from './pages/database.js';
-import {withCookies, Cookies} from 'react-cookie'
+import {
+  withCookies
+  // Cookies
+} from 'react-cookie'
 
 // let isAuthenticated = false
+// eslint-disable-next-line
 const PrivateRoute = withCookies(({component: Component, cookies: cookies, ...rest}) => {
   // console.log(cookies.get('connect.sid'))
    let isAuthenticated = cookies.get('connect.sid')
