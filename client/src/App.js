@@ -1,10 +1,11 @@
-import React, { Redirect, Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 // import PropTypes from 'prop-types'
 import {
   Router,
   Route,
+  Redirect,
+  Switch
   // BrowserRouter
-  // Switch
 } from 'react-router-dom'
 import LoginBox from './components/LoginBox/LoginBox'
 import { LogoutBox } from './components/LogoutBox'
@@ -16,7 +17,22 @@ import Manager from './pages/Manager.js'
 import Database from './pages/Database.js'
 import Logout from './pages/Logout';
 import SignUpBox from './components/SignUpBox/SignUpBox';
+import {withCookies, Cookies} from 'react-cookie'
 
+// let isAuthenticated = false
+
+const PrivateRoute = withCookies(({component: Component, cookies: cookies, ...rest}) => {
+ // console.log(cookies.get('connect.sid'))
+  let isAuthenticated = cookies.get('connect.sid')
+
+  return <Route {...rest} render={ props => (
+    isAuthenticated ? (<Component {...props}/>) 
+    : (<Redirect to={{
+      pathname: '/login',
+      state: {from: props.location}
+    }}/>)  )
+  }/>
+})
 
 class App extends Component {
   render () {
@@ -25,7 +41,7 @@ class App extends Component {
     if (loggedIn) {
       return (
         <Router history={history}>
-          <Fragment>
+          <Switch>
             <Route
               exact
               path="/"
@@ -46,22 +62,22 @@ class App extends Component {
               path="/signup"
               component={ SignUpBox}
             />
-            <Route
+            <PrivateRoute
               exact
               path="/audition"
               component={ Audition }
             />
-            <Route
+            <PrivateRoute
               exact
               path="/manager"
               component={ Manager }
             />
-            <Route
+            <PrivateRoute
               exact
               path="/database"
               component={ Database }
             />
-          </Fragment> 
+          </Switch> 
         </Router>
       )
     } else {

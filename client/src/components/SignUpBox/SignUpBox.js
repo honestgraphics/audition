@@ -49,22 +49,21 @@ handleSubmit(event) {
   // console.log(typeof userFormData);
   // console.log(userFormData);
 
-  axios.post('/api/users/signup', userFormData).then((res, data) =>{
+  axios.post('/api/users/signup', userFormData).then((res) =>{
 
-    console.log('this is the axios response: ' , res)
-    if(res.body.username !== this.state.username){
-      res.render('User already registered');
-      this.props.history.push('/signup')
+    // console.log('this is the axios response: ' , res.data)
+    if(res.data === 'User already exist'){
+      alert('User already exist')
+      window.isAuthenticated = false;
+      this.props.history.push('/login')
     }else{
-      res.render('registration successfull')
-      this.props.history.push("/login")
+      alert('registration successfull')
+      window.isAuthenticated = true;
+      this.props.history.push("/audition")
     }
-   
-    
-    res.render('registerd OK');
   }); 
-
-}
+  }
+  
   render (){
 
     return (
@@ -112,7 +111,8 @@ handleSubmit(event) {
                 type="text" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
           </div>
          
-          <button type="submit"  className="btn btn-success btn-block" onClick={this.handleSubmit}>Sign up</button>
+          <button type="submit"  className="btn btn-success btn-block" 
+          onClick={this.handleSubmit}>Sign up</button>
           {/* <GoogleBtn /> */}
         </form>
       </div>

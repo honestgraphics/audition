@@ -26,12 +26,14 @@ export default class Table extends React.Component {
   
  render() {
    const { tracks, fetchTrack } = this.props;
+
    console.log("Tracks from table being sent down:"+tracks);
-   return (<div className="container tableContainer">
+   return (<div className="tableContainer">
    <div className="row">
-   <div className="col-md-12">
+   <div className="col-lg-1"></div>
+   <div className=" tableDiv col-lg-10">
             <div className="panel-body">
-    <table className="table table-sm table-hover table-responsive">
+    <table className="table table-md table-hover table-responsive">
       <thead className="thead-dark">
         <tr>
           <th className="responsive-visibility" scope="col">
@@ -43,12 +45,12 @@ export default class Table extends React.Component {
           <th className="responsive-invisibility" scope="col">
             Submission Date
           </th>
-          <th className="responsive-invisibility" scope="col">
+          {/* <th className="responsive-invisibility" scope="col">
            Manager
-          </th>
-          <th className="responsive-invisibility" scope="col">
+          </th> */}
+          {/* <th className="responsive-invisibility" scope="col">
             Submission Date
-          </th>
+          </th> */}
           <th className="responsive-visibility" scope="col">
             Approve Audition
           </th>
@@ -101,12 +103,12 @@ export default class Table extends React.Component {
           <td>
             {track.auditionDateSubmitted}
           </td>
-          <td>
+          {/* <td>
             {track.managerApprovalBy}
           </td>
           <td>
             {track.managerDateSubmitted}
-          </td>
+          </td> */}
           <td>
             {/* Let's add a checkbox component later where we can pass a true/false value. 
              Until then we can drop a boolean in the table*/}
@@ -150,6 +152,7 @@ export default class Table extends React.Component {
     </table>
     </div>
     </div>
+    <div className="col-lg-1"></div>
     </div>
   </div>)
  }

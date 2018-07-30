@@ -17,7 +17,7 @@ const authentication = require('./libraries/authentication')(connection)
 const middleware = require('./libraries/middleware')
 
 const fileUpload = require('express-fileupload');
-
+//const cookiesMiddleware = require('universal-cookie-express')
 
 //requiring dotenv so we can use a .env file
 require("dotenv").config();
@@ -34,17 +34,17 @@ app.use(cors()); //enabled cors
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 //session give you the ability to mange users by using coockies or JWT
 app.use(session({
   secret: 'test',
   resave: false,
+  cookie: {httpOnly: false},
   saveUninitialized: false
 }))
 
 app.use(passport.initialize())
 app.use(passport.session())
-
+//app.use(cookiesMiddleware())
 
 
 // Passport handels user object and passing the functions in the libraries folder  

@@ -16,7 +16,7 @@ module.exports = function(connection){
         authenticateUser: function(username, password, done){
             console.log("in authenticate user in authentication.js")
             console.log(username)
-            connection.model('User').findOne({email: username})
+            connection.model('User').findOne({username})
             .exec()
             .then(user=>{
                 console.log('authenticating the user function ################');
