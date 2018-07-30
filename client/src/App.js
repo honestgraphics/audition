@@ -15,7 +15,6 @@ import LogoutBox from './components/ForPassport/LogoutBox/logoutbox';
 import SignUpBox from './components/ForPassport/SignUpBox/signupbox';
 import history from './components/ForPassport/Routes/history';
 //import pages
-
 import LoginPage from './pages/login';
 import LogoutPage from './pages/logout';
 import AuditionPage from './pages/audition.js';

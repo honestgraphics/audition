@@ -1,21 +1,11 @@
-<<<<<<< HEAD:client/src/components/SignUpBox/SignUpBox.js
 import React from 'react'
 // import PropTypes from 'prop-types'
 // import { Link } from 'react-router-dom'
-import logo from '../../assets/images/auditionlogo.png';
-// import GoogleBtn from "../Google+/googleBtn"
 import axios from 'axios'
 import './SignUpBox.css'
 import '../../api/api.js'
-=======
-import React from 'react';
-// import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
-import axios from 'axios';
 import logo from '../../../assets/images/auditionlogo.png';
-import GoogleBtn from '../GoogleBtn/googlebtn';
 
->>>>>>> clean up folder structure, added prop-types, yarn build, fix link:client/src/components/ForPassport/SignUpBox/signupbox.js
 
 class SignUpBox extends React.Component {
  constructor (props){
@@ -31,15 +21,8 @@ class SignUpBox extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
  }
  
-
-<<<<<<< HEAD:client/src/components/SignUpBox/SignUpBox.js
-
   handleChange = event => {
-    // console.log(this.state)
-    // alert('sup')
-=======
-  handleInputChange = event => {
->>>>>>> clean up folder structure, added prop-types, yarn build, fix link:client/src/components/ForPassport/SignUpBox/signupbox.js
+  // handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
