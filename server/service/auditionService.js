@@ -23,6 +23,7 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       update: function(req, res) {
+        console.log("about to update");
         db.Audition
           .findOneAndUpdate({ _id: req.params.id }, req.body)
           .then(dbModel => res.json(dbModel))

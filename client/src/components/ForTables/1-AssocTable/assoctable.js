@@ -3,7 +3,7 @@ import React from 'react';
 import TablePlayBtn from '../../ForButtons/TablePlayBtn/tableplaybtn';
 import EditBtn from '../../ForButtons/EditBtn/editbtn';
 import DeleteBtn from '../../ForButtons/DeleteBtn/deletebtn';
-
+import axios from "axios";
 
 export default class Table extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ export default class Table extends React.Component {
       tracks: [],
       updateTable: false
     }
+    this.onChangeAction = this.onChangeAction.bind(this)
   }
 
   componentDidMount() {
@@ -23,6 +24,16 @@ export default class Table extends React.Component {
   updateTableMethod = () => {
     this.setState({
       updateTable: true
+    });
+  }
+
+  //song approval checkbox
+  onChangeAction = (_id, e) => {
+    console.log("you got checked", e.target.checked)
+    console.log("id", _id);
+    axios.put("/api/auditions/"+_id, e.target.checked).then(res => {
+      console.log(res, "unique")
+      this.setState({updateTable: true})
     });
   }
 
@@ -114,12 +125,17 @@ export default class Table extends React.Component {
             {track.managerDateSubmitted}
           </td>
           <td>
-            <input type="checkbox" value="" aria-label="Checkbox for following text input"/>
+            {/* {*approve checkbox*} */}
+            <input
+            type="checkbox" 
+            aria-label="Checkbox for following text input"
+            // checked={this.settings[setting]}
+            onChange={(e)=>{this.onChangeAction(track._id, e)}} 
+            />
             {track.auditionApprovalStatus}
           </td>
           <td>
              <TablePlayBtn auditionSongLink={track.auditionSongLink}/>
-              
           </td>
           <td>
            {track.auditionId}
