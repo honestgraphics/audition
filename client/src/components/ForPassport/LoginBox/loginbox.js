@@ -83,7 +83,7 @@ return (
                 <input         
                 onChange={this.handleChange}
                 name="password" value= {this.state.password}
-                type="text" className="form-control" id="exampleDropdownFormPassword2" placeholder="Password" />
+                type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Password" />
               </div>
               {/* <div className="form-check">
                 <input type="checkbox" className="form-check-input" id="dropdownCheck2" />
