@@ -5,21 +5,25 @@ import EditBtn from '../../ForButtons/EditBtn/editbtn';
 import DeleteBtn from '../../ForButtons/DeleteBtn/deletebtn';
 import axios from "axios";
 
-export default class Table extends React.Component {
+export default class AssocTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       tracks: [],
       updateTable: false
+      // auditionApprovalStatus: {},
     }
-    this.onChangeAction = this.onChangeAction.bind(this)
+    // console.log(tracks);
+    this.handleAuditionApproval = this.handleAuditionApproval.bind(this)
   }
-
+  
   componentDidMount() {
     // bring in fetchTrack property from Table.js
     this.props.fetchTrack();
-
+    //this.props.tracks();
   }
+
+  
 
   updateTableMethod = () => {
     this.setState({
@@ -27,14 +31,45 @@ export default class Table extends React.Component {
     });
   }
 
+  // handleChange = (_id, event) => {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+  //   this.setState({
+  //     [name]: value
+
+  //   });
+    // // let auditionApprovalStatus = this.state.auditionApprovalStatus;
+    // // auditionApprovalStatus(track._id) = e.target.checked;
+    // this.setState({auditionApprovalStatus});
+
+    // // console.log("you got checked", e.target.checked)
+    // // console.log("id", _id);
+    // axios.put("/api/auditions/"+_id, e.target.checked).then(res => {
+    //   // console.log(res, "unique")
+    //   this.setState({updateTable: true})
+    // });
+  // }
+
   //song approval checkbox
-  onChangeAction = (_id, e) => {
-    console.log("you got checked", e.target.checked)
-    console.log("id", _id);
-    axios.put("/api/auditions/"+_id, e.target.checked).then(res => {
-      console.log(res, "unique")
-      this.setState({updateTable: true})
-    });
+  handleAuditionApproval = (_id, e) => {
+    // let auditionApprovalStatus = this.state.auditionApprovalStatus;
+    // auditionApprovalStatus(track._id) = e.target.checked;
+    //let auditionApprovalStatus = e.target.checked
+   // this.setState({auditionApprovalStatus}, () => {
+      // console.log("you got checked", e.target.checked)
+      // console.log("id", _id);
+     
+   // });
+debugger
+  //calling api endpoint on back    referencing a request body-object where the key values map to the data model .. here key:value    this returns a promise that you can call then on
+   axios.put("/api/auditions/"+_id, {auditionApprovalStatus: e.target.checked}).then(res => {
+    // console.log(res, "unique")
+    this.setState({updateTable: true})
+    location.window.reload();
+  })
+  .catch(err => {
+    console.error(err)
+  })
   }
 
   // openTrack = (auditionLink) => {
@@ -125,14 +160,30 @@ export default class Table extends React.Component {
             {track.managerDateSubmitted}
           </td>
           <td>
+
+
+
+
+
             {/* {*approve checkbox*} */}
+
             <input
-            type="checkbox" 
-            aria-label="Checkbox for following text input"
-            // checked={this.settings[setting]}
-            onChange={(e)=>{this.onChangeAction(track._id, e)}} 
-            />
-            {track.auditionApprovalStatus}
+            type="checkbox"
+            // name="approvalCheckbox" value={this.state.auditionApprovalStatus}
+            // onChange={this.handleChange}
+            // onClick={}
+            onChange={(e) => {this.handleAuditionApproval(track._id, e)}}
+            checked={this.settings[setting]}
+            
+             />
+
+
+
+            {`${track.auditionApprovalStatus}`}
+
+
+
+
           </td>
           <td>
              <TablePlayBtn auditionSongLink={track.auditionSongLink}/>
