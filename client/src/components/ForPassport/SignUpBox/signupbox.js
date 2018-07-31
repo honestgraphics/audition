@@ -21,7 +21,6 @@ class SignUpBox extends React.Component {
  }
  
   handleChange = event => {
-  // handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
@@ -88,9 +87,10 @@ handleSubmit(event) {
           <div className="form-group">
             <label htmlFor="exampleDropdownFormEmail2">Email</label>
             <input 
-            onChange={this.handleChange}
-                name="username" value= {this.state.username}
-                type="text" className="form-control" id="SignupEmail" placeholder="email@example.com" />
+              onChange={this.handleChange}
+              value= {this.state.username}
+              name="username" 
+              type="text" className="form-control" id="SignupEmail" placeholder="email@example.com" />
           </div>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormPassword2">Password</label>
