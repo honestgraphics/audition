@@ -17,4 +17,7 @@ router
     auditionService.remove(req, res)
   });
 
+router.route("/api/search")
+.get(auditionService.search)
+
 module.exports = router;

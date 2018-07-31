@@ -34,5 +34,11 @@ module.exports = {
           .then(dbModel => dbModel.remove())
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      },
+      search: function(req, res){
+        db.Audition
+        .find({track: req.params.search})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       }
     };

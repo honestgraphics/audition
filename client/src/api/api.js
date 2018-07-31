@@ -23,7 +23,9 @@ export default {
   deleteAudition: function(id) {
     return axios.delete("/api/auditions/" + id);
   },
-
+  searchAudition: function(search){
+    return axios.get('/search', { params: { search: search.search} })
+  },
 
 
 // PASSPORT FUNCTIONALITY

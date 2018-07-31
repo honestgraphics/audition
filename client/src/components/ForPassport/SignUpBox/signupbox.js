@@ -97,14 +97,14 @@ handleSubmit(event) {
             <input 
             onChange={this.handleChange}
                 name="password" value= {this.state.password}
-                type="text" className="form-control" id="SignupPassword" placeholder="Password" />
+                type="password" className="form-control" id="SignupPassword" placeholder="Password" />
           </div>
           <div className="form-group">
             <label htmlFor="exampleDropdownFormPassword2">Confirm Password</label>
             <input 
             onChange={this.handleChange}
                 name="confirmpassword" value= {this.state.confirmpassword}
-                type="text" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
+                type="password" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
           </div>
          
           <button type="submit"  className="btn btn-success btn-block" 
