@@ -22,6 +22,14 @@ class Contact extends React.Component {
 
   render() {
     return (
+      <div className="wrapper">
+        <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h2 className="display-4">CONTACT US</h2>
+          <h2 className="lead">Let's Audition your stattion !</h2>
+        </div>
+      </div>  
+
       <form method="POST" action="https://formspree.io/hill341539@gmail.com" >
         <input type="email" name="email" placeholder="Your email"/>
         <br/>
@@ -29,6 +37,7 @@ class Contact extends React.Component {
         <br/>
         <input type="submit" value="Send" />
       </form>
+      </div>
     );
   }
 }
