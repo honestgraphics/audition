@@ -11,6 +11,7 @@ import ModalPlayBtn from '../../ForButtons/ModalPlayBtn/modalplaybtn';
 
 class EditBtn extends Component {
   constructor(props) {
+    console.log(props)
     super(props);
         
     this.state = {
@@ -29,7 +30,7 @@ class EditBtn extends Component {
         updateTable: false
       }
     };
-
+    
     this.handleChange = this.handleChange.bind(this);
     this.updateTrack = this.updateTrack.bind(this);
   }
@@ -47,32 +48,35 @@ class EditBtn extends Component {
     // alert('sup')
     const value = event.target.value;
     const name = event.target.name;
+    let tmpTrack = {...this.state.track}
+    tmpTrack[name] = value;
     this.setState({
-      [name]: value
-      
+      ...this.state,
+      track: tmpTrack
     });
     // console.log(value)
   };
 
   /* LIFECYCLE EVENTS */
   componentDidMount = () => {
-    this.setState({_id: this.props.mongoId });
+    this.setState({track:this.props.track})
   }
   
   updateTrack = (event) => {
     event.preventDefault();
     // console.log("inside update track")
     // variables in react recast to model names in Audition.js
-    let _id = this.state._id;
-    let auditionId = this.state.auditionId;
-    let songTitle = this.state.songTitle;
-    // let auditionLink = this.state.auditionLink;
-    let album = this.state.album;
-    let songCategory = this.state.songCategory;
-    let ISRC = this.state.ISRC;
-    let filepath = this.state.filepath;
-    let recordLabel = this.state.recordLabel;
-    let artist = this.state.artist;
+    console.log()
+    let _id = this.state.track._id;
+    let auditionId = this.state.track.auditionId;
+    let songTitle = this.state.track.songTitle;
+    let auditionLink = this.state.auditionLink;
+    let album = this.state.track.album;
+    let songCategory = this.state.track.songCategory;
+    let ISRC = this.state.track.ISRC;
+    let filepath = this.state.track.filepath;
+    let recordLabel = this.state.track.recordLabel;
+    let artist = this.state.track.artist;
     let formData = {_id, songTitle, auditionId, album, songCategory, ISRC, filepath, recordLabel, artist }
     // console.log(typeof formData)
     // console.log(formData)
@@ -165,7 +169,7 @@ class EditBtn extends Component {
                           {/* <button onClick={() => this.openTrack(this.props.track)} className="btn btn-success">
                             <i className="fas fa-play"></i>
                           </button> */}
-                          <ModalPlayBtn auditionSongLink={this.props.track}/>
+                          <ModalPlayBtn auditionSongLink={this.props.track.auditionSongLink}/>
                         {/* </div> */}
                       
                     </div>
@@ -174,12 +178,12 @@ class EditBtn extends Component {
                       <div className="col">
                         {/* ID Input */}
                         <label htmlFor="id">ID</label>
-                        <input value={this.state.auditionId} name="auditionId" className="form-control" onChange={this.handleChange} />
+                        <input value={this.state.track.auditionId} name="auditionId" className="form-control" onChange={this.handleChange} />
                       </div>
                       <div className="col">
                         {/*Song Title Input */}
                         <label htmlFor="songTitle">Song Title</label>
-                        <input value={this.state.songTitle} name="songTitle"onChange={this.handleChange} type="text" className="form-control" id="songTitle" placeholder="My Song" />
+                        <input value={this.state.track.songTitle} name="songTitle"onChange={this.handleChange} type="text" className="form-control" id="songTitle" placeholder="My Song" />
                       </div>
                     </div>
                     {/* Modal Row 3 */}
@@ -187,12 +191,12 @@ class EditBtn extends Component {
                       <div className="col">
                         {/* Category Input */}
                         <label htmlFor="songCategory">Category</label>
-                        <input value={this.state.songCategory} name="songCategory" className="form-control" id="category"  onChange={this.handleChange} />
+                        <input value={this.state.track.songCategory} name="songCategory" className="form-control" id="category"  onChange={this.handleChange} />
                       </div>
                       <div className="col">
                         {/* ISRC Input */}
                         <label htmlFor="ISRC">ISRC</label>
-                        <input value={this.state.ISRC} name="ISRC" className="form-control" id="isrc"  onChange={this.handleChange} />
+                        <input value={this.state.track.ISRC} name="ISRC" className="form-control" id="isrc"  onChange={this.handleChange} />
                       </div>
                     </div>
                     {/* Modal Row 4 */}
@@ -200,12 +204,12 @@ class EditBtn extends Component {
                       <div className="col">
                         {/* Record Label Input */}
                         <label htmlFor="recordLabel">Record label</label>
-                        <input value={this.state.recordLabel} name="recordLabel" className="form-control" id="recordLabel"  onChange={this.handleChange} />
+                        <input value={this.state.track.recordLabel} name="recordLabel" className="form-control" id="recordLabel"  onChange={this.handleChange} />
                       </div>
                       <div className="col">
                         {/* Artist Name Input */}
                         <label htmlFor="artist">Artist Name</label>
-                        <input value={this.state.artist} name="artist"className="form-control" id="songArtist" onChange={this.handleChange} />
+                        <input value={this.state.track.artist} name="artist"className="form-control" id="songArtist" onChange={this.handleChange} />
                         </div>
                     </div>
                     {/* Modal Row 5 */}
@@ -213,7 +217,7 @@ class EditBtn extends Component {
                       <div className="col">
                         {/* Album Name Input */}
                         <label htmlFor="album">Album Name</label>
-                        <input value={this.state.album} name="album"className="form-control" id="albumTitle"  onChange={this.handleChange} />
+                        <input value={this.state.track.album} name="album"className="form-control" id="albumTitle"  onChange={this.handleChange} />
                       </div>
                       {/* <div className="col">
                         <label htmlFor="filepath">File Path</label>

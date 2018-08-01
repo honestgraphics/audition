@@ -1,8 +1,5 @@
 import React from 'react';
-// import buttons
-import TablePlayBtn from '../../ForButtons/TablePlayBtn/tableplaybtn';
-import EditBtn from '../../ForButtons/EditBtn/editbtn';
-import DeleteBtn from '../../ForButtons/DeleteBtn/deletebtn';
+import RowComponent from '../../ForTables/RowComponent/rowcomponent';
 import axios from "axios";
 
 export default class AssocTable extends React.Component {
@@ -14,22 +11,16 @@ export default class AssocTable extends React.Component {
       // auditionApprovalStatus: {},
     }
     // console.log(tracks);
-    this.handleAuditionApproval = this.handleAuditionApproval.bind(this)
+    // this.handleAuditionApproval = this.handleAuditionApproval.bind(this)
   }
   
-  componentDidMount() {
-    // bring in fetchTrack property from Table.js
-    this.props.fetchTrack();
-    //this.props.tracks();
-  }
-
   
 
-  updateTableMethod = () => {
-    this.setState({
-      updateTable: true
-    });
-  }
+  // updateTableMethod = () => {
+  //   this.setState({
+  //     updateTable: true
+  //   });
+  // }
 
   // handleChange = (_id, event) => {
   //   const value = event.target.value;
@@ -50,35 +41,38 @@ export default class AssocTable extends React.Component {
     // });
   // }
 
-  //song approval checkbox
-  handleAuditionApproval = (_id, e) => {
-    // let auditionApprovalStatus = this.state.auditionApprovalStatus;
-    // auditionApprovalStatus(track._id) = e.target.checked;
-    //let auditionApprovalStatus = e.target.checked
-   // this.setState({auditionApprovalStatus}, () => {
-      // console.log("you got checked", e.target.checked)
-      // console.log("id", _id);
+//   //song approval checkbox
+//   handleAuditionApproval = (_id, e) => {
+//     // let auditionApprovalStatus = this.state.auditionApprovalStatus;
+//     // auditionApprovalStatus(track._id) = e.target.checked;
+//     //let auditionApprovalStatus = e.target.checked
+//    // this.setState({auditionApprovalStatus}, () => {
+//       // console.log("you got checked", e.target.checked)
+//       // console.log("id", _id);
      
-   // });
-debugger
-  //calling api endpoint on back    referencing a request body-object where the key values map to the data model .. here key:value    this returns a promise that you can call then on
-   axios.put("/api/auditions/"+_id, {auditionApprovalStatus: e.target.checked}).then(res => {
-    // console.log(res, "unique")
-    this.setState({updateTable: true})
-    location.window.reload();
-  })
-  .catch(err => {
-    console.error(err)
-  })
-  }
+//    // });
+// debugger
+//   //calling api endpoint on back    referencing a request body-object where the key values map to the data model .. here key:value    this returns a promise that you can call then on
+//    axios.put("/api/auditions/"+_id, {auditionApprovalStatus: e.target.checked}).then(res => {
+//     // console.log(res, "unique")
+//     this.setState({updateTable: true})
+//     location.window.reload();
+//   })
+//   .catch(err => {
+//     console.error(err)
+//   })
+//   }
 
   // openTrack = (auditionLink) => {
   //   window.open(auditionLink, '', 'width=320, height=75')
   // }
   
  render() {
-   const { tracks, fetchTrack } = this.props;
-  //  console.log("Tracks from table being sent down:"+tracks);
+   const tracks = this.props.tracks;
+  //  const { 
+  //    tracks, 
+  //   //  fetchTrack 
+  //   } = this.props;
    return (<div className="container tableContainer">
    <div className="row">
    <div className="col-md-12">
@@ -137,89 +131,22 @@ debugger
         </tr>
       </thead>
       <tbody>
-        {tracks.map((track, i) => {
+        {tracks.map((
+          track,
+          i
+        ) => {
           // console.log('track', track);
           // console.log("TRACK STUFF HERE *(**************************");
           // console.log(track.filepath);
         return (
-          
-        <tr key={i}>
-          <td>
-            <input className="submitcheckbox" type="checkbox" value="" aria-label="Checkbox for following text input"/>
-          </td>
-          <td>
-            {track.auditionedBy}
-          </td>
-          <td>
-            {track.auditionDateSubmitted}
-          </td>
-          <td>
-            {track.managerApprovalBy}
-          </td>
-          <td>
-            {track.managerDateSubmitted}
-          </td>
-          <td>
-
-
-
-
-
-            {/* {*approve checkbox*} */}
-
-            <input
-            type="checkbox"
-            // name="approvalCheckbox" value={this.state.auditionApprovalStatus}
-            // onChange={this.handleChange}
-            // onClick={}
-            onChange={(e) => {this.handleAuditionApproval(track._id, e)}}
-            checked={this.settings[setting]}
-            
-             />
-
-
-
-            {`${track.auditionApprovalStatus}`}
-
-
-
-
-          </td>
-          <td>
-             <TablePlayBtn auditionSongLink={track.auditionSongLink}/>
-          </td>
-          <td>
-           {track.auditionId}
-          </td>
-          <td>
-            {/* We can make a song category dropdown component, for now I'll put in the type */}
-            {track.songCategory}
-          </td>
-          <td>
-            {track.ISRC}
-          </td>
-          <td>
-            {track.recordLabel}
-          </td>
-          <td>
-             {track.artist}
-          </td>
-          <td>
-            {track.songTitle}
-          </td>
-          <td>
-            {track.album}
-          </td>
-          <td>
-          {track.filepath
-          ?  track.filepath.split("_")[1]
-          : ""}
-          </td>
-          <td>
-            <EditBtn track={track.auditionSongLink} mongoId={track._id} updateTableMethod={this.state.updateTable}/>
-            <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} filepath={track.filepath} />
-          </td>
-        </tr>)})}
+          <
+            RowComponent 
+            track={track}
+            key={i}  
+            fetchTrack={this.props.fetchTrack} 
+            // tracks={this.state.tracks} 
+          />
+        )})}
       </tbody>
     </table>
     </div>
