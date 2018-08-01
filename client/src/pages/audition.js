@@ -42,8 +42,8 @@ class AuditionPage extends React.Component {
 
   render() {
     
-    console.log("rendered")
-    console.log(this.state.tracks)
+    // console.log("rendered")
+    // console.log(this.state.tracks)
     return (
       <Fragment>
         {/* <h1 style={sectionStyle}>AUDITION PAGE</h1> */}

@@ -19,7 +19,7 @@ class SubmitBtn extends Component {
 
    return (
     <Fragment>
-      <button type="button" class="btn btn-primary submitBtn">Submit</button>
+      <button type="button" className="btn btn-primary submitBtn">Submit</button>
     </Fragment>
     )
   }
