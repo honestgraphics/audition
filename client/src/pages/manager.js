@@ -6,6 +6,7 @@ import axios from 'axios';
 // import components
 import Header from '../components/ForPages/Header/header';
 import ManagerTable from '../components/ForTables/2-ManagerTable/managertable';
+import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
 import Footer from '../components/ForPages/Footer/footer';
 
 
@@ -32,6 +33,7 @@ class ManagerPage extends React.Component {
       <Fragment>
         <Header />
         <ManagerTable fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
+        <SubmitBtn />
         <Footer />
       </Fragment>
     );

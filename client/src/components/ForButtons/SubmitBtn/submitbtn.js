@@ -19,10 +19,10 @@ class SubmitBtn extends Component {
 
    return (
     <Fragment>
-      <button type="button" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-primary submitBtn">Submit</button>
     </Fragment>
     )
   }
 }
 
-  export default TablePlayBtn;
+  export default SubmitBtn;
