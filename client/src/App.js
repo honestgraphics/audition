@@ -23,6 +23,7 @@ import AuditionPage from './pages/audition.js';
 import HomePage from './pages/home.js';
 import ManagerPage from './pages/manager.js';
 import DatabasePage from './pages/database.js';
+import ContactPage from './pages/contact.js';
 import {
   withCookies
   // Cookies
@@ -86,6 +87,11 @@ class App extends Component {
               exact
               path="/database"
               component={ DatabasePage }
+            />
+            <PrivateRoute
+              exact
+              path="/contact"
+              component={ ContactPage }
             />
           </Switch> 
         </Router>

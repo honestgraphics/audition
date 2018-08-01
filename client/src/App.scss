@@ -6,9 +6,9 @@
 @import './components/ForButtons/TablePlayBtn/tableplaybtn.scss';
 @import './components/ForButtons/UploadBtn/uploadbtn.scss';
 // For Modals
-@import './components/1-AssocModal/assocmodal.scss';
-@import './components/2-ManagerModal/managermodal.scss';
-@import './components/3-DatabaseModal/databasemodal.scss';
+@import './components/ForModals/1-AssocModal/assocmodal.scss';
+@import './components/ForModals/2-ManagerModal/managermodal.scss';
+@import './components/ForModals/3-DatabaseModal/databasemodal.scss';
 // For Pages
 @import './components/ForPages/About/about.scss';
 @import './components/ForPages/Contact/contact.scss';
@@ -21,7 +21,7 @@
 @import './components/ForPassport/LogoutBox/logoutbox.scss';
 @import './components/ForPassport/SignUpBox/signupbox.scss';
 // For Tables
-@import './components/ForTables/1-AssocTable/assoctable.scss';
+// @import './components/ForTables/1-AssocTable/assoctable.scss';
 @import './components/ForTables/2-ManagerTable/managertable.scss';
 @import './components/ForTables/3-DatabaseTable/databasetable.scss';
 

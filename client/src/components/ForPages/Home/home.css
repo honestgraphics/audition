@@ -4,7 +4,7 @@
   display: block; }
 
 .homeLinks {
-  text-decoration: none; }
+  text-decoration: none !important; }
 
 .homeCards {
   animation: fadein 3s;
@@ -21,7 +21,7 @@
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -69,9 +69,6 @@ h1 {
 h1:hover {
   color: #f3f382;
   font-size: 9.5vw; }
-
-a:hover {
-  text-decoration: none; }
 
 @keyframes fadein {
   from {
