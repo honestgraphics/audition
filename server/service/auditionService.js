@@ -3,6 +3,8 @@ const db = require("../models/auditionModel");
 module.exports = {
 
     findAll: function(req, res) {
+      console.log("req" +req);
+      console.log("req.query: "+ req.query);
         db.Audition
           .find(req.query)
           .sort({ date: -1 })

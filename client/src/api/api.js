@@ -7,6 +7,10 @@ export default {
   getAuditions: function() {
     return axios.get("/api/auditions");
   },
+
+  getFilteredAuditions: function(query){
+    return axios.get("/api/auditions", query);
+  },
   // creates a new single audition
   createAudition: function(audition){
       return axios.post("/api/auditions", audition)
