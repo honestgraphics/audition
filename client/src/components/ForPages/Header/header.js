@@ -28,7 +28,7 @@ const Header = ({ fetchTrack }) => (
             <NavLink  className="nav-link" to="/audition">Audition</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/Manager">Manager Approval</NavLink>
+            <NavLink  className="nav-link" to="/manager">Manager Approval</NavLink>
           </li>
           <li className="nav-item">
             <NavLink  className="nav-link" to="/Database">View All</NavLink>
