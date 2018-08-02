@@ -30,7 +30,7 @@ class AuditionPage extends React.Component {
 
 
         this.setState({ tracks: data }, () => {
-          console.log(this.state)
+          // console.log(this.state)
         });
 
       })
@@ -51,7 +51,7 @@ class AuditionPage extends React.Component {
     let track = tracks.find(t => t._id === id)
     track.selected = val
     var updateObject = {}
-    
+
     if (track.selected === true && track.auditionApprovalStatus === true)
       this.updateObject = {
         auditionApprovalStatus: track.auditionApprovalStatus,
