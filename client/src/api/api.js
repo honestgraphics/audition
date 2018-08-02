@@ -5,11 +5,11 @@ export default {
   
   // Gets all auditions
   getAuditions: function() {
-    return axios.get("/api/auditions");
+    return axios.get("/api/auditions/");
   },
 
   getAssociateTracks: function(){
-    return axios.get("/api/auditions/associate");
+    return axios.get("/api/auditions/assTracks");
   },
   // creates a new single audition
   createAudition: function(audition){
