@@ -1,6 +1,6 @@
 import React from 'react';
 import RowComponent from '../../ForTables/RowComponent/rowcomponent';
-import axios from "axios";
+// import axios from "axios";
 
 export default class ManagerTable extends React.Component {
   constructor(props) {
