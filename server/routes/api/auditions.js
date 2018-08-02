@@ -2,6 +2,10 @@ const router = require("express").Router();
 const auditionService = require("../../service/auditionService");
 const awsService = require("../../service/awsService");
 
+router
+.route("/assTracks")
+.get((auditionService.getAssociateTracks));
+
 // Matches with "/api/auditions"
 router.route("/")
   .get(auditionService.findAll)
@@ -31,9 +35,5 @@ router
     console.log(req.body)
     res.send("SUCCESS SUBMIT")
   });
-
-  router
-  .route("/associate")
-  .get(auditionService.findAll)
 
 module.exports = router;
