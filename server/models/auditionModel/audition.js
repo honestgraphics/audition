@@ -39,7 +39,13 @@ const auditionSchema = new Schema({
 
   filepath: {type: String,},
 
-  editAndDeleteLinks: {type: String,}
+  editAndDeleteLinks: {type: String,},
+ // Selected is a boolean that represents whether a row has been selected for submission
+  selected: {type: Boolean, default: false},
+// this boolean will only become true if both "selected" and "auditionApprovalStatus" are both true
+  readyForManager: {type: Boolean, default: false},
+
+  onManagerPage: {type: Boolean, default: false}
 
 });
 
