@@ -17,7 +17,7 @@ export default {
   },
 
   getDatabaseTracks: function(){
-    return axios.get("/api/auditions/")
+    return axios.get("/api/auditions/dbTracks")
   },
   // creates a new single audition
   createAudition: function(audition){

@@ -17,14 +17,20 @@ class DatabasePage extends React.Component {
     }
   }
   fetchTrack = () => {
+
     api.getDatabaseTracks()
     .then((res) => {
+      console.log("database hit", res)
       const { data } = res;
       this.setState(prevState => ({
         ...prevState,
         tracks: data
       }));
     })
+  }
+
+  componentDidMount(){
+    this.fetchTrack();
   }
   render() {
     return (
