@@ -63,7 +63,7 @@ class UploadBtn extends Component {
     <div className = "App">
       <Fragment> 
         { /* Ternary stating if loading is true, then load loading gif, else  */ } 
-        {loading ? < img className="spinner" src = {Spinner} alt = "spinner" height = "70" width = "70" / >
+        {loading ? < img className="spinner" src = {Spinner} alt = "spinner" height = "45" width = "45" / >
           : <div className = "custom-file-upload uploadBtn">
               <label htmlFor = "file-upload" className = "custom-file-upload" >
                 {/* <i className = "fa fa-cloud-upload" /> */}

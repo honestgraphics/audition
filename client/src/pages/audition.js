@@ -112,7 +112,6 @@ class AuditionPage extends React.Component {
     return (
       <Fragment>
         <Header fetchTrack={this.addTrack} />
-
         <AssocTable tracks={this.state.tracks} 
                     fetchTrack={this.fetchTrack}
                     setSelected={this.setSelected} 

@@ -2,7 +2,7 @@ import React, {
   // Component, 
   Fragment 
 } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 // import components
 import Header from '../components/ForPages/Header/header';
 import DatabaseTable from '../components/ForTables/3-DatabaseTable/databasetable';
