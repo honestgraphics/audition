@@ -11,9 +11,16 @@ router
 .get((auditionService.getManagerTracks));
 
 router
+.route("/dbTracks")
+.get((auditionService.getDatabaseTracks));
+
+router
 .route("/sendToManager")
 .put((auditionService.sendToManager));
 
+router
+.route("/sendToDatabase")
+.put((auditionService.sendToDatabase))
 // Matches with "/api/auditions"
 router.route("/")
   .get(auditionService.findAll)

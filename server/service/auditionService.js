@@ -40,7 +40,7 @@ module.exports = {
   },
   getAssociateTracks: function (req, res) {
     db.Audition
-      .find({ onManagerPage: false })
+      .find({ onManagerPage: false, onDatabasePage: false })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -52,11 +52,28 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  getDatabaseTracks: function (req, res){
+    db.Audition
+    .find({onDatabasePage: true})
+    .sort({ date: -1 })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+  
   sendToManager: function (req, res) {
     db.Audition
-      .updateMany({ readyForManager: true, selected: true, auditionApprovalStatus: true },
-        { $set: { onManagerPage: true } })
+      .updateMany({onDatabasePage:false, onManagerPage: false, readyForManager: true, selected: true, auditionApprovalStatus: true },
+        { $set: { onManagerPage: true , selected: false, auditionApprovalStatus: false }})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+
+  sendToDatabase: function (req, res){
+    db.Audition
+    .updateMany({ readyForDatabase: true, onManagerPage:true, selected: true, auditionApprovalStatus: true },
+      { $set: { onDatabasePage: true , onManagerPage:false, selected: false, auditionApprovalStatus: false }})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
   }
+
 };
