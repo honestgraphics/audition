@@ -42,9 +42,14 @@ button:focus {
   display: none; }
 
 .custom-file-upload {
+  all: unset; }
+
+.custom-file-upload {
   flex: 1;
   margin-top: 3px;
-  cursor: pointer; }
+  cursor: pointer;
+  box-shadow: transparent;
+  text-shadow: transparent; }
 
 .backdrop {
   position: fixed;
@@ -834,6 +839,10 @@ h1:hover {
 
 .table tr:hover {
   background-color: #ddd !important; }
+
+.container {
+  margin-left: 10%;
+  margin-rigth: 10%; }
 
 .table-sm td, .table-sm th {
   font-size: .8rem;
