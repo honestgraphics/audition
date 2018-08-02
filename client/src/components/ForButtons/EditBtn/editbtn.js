@@ -142,7 +142,8 @@ class EditBtn extends Component {
     return (
       <Fragment>
         <Link to="#" onClick={this.toggleModal}>
-          <i className="fas fa-edit text-info"></i>
+          <i className="fas fa-pencil-alt text-info editBtn">
+          </i>
         </Link>
 
         <Modal show={this.state.isOpen}
