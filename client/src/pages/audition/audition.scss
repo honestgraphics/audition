@@ -1,0 +1,9 @@
+.submitBtn {
+  display: flex;
+  flex-direction:row-reverse
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: rgb(98, 171, 250);
+  color: white;
+}
