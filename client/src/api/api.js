@@ -11,6 +11,10 @@ export default {
   getAssociateTracks: function(){
     return axios.get("/api/auditions/assTracks");
   },
+
+  getManagerTracks: function(){
+    return axios.get("/api/auditions/manTracks");
+  },
   // creates a new single audition
   createAudition: function(audition){
       return axios.post("/api/auditions", audition)

@@ -6,6 +6,10 @@ router
 .route("/assTracks")
 .get((auditionService.getAssociateTracks));
 
+router
+.route("/manTracks")
+.get((auditionService.getManagerTracks));
+
 // Matches with "/api/auditions"
 router.route("/")
   .get(auditionService.findAll)
