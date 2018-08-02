@@ -40,6 +40,4 @@ router
     res.send("SUCCESS SUBMIT")
   });
 
-
-
 module.exports = router;

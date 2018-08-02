@@ -66,13 +66,10 @@ export default class ManagerTable extends React.Component {
   // openTrack = (auditionLink) => {
   //   window.open(auditionLink, '', 'width=320, height=75')
   // }
-
-componentDidMount(){
-  console.log("TABLE COMPONENT MOUNTED");
-}
   
  render() {
    const tracks = this.props.tracks;
+   console.log('assoctable render', tracks)
   //  const { 
   //    tracks, 
   //   //  fetchTrack 
@@ -141,13 +138,14 @@ componentDidMount(){
         ) => {
           // console.log('track', track);
           // console.log("TRACK STUFF HERE *(**************************");
-          // console.log(track.filepath);
+           console.log(track.filepath);
         return (
           <
             RowComponent 
             track={track}
-            key={i}  
-            fetchTrack={this.props.fetchTrack} 
+            key={track._id}  
+            {...this.props}
+            //fetchTrack={this.props.fetchTrack} 
             // tracks={this.state.tracks} 
           />
         )})}

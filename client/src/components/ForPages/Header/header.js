@@ -63,14 +63,14 @@ const Header = ({ fetchTrack }) => (
             <NavLink  className="nav-link" to="/about">About</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/audition">Production</NavLink>
+            <NavLink  className="nav-link" to="/audition">Audition</NavLink>
           </li>
           <li className="nav-item">
             <NavLink  className="nav-link" to="/manager">Manage</NavLink>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink  className="nav-link" to="/Database">Database</NavLink>
-          </li>
+          </li> */}
           <li className="nav-item">
             <NavLink  className="nav-link" to="/contact">Contact</NavLink>
           </li>

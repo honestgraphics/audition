@@ -116,6 +116,7 @@ class ManagerPage extends React.Component {
           <ManagerTable  tracks={this.state.tracks} 
                     fetchTrack={this.fetchTrack}
                     setSelected={this.setSelected}/>
+
       
           {/* SubmitBtn introduced here instead of from component */}
           <div className="container">

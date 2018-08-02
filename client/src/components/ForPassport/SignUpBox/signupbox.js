@@ -104,7 +104,7 @@ handleSubmit(event) {
             <input 
             onChange={this.handleChange}
                 name="confirmpassword" value= {this.state.confirmpassword}
-                type="passport" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
+                type="password" className="form-control" id="SignupConfirmPassword" placeholder="Confirm Password" />
           </div>
          
           <button type="submit"  className="btn btn-success btn-block" 

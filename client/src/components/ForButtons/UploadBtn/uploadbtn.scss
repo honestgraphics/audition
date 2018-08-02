@@ -1,11 +1,20 @@
 .custom-file-upload input[type="file"] {
   display: none;
 }
+
+
+.custom-file-upload {
+  all: unset;
+}
+
 .custom-file-upload {
   flex: 1;
   margin-top: 3px;
   cursor:pointer;
+  box-shadow: transparent;
+  text-shadow: transparent;
 }
+
 // .custom-file-upload .custom-file-upload {
 //   border: 1px solid #ccc;
 //   display: inline-block;
