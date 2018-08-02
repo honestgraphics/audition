@@ -37,5 +37,11 @@ module.exports = {
           .then(dbModel => dbModel.remove())
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      },
+      getAssociateTracks: function(req, res){
+        find({onManagerPage: false})
+        .sort({ date: -1 })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       }
     };
