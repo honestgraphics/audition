@@ -3,7 +3,16 @@
 //   border: 0px;
 // }
 
-button.tablePlayBtn {
-  border: none;
+// button, input {
+//   border: none;
+//   background-color: transparent;
+// }
+
+button{
+  border:none;
   background-color: transparent;
+}
+
+button:focus{
+outline: none;
 }
