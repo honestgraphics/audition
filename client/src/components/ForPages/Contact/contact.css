@@ -1,5 +1,22 @@
+.wrapper {
+  margin: 0;
+  padding: 0; }
+
+.jumbotron {
+  background-image: url("https://www.thevoicerealm.com/blog/wp-content/uploads/2013/09/Professional-Studio-Microphone.jpg");
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  margin-top: 4vh;
+  padding: 9vh;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999; }
+
 form {
-  padding: 20vh; }
+  width: 70%;
+  margin: 0 auto; }
+
+textarea, input[type=email], input[type=submit]:focus {
+  outline: none !important; }
 
 input[type=email] {
   width: 100%;
@@ -8,7 +25,8 @@ input[type=email] {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999; }
 
 textarea {
   width: 100%;
@@ -18,7 +36,8 @@ textarea {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999; }
 
 input[type=submit] {
   width: 100%;
@@ -30,5 +49,15 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer; }
 
-input[type=submit]:hover {
-  background-color: #45a049; }
+input[type=submit]:focus {
+  outline: none;
+  box-shadow: none; }
+
+input[type=submit] {
+  background-color: #45a049;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999; }
+
+h2 {
+  font-family: 'Permanent Marker', cursive;
+  color: whitesmoke;
+  text-shadow: 3px 3px 3px #131311; }

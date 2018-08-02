@@ -14,3 +14,22 @@
   min-height: 300px;
   margin: 0 auto;
 }
+
+.aboutBox{
+width:40vw;
+// box-shadow: 5px 5px 5px red;
+position: relative;
+margin-left:10%;
+}
+
+li , h3{
+  color: whitesmoke;
+  text-shadow: 3px 3px 3px #131311; 
+
+}
+
+@media only screen and (max-width: 900px){
+  .aboutBox{
+width: 100%;
+  }
+}

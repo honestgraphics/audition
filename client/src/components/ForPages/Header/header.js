@@ -34,6 +34,12 @@ const Header = ({ fetchTrack }) => (
             <NavLink  className="nav-link" to="/Database">View All</NavLink>
           </li>
           <li className="nav-item">
+            <NavLink  className="nav-link" to="/contact">Contact</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink  className="nav-link" to="/about">About</NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink  className="nav-link" to="/logout">Logout</NavLink>
           </li>
           <li>
