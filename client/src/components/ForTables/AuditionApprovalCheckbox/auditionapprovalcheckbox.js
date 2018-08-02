@@ -12,7 +12,7 @@ export default class AuditionApprovalCheckbox extends React.Component {
       updateTable: false
       // auditionApprovalStatus: {},
     }
-    // console.log(tracks);
+     console.log(this.props.track._id, this.props.track.auditionApprovalStatus);
     // this.handleAuditionApproval = this.handleAuditionApproval.bind(this)
   }
 
@@ -59,34 +59,33 @@ export default class AuditionApprovalCheckbox extends React.Component {
 
 
   render() {
-    const {fetchTrack } = this.props;
+    // const {fetchTrack } = this.props;
     return (
-        
-          <td>
-            {/* {*approve checkbox*} ******************************************************/}
             <input 
             type="checkbox" 
             onChange={(e)=>{this.handleAuditionApproval(this.props.trackId, e)}} 
-            checked={this.props.isChecked}
-            isChecked={this.state.track.auditionApprovalStatus} 
+            //checked={this.props.isChecked}
+            checked={this.state.track.auditionApprovalStatus} 
             // _id={this.state.track._id}
             />
             
 
 
             
-            {/* <input
-            type="checkbox"
-            // name="approvalCheckbox" value={this.state.auditionApprovalStatus}
-            // onChange={this.handleChange}
-            // onClick={}
-            onChange={(e) => {this.handleAuditionApproval(this.state.track._id, e)}}
-            checked={!!this.state.track.auditionApprovalStatus}
-            // checked={this.settings[setting]}
-            //checked={this.handleAuditionApproval}
-             /> */}
             
-          </td>
-    );
+              // <input
+              // type="checkbox"
+              // // name="approvalCheckbox" value={this.state.auditionApprovalStatus}
+              // // onChange={this.handleChange}
+              // // onClick={}
+              // onChange={(e) => {this.handleAuditionApproval(this.state.track._id, e)}}
+              // checked={!!this.state.track.auditionApprovalStatus}
+              // // checked={this.settings[setting]}
+              // //checked={this.handleAuditionApproval}
+              // /> 
+            
+            
+
+    )
   }
 }

@@ -13,8 +13,23 @@ router
   .get(auditionService.findById)
   .put(auditionService.update)
   .delete(async (req, res) => {
-    let data = await awsService.delete(req.query.filepath)
-    auditionService.remove(req, res)
+    console.log('delete', req.query.filepath)
+    try {
+      let data = await awsService.delete(req.query.filepath)
+      auditionService.remove(req, res)
+    }
+    catch(e) {
+      console.error('delete catch', e.message)
+     throw e
+    }
   });
+
+// Matches with "/api/auditions/submit"
+router
+  .route("/submit")
+  .post((req, res) => {
+    console.log(req.body)
+    res.send("SUCCESS SUBMIT")
+  })
 
 module.exports = router;

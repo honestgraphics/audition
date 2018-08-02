@@ -59,16 +59,14 @@ export default class SubmitToManagerCheckBox extends React.Component {
 
 
   render() {
-    const {fetchTrack } = this.props;
+    // const {fetchTrack } = this.props;
     return (
-          <td>
             <input 
             type="checkbox" 
             onChange={(e)=>{this.handleAuditionApproval(this.props.trackId, e)}} 
-            checked={this.props.isChecked}
-            isChecked={this.state.track.auditionApprovalStatus} 
+           // checked={this.props.isChecked}
+            checked={this.state.track.auditionApprovalStatus} 
             />
-          </td>
     );
   }
 }

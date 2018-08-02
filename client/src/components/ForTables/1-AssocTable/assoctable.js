@@ -1,6 +1,6 @@
 import React from 'react';
 import RowComponent from '../../ForTables/RowComponent/rowcomponent';
-import axios from "axios";
+// import axios from "axios";
 
 export default class AssocTable extends React.Component {
   constructor(props) {
@@ -69,6 +69,7 @@ export default class AssocTable extends React.Component {
   
  render() {
    const tracks = this.props.tracks;
+   console.log('assoctable render', tracks)
   //  const { 
   //    tracks, 
   //   //  fetchTrack 
@@ -137,13 +138,14 @@ export default class AssocTable extends React.Component {
         ) => {
           // console.log('track', track);
           // console.log("TRACK STUFF HERE *(**************************");
-          // console.log(track.filepath);
+           console.log(track.filepath);
         return (
           <
             RowComponent 
             track={track}
-            key={i}  
-            fetchTrack={this.props.fetchTrack} 
+            key={track._id}  
+            {...this.props}
+            //fetchTrack={this.props.fetchTrack} 
             // tracks={this.state.tracks} 
           />
         )})}

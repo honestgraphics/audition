@@ -70,7 +70,7 @@ class EditBtn extends Component {
     let _id = this.state.track._id;
     let auditionId = this.state.track.auditionId;
     let songTitle = this.state.track.songTitle;
-    let auditionLink = this.state.auditionLink;
+    // let auditionLink = this.state.auditionLink;
     let album = this.state.track.album;
     let songCategory = this.state.track.songCategory;
     let ISRC = this.state.track.ISRC;

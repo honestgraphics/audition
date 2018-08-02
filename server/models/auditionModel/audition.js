@@ -7,7 +7,6 @@ const auditionSchema = new Schema({
 
     // There are a number of entries here that are not required. These are elements 
     // that I am unsure are going to be required. 
-    
 
   auditionedBy: { type: String, },
 

@@ -3,7 +3,6 @@ import React from 'react';
 import TablePlayBtn from '../../ForButtons/TablePlayBtn/tableplaybtn';
 import EditBtn from '../../ForButtons/EditBtn/editbtn';
 import DeleteBtn from '../../ForButtons/DeleteBtn/deletebtn';
-import SubmitToManagerCheckBox from '../SubmitToManagerCheckBox/submittomanagercheckbox';
 import AuditionApprovalCheckbox from '../AuditionApprovalCheckbox/auditionapprovalcheckbox'
 import axios from "axios";
 
@@ -22,7 +21,8 @@ export default class RowComponent extends React.Component {
     super(props);
     this.state = {
       track: this.props.track,
-      updateTable: false
+      updateTable: false,
+      selected: false
       // auditionApprovalStatus: {},
     }
     // console.log(tracks);
@@ -78,7 +78,16 @@ export default class RowComponent extends React.Component {
           {/* Submit Checkbox */}
             <td>
               {/* CUSTOMIZE PROPS or STATE THAT ARE PASSED THROUGH TO GET THIS TO WORK */}
-              <SubmitToManagerCheckBox track={this.state.track} fetchTrack={fetchTrack} updateTableMethod={this.state.updateTable} trackId={this.state.track['_id']} />
+              {/* <SubmitToManagerCheckBox track={this.state.track} fetchTrack={fetchTrack} updateTableMethod={this.state.updateTable} trackId={this.state.track['_id']} /> */}
+
+               <input 
+                type="checkbox" 
+                onChange={(e)=>{
+                  this.setState({selected: e.target.checked}, () => {
+                    this.props.setSelected(this.state.selected, this.state.track._id)
+                  })}} 
+                checked={this.state.selected} 
+                 />
             </td>
 
           {/* Associate Approval Name */}

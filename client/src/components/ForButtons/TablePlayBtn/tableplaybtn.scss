@@ -1,0 +1,18 @@
+// .tablePlayBtn {
+//   background-color: clear;
+//   border: 0px;
+// }
+
+// button, input {
+//   border: none;
+//   background-color: transparent;
+// }
+
+button{
+  border:none;
+  background-color: transparent;
+}
+
+button:focus{
+outline: none;
+}

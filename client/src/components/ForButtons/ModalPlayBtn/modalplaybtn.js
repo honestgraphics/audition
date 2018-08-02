@@ -33,7 +33,7 @@ class ModalPlayBtn extends Component {
           playSong 
         })
       }}> 
-        <i className="fas fa-play-white text-success"></i>
+        <i className="fas fa-play text-white"></i>
       </button>
     </Fragment>
   }
