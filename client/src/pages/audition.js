@@ -6,7 +6,7 @@ import api from "../api/api";
 // import components
 import Header from '../components/ForPages/Header/header';
 import AssocTable from '../components/ForTables/1-AssocTable/assoctable';
-import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
+// import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
 import Footer from '../components/ForPages/Footer/footer';
 import axios from 'axios'
 
