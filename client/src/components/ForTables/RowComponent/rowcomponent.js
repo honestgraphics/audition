@@ -22,7 +22,7 @@ export default class RowComponent extends React.Component {
     this.state = {
       track: this.props.track,
       updateTable: false,
-      selected: false
+      selected: this.props.track.selected
       // auditionApprovalStatus: {},
     }
     // console.log(tracks);

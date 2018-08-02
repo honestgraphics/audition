@@ -29,31 +29,32 @@ export default class AuditionApprovalCheckbox extends React.Component {
 
   //song approval checkbox
   handleAuditionApproval = (_id, e) => {
-   
-    // let auditionApprovalStatus = this.state.auditionApprovalStatus;
-    // auditionApprovalStatus(track._id) = e.target.checked;
-    //let auditionApprovalStatus = e.target.checked
-   // this.setState({auditionApprovalStatus}, () => {
-      // console.log("you got checked", e.target.checked)
-      // console.log("id", _id);
-     
-   // });
-  //calling api endpoint on back    referencing a request body-object where the key values map to the data model .. here key:value    this returns a promise that you can call then on
-   axios.put("/api/auditions/"+_id, {auditionApprovalStatus: e.target.checked})
-   .then(res => {
 
+var approvalObject = {}
+console.log("Approval checkbox track state", this.state.track);
+this.props.fetchTrack();
+ if(e.target.checked === false)
+  approvalObject = {auditionApprovalStatus: e.target.checked, readyForManager: false}
+ 
+ else if(this.state.track.selected === true)
+   approvalObject = {auditionApprovalStatus: e.target.checked, readyForManager: true}
+ 
+ else
+   approvalObject = {auditionApprovalStatus: e.target.checked, readyForManager: false}
+
+ console.log("Approval object from appove checkbox", approvalObject);
+  axios.put("/api/auditions/"+_id, approvalObject)
+   .then(res => {
     const track = Object.assign({}, this.state.track);
     track.auditionApprovalStatus = !track.auditionApprovalStatus;
     this.setState({track})
-    // console.log(res, "unique")
     this.props.fetchTrack()
-    //this.setState({updateTable: true})
-    // location.window.reload();
-
   })
   .catch(err => {
     console.error(err)
   })
+
+
   }
   // handleChange={this.handleAuditionApproval}
 
