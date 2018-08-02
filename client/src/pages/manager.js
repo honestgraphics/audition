@@ -50,7 +50,7 @@ class ManagerPage extends React.Component {
     let tracks = [...this.state.tracks]
     let track = tracks.find(t => t._id === id)
     track.selected = val
-    var updateObject = {}
+    // var updateObject = {}
 
     if (track.selected === true && track.auditionApprovalStatus === true)
       this.updateObject = {

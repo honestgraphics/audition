@@ -8,7 +8,7 @@ import Header from '../components/ForPages/Header/header';
 import AssocTable from '../components/ForTables/1-AssocTable/assoctable';
 // import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
 import Footer from '../components/ForPages/Footer/footer';
-import axios from 'axios'
+// import axios from 'axios'
 
 class AuditionPage extends React.Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class AuditionPage extends React.Component {
     let tracks = [...this.state.tracks]
     let track = tracks.find(t => t._id === id)
     track.selected = val
-    var updateObject = {}
+    // var updateObject = {}
 
     if (track.selected === true && track.auditionApprovalStatus === true)
       this.updateObject = {
