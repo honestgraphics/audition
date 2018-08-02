@@ -44,7 +44,12 @@ class ManagerPage extends React.Component {
                     fetchTrack={this.fetchTrack}
                     setSelected={this.setSelected}/>
           {/* <SubmitBtn /> */}
-          <button type="button" className="btn btn-primary submitBtn" onClick={this.onSubmit}  disabled={this.getSelected().length<=0}>Submit</button>
+          <div className="container">
+          <button type="button" className="btn btn-primary submitBtn" onClick={this.onSubmit}  
+          // disabled={this.getSelected().length<=0}
+          >Submit
+          </button>
+          </div>
         <Footer />
       </Fragment>
     );

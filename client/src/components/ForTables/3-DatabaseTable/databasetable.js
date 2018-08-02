@@ -1,8 +1,10 @@
 import React from 'react';
 //import buttons
-import TablePlayBtn from '../../ForButtons/TablePlayBtn/tableplaybtn';
-import EditBtn from '../../ForButtons/EditBtn/editbtn';
-import DeleteBtn from '../../ForButtons/DeleteBtn/deletebtn';
+// import TablePlayBtn from '../../ForButtons/TablePlayBtn/tableplaybtn';
+// import EditBtn from '../../ForButtons/EditBtn/editbtn';
+// import DeleteBtn from '../../ForButtons/DeleteBtn/deletebtn';
+import RowComponent from '../../ForTables/RowComponent/rowcomponent';
+// import axios from "axios";
 
 
 export default class Table extends React.Component {
@@ -11,31 +13,77 @@ export default class Table extends React.Component {
     this.state = {
       tracks: [],
       updateTable: false
+      // auditionApprovalStatus: {},
     }
-  }
-
-  componentDidMount() {
-    // bring in fetchTrack property from Table.js
-    this.props.fetchTrack();
-
-  }
-
-  updateTableMethod = () => {
-    this.setState({
-      updateTable: true
-    });
+    // console.log(tracks);
+    // this.handleAuditionApproval = this.handleAuditionApproval.bind(this)
   }
   
- render() {
-   const { tracks, fetchTrack } = this.props;
+  
 
-  //  console.log("Tracks from table being sent down:"+tracks);
-   return (<div className="tableContainer">
+  // updateTableMethod = () => {
+  //   this.setState({
+  //     updateTable: true
+  //   });
+  // }
+
+  // handleChange = (_id, event) => {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+  //   this.setState({
+  //     [name]: value
+
+  //   });
+    // // let auditionApprovalStatus = this.state.auditionApprovalStatus;
+    // // auditionApprovalStatus(track._id) = e.target.checked;
+    // this.setState({auditionApprovalStatus});
+
+    // // console.log("you got checked", e.target.checked)
+    // // console.log("id", _id);
+    // axios.put("/api/auditions/"+_id, e.target.checked).then(res => {
+    //   // console.log(res, "unique")
+    //   this.setState({updateTable: true})
+    // });
+  // }
+
+//   //song approval checkbox
+//   handleAuditionApproval = (_id, e) => {
+//     // let auditionApprovalStatus = this.state.auditionApprovalStatus;
+//     // auditionApprovalStatus(track._id) = e.target.checked;
+//     //let auditionApprovalStatus = e.target.checked
+//    // this.setState({auditionApprovalStatus}, () => {
+//       // console.log("you got checked", e.target.checked)
+//       // console.log("id", _id);
+     
+//    // });
+// debugger
+//   //calling api endpoint on back    referencing a request body-object where the key values map to the data model .. here key:value    this returns a promise that you can call then on
+//    axios.put("/api/auditions/"+_id, {auditionApprovalStatus: e.target.checked}).then(res => {
+//     // console.log(res, "unique")
+//     this.setState({updateTable: true})
+//     location.window.reload();
+//   })
+//   .catch(err => {
+//     console.error(err)
+//   })
+//   }
+
+  // openTrack = (auditionLink) => {
+  //   window.open(auditionLink, '', 'width=320, height=75')
+  // }
+  
+ render() {
+   const tracks = this.props.tracks;
+   console.log('assoctable render', tracks)
+  //  const { 
+  //    tracks, 
+  //   //  fetchTrack 
+  //   } = this.props;
+   return (<div className="container tableContainer">
    <div className="row">
-   <div className="col-lg-1"></div>
-   <div className=" tableDiv col-lg-10">
+   <div className="col-md-12">
             <div className="panel-body">
-    <table className="table table-md table-hover table-responsive">
+    <table className="table table-sm table-hover table-responsive">
       <thead className="thead-dark">
         <tr>
           <th className="responsive-visibility" scope="col">
@@ -47,12 +95,12 @@ export default class Table extends React.Component {
           <th className="responsive-invisibility" scope="col">
             Submission Date
           </th>
-          {/* <th className="responsive-invisibility" scope="col">
+          <th className="responsive-invisibility" scope="col">
            Manager
-          </th> */}
-          {/* <th className="responsive-invisibility" scope="col">
+          </th>
+          <th className="responsive-invisibility" scope="col">
             Submission Date
-          </th> */}
+          </th>
           <th className="responsive-visibility" scope="col">
             Approve Audition
           </th>
@@ -81,7 +129,7 @@ export default class Table extends React.Component {
             Album
           </th>
           <th className="responsive-visibility" scope="col">
-            File Name
+            File Path
           </th>
           <th className="responsive-visibility" scope="col">
             Edit & Delete
@@ -89,75 +137,27 @@ export default class Table extends React.Component {
         </tr>
       </thead>
       <tbody>
-        {tracks.map((track, i) => {
+        {tracks.map((
+          track,
+          i
+        ) => {
           // console.log('track', track);
           // console.log("TRACK STUFF HERE *(**************************");
-          // console.log(track.filepath);
+           console.log(track.filepath);
         return (
-          
-        <tr key={i}>
-          <td>
-            autofill
-          </td>
-          <td>
-            {track.auditionedBy}
-          </td>
-          <td>
-            {track.auditionDateSubmitted}
-          </td>
-          {/* <td>
-            {track.managerApprovalBy}
-          </td>
-          <td>
-            {track.managerDateSubmitted}
-          </td> */}
-          <td>
-            {/* Let's add a checkbox component later where we can pass a true/false value. 
-             Until then we can drop a boolean in the table*/}
-            {track.auditionApprovalStatus}
-          </td>
-          <td>
-             <TablePlayBtn auditionSongLink={track.auditionSongLink}/>
-          </td>
-          <td>
-           {track.auditionId}
-          </td>
-          <td>
-            {/* We can make a song category dropdown component, for now I'll put in the type */}
-            {track.songCategory}
-          </td>
-          <td>
-            {track.ISRC}
-          </td>
-          <td>
-            {track.recordLabel}
-          </td>
-          <td>
-             {track.artist}
-          </td>
-          <td>
-            {track.songTitle}
-          </td>
-          <td>
-            {track.album}
-          </td>
-          <td>
-          {track.filepath
-          ?  track.filepath.split("_")[1]
-          : ""}
-
-            {/* {track.filepath.split("_")[1]} */}
-          </td>
-          <td>
-            <EditBtn track={track.auditionSongLink} mongoId={track._id} updateTableMethod={this.state.updateTable}/>
-            <DeleteBtn trackId={track['_id']} fetchTrack={fetchTrack} filepath={track.filepath} />
-          </td>
-        </tr>)})}
+          <
+            RowComponent 
+            track={track}
+            key={track._id}  
+            {...this.props}
+            //fetchTrack={this.props.fetchTrack} 
+            // tracks={this.state.tracks} 
+          />
+        )})}
       </tbody>
     </table>
     </div>
     </div>
-    <div className="col-lg-1"></div>
     </div>
   </div>)
  }
