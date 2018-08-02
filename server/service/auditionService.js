@@ -39,7 +39,8 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       getAssociateTracks: function(req, res){
-        find({onManagerPage: false})
+        db.Audition
+        .find({onManagerPage: false})
         .sort({ date: -1 })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));

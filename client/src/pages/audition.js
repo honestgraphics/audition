@@ -22,11 +22,11 @@ class AuditionPage extends React.Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
   fetchTrack = () => {
-    api.getAuditions()
+    api.getAssociateTracks()
       .then((res) => {
         const { data } = res;
         // console.log("this is the tracks for assoctable", this.state)
-        // console.log("this is the res for fetchtrack for assoctable", res)
+         console.log("this is the res for fetchtrack for assoctable", res)
 
 
         this.setState({ tracks: data }, () => {
