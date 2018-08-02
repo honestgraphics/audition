@@ -5,13 +5,11 @@
 
 // create margin between table and header
 .tableContainer {
-  margin-top:30px;
+  margin-top: 30px;
 }
 
-// round corners on table
 .table {
-  border-radius: 10px;
-  // padding: 0;
+  border-radius: 10px
 }
 
 // different color rows on table
@@ -23,10 +21,6 @@
   background-color: #ddd !important; 
 }
 
-// .col-lg-1{
-// width: 5%;
-// }
-// .tableDiv{
-//   // padding: 0;
-//   align-content: center;
+// .submitCheckbox {
+//   text-align: center;
 // }
