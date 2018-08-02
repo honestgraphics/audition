@@ -62,6 +62,7 @@ export default class AuditionApprovalCheckbox extends React.Component {
     // const {fetchTrack } = this.props;
     return (
             <input 
+            className="auditionApprovalCheckbox"
             type="checkbox" 
             onChange={(e)=>{this.handleAuditionApproval(this.props.trackId, e)}} 
             //checked={this.props.isChecked}
