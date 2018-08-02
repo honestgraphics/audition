@@ -23,7 +23,7 @@
 }
 
 .nav-link:hover{
-  color:rgb(243, 243, 130) !important;
+  color: #FDFB44 !important;
 }
 
 img.card {
@@ -47,6 +47,36 @@ img.card {
 .navbar-toggler{
   background-color: whitesmoke;
 }
+
+.uploadBtn, .logoutBtn {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+
+
+.nav-item.top {
+  font-size: 4vh;
+  
+}
+
+.navbar-fixed-top {
+  display: flex !important;
+  // align-items: flex-end;
+  flex-direction: row-reverse;
+  background-color: black;
+}
+
+.logoutBtn {
+  font-size: 4vh;
+  margin-right: 14px;
+}
+
+
+
+
+
+
 
 /* Generated with Bounce.js. Edit at https://goo.gl/et2XBk */
 

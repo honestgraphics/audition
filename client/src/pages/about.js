@@ -8,11 +8,11 @@ class AboutPage extends React.Component {
 
     render(){
         return(
-            <div>
-        <Header />
-        <About />
-        <Footer />
-        </div>
+        <Fragment>
+            <Header />
+            <About />
+            <Footer />
+        </Fragment>
         )
     }
 }

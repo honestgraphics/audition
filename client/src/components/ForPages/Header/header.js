@@ -6,9 +6,44 @@ import logo from '../../../assets/images/auditionlogo.png';
 import UploadBtn from '../../ForButtons/UploadBtn/uploadbtn';
 
 
+// $('.navbar-lower').affix({
+//   offset: {top: 50}
+// });
+
 const Header = ({ fetchTrack }) => (
   <div>
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+
+
+    <nav className="navbar 
+    navbar-expand-sm
+    // navbar-default 
+    navbar-fixed-top">
+        
+        <div className="row">
+        <div className="col-12-lg">
+          <ul className="navbar-nav ml-auto topNav">
+            
+            <li className="nav-item top">
+              <UploadBtn className="uploadBtn" fetchTrack={fetchTrack} />
+            </li>
+
+            <li className="nav-item top">
+              <NavLink  className="nav-link" to="/logout">
+                <i className="fas fa-sign-out-alt text-danger logoutBtn"></i>
+              </NavLink>
+            </li>
+
+          </ul>
+          </div>
+        </div>
+      
+    </nav>
+
+
+
+
+{/* second nav */}
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark navbar-lower">
       <img className="nav_logo" src={logo} alt="Logo" />
       <Link to="/">
         <div className="navbar-brand navbar_app_name">
@@ -25,28 +60,30 @@ const Header = ({ fetchTrack }) => (
             <NavLink  className="nav-link" to="/">Home</NavLink>
           </li> */}
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/audition">Audition</NavLink>
+            <NavLink  className="nav-link" to="/about">About</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/manager">Manager Approval</NavLink>
+            <NavLink  className="nav-link" to="/audition">Production</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink  className="nav-link" to="/Database">View All</NavLink>
+            <NavLink  className="nav-link" to="/manager">Manage</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink  className="nav-link" to="/Database">Database</NavLink>
           </li>
           <li className="nav-item">
             <NavLink  className="nav-link" to="/contact">Contact</NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink  className="nav-link" to="/about">About</NavLink>
-          </li>
-          <li className="nav-item">
+          
+          {/* <li className="nav-item">
             <NavLink  className="nav-link" to="/logout">Logout</NavLink>
           </li>
           <li>
           <UploadBtn fetchTrack={fetchTrack} />
-          </li>
+          </li> */}
         </ul>
       </div>
+      
     </nav>
   </div>
 )

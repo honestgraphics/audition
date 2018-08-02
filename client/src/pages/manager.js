@@ -2,11 +2,11 @@ import React, {
   // Component, 
   Fragment 
 } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 // import components
 import Header from '../components/ForPages/Header/header';
 import ManagerTable from '../components/ForTables/2-ManagerTable/managertable';
-import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
+// import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
 import Footer from '../components/ForPages/Footer/footer';
 import api from "../api/api"
 
@@ -39,9 +39,12 @@ class ManagerPage extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header />
-        <ManagerTable fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
-        <SubmitBtn />
+        <Header  fetchTrack={this.addTrack} />
+        <ManagerTable  tracks={this.state.tracks} 
+                    fetchTrack={this.fetchTrack}
+                    setSelected={this.setSelected}/>
+          {/* <SubmitBtn /> */}
+          <button type="button" className="btn btn-primary submitBtn" onClick={this.onSubmit}  disabled={this.getSelected().length<=0}>Submit</button>
         <Footer />
       </Fragment>
     );

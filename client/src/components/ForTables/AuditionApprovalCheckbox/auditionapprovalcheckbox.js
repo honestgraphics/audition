@@ -63,6 +63,7 @@ this.props.fetchTrack();
     // const {fetchTrack } = this.props;
     return (
             <input 
+            className="auditionApprovalCheckbox"
             type="checkbox" 
             onChange={(e)=>{this.handleAuditionApproval(this.props.trackId, e)}} 
             //checked={this.props.isChecked}

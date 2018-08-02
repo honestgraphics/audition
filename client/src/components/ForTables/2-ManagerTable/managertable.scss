@@ -1,33 +1,32 @@
 .table-sm td, .table-sm th {
   font-size: .8rem;
   font-family: 'open sans' !important;
+}
 
-}
-.col-lg-1{
-width: 5%;
-}
+// create margin between table and header
 .tableContainer {
   margin-top:30px;
-  // background-color: red;
-  // width:100%;
 }
 
-.tableDiv{
-  padding: 0;
-  align-content: center;
-}
-
+// round corners on table
 .table {
-  border-radius: 5px;
-  padding: 0;
-
+  border-radius: 10px;
+  // padding: 0;
 }
 
+// different color rows on table
 .table tr:nth-child(even){background-color: #f1f1f1;}
-
 .table tr:nth-child(odd){background-color: #f9f9f9;}
 
-
+// hover effect on table
 .table tr:hover{
   background-color: #ddd !important; 
 }
+
+// .col-lg-1{
+// width: 5%;
+// }
+// .tableDiv{
+//   // padding: 0;
+//   align-content: center;
+// }

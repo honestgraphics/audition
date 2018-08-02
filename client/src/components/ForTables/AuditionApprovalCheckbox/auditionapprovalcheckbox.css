@@ -1,0 +1,6 @@
+input.auditionApprovalCheckbox {
+  font-size: 2vh; }
+
+@media only screen and (max-width: 600px) {
+  .auditionApprovalCheckbox {
+    font-size: 3vh; } }

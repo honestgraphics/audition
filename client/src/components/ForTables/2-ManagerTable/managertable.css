@@ -2,19 +2,11 @@
   font-size: .8rem;
   font-family: 'open sans' !important; }
 
-.col-lg-1 {
-  width: 5%; }
-
 .tableContainer {
   margin-top: 30px; }
 
-.tableDiv {
-  padding: 0;
-  align-content: center; }
-
 .table {
-  border-radius: 5px;
-  padding: 0; }
+  border-radius: 10px; }
 
 .table tr:nth-child(even) {
   background-color: #f1f1f1; }

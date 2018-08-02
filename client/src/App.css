@@ -1,3 +1,10 @@
+.fa-trash {
+  font-size: 2vh; }
+
+@media only screen and (max-width: 600px) {
+  .fa-trash {
+    font-size: 3vh; } }
+
 .upload-icon {
   display: flex;
   justify-content: center;
@@ -7,25 +14,37 @@
 .form-row {
   margin-bottom: .5em; }
 
+.fa-pencil-alt {
+  font-size: 2vh; }
+
+@media only screen and (max-width: 600px) {
+  .fa-pencil-alt {
+    font-size: 3vh; } }
+
 .fa {
   color: white; }
+
+button {
+  border: none;
+  background-color: transparent; }
+
+button:focus {
+  outline: none; }
+
+.fa-play {
+  font-size: 2vh; }
+
+@media only screen and (max-width: 600px) {
+  .fa-play {
+    font-size: 3vh; } }
 
 .custom-file-upload input[type="file"] {
   display: none; }
 
 .custom-file-upload {
   flex: 1;
-  margin-left: 5px; }
-
-.custom-file-upload .custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  width: 100%;
-  background-color: #437cff;
-  color: #fff;
-  border-radius: 10px; }
+  margin-top: 3px;
+  cursor: pointer; }
 
 .backdrop {
   position: fixed;
@@ -82,11 +101,12 @@
 .aboutBox {
   width: 40vw;
   position: relative;
-  margin-left: 10%; }
+  margin-top: 2%;
+  margin-left: 6%; }
 
 li, h3 {
-  color: whitesmoke;
-  text-shadow: 3px 3px 3px #131311; }
+  color: #131311;
+  text-shadow: 3px 4px 8px #676768; }
 
 @media only screen and (max-width: 900px) {
   .aboutBox {
@@ -102,12 +122,21 @@ li, h3 {
   position: relative;
   width: 100%;
   margin-top: 4vh;
-  padding: 9vh;
+  padding: 7vh;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999; }
 
 form {
-  width: 70%;
+  width: 50%;
   margin: 0 auto; }
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14vh; }
+
+.formParts {
+  margin-bottom: 10px !important; }
 
 textarea, input[type=email], input[type=submit]:focus {
   outline: none !important; }
@@ -157,6 +186,7 @@ h2 {
   text-shadow: 3px 3px 3px #131311; }
 
 .footer {
+  margin-top: 50px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -196,7 +226,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   text-shadow: 2px 2px 2px #131311; }
 
 .nav-link:hover {
-  color: #f3f382 !important; }
+  color: #FDFB44 !important; }
 
 img.card {
   display: flex;
@@ -214,6 +244,23 @@ img.card {
 
 .navbar-toggler {
   background-color: whitesmoke; }
+
+.uploadBtn, .logoutBtn {
+  display: flex;
+  justify-content: flex-end;
+  color: white; }
+
+.nav-item.top {
+  font-size: 4vh; }
+
+.navbar-fixed-top {
+  display: flex !important;
+  flex-direction: row-reverse;
+  background-color: black; }
+
+.logoutBtn {
+  font-size: 4vh;
+  margin-right: 14px; }
 
 /* Generated with Bounce.js. Edit at https://goo.gl/et2XBk */
 @-webkit-keyframes animation {
@@ -441,7 +488,7 @@ img.card {
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -487,7 +534,7 @@ h1 {
   color: whitesmoke; }
 
 h1:hover {
-  color: #f3f382;
+  color: #FDFB44;
   font-size: 9.5vw; }
 
 @keyframes fadein {
@@ -727,11 +774,10 @@ h1:hover {
   vertical-align: bottom; }
 
 .brand {
-  font-family: 'Markazi Text', serif;
-  font-size: 60px;
-  color: #5a5a5a;
-  margin-bottom: 15px;
-  vertical-align: top; }
+  font-family: 'Permanent Marker', cursive;
+  font-size: 8vh;
+  color: whitesmoke !important;
+  text-shadow: 3px 3px 3px #131311; }
 
 .bg {
   background-color: white; }
@@ -759,23 +805,26 @@ h1:hover {
   margin-bottom: 15px;
   vertical-align: top; }
 
+.brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 9vh;
+  color: black !important;
+  text-shadow: 3px 3px 3px whitesmoke; }
+
+.logo {
+  width: 15%;
+  float: left;
+  vertical-align: bottom; }
+
 .table-sm td, .table-sm th {
   font-size: .8rem;
   font-family: 'open sans' !important; }
 
-.col-lg-1 {
-  width: 5%; }
-
 .tableContainer {
   margin-top: 30px; }
 
-.tableDiv {
-  padding: 0;
-  align-content: center; }
-
 .table {
-  border-radius: 5px;
-  padding: 0; }
+  border-radius: 10px; }
 
 .table tr:nth-child(even) {
   background-color: #f1f1f1; }
@@ -804,6 +853,14 @@ h1:hover {
 
 .table tr:hover {
   background-color: #ddd !important; }
+
+.submitBtn {
+  display: flex;
+  flex-direction: row-reverse; }
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #62abfa;
+  color: white; }
 
 .App {
   text-align: center; }

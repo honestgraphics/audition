@@ -14,11 +14,12 @@
 .aboutBox {
   width: 40vw;
   position: relative;
-  margin-left: 10%; }
+  margin-top: 2%;
+  margin-left: 6%; }
 
 li, h3 {
-  color: whitesmoke;
-  text-shadow: 3px 3px 3px #131311; }
+  color: #131311;
+  text-shadow: 3px 4px 8px #676768; }
 
 @media only screen and (max-width: 900px) {
   .aboutBox {

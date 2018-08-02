@@ -1,0 +1,10 @@
+.brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 9vh;
+  color: black !important;
+  text-shadow: 3px 3px 3px whitesmoke; }
+
+.logo {
+  width: 15%;
+  float: left;
+  vertical-align: bottom; }

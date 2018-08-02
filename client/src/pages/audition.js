@@ -111,16 +111,23 @@ class AuditionPage extends React.Component {
     console.log('audition render', this.state.tracks)
     return (
       <Fragment>
-        {/* <h1 style={sectionStyle}>AUDITION PAGE</h1> */}
         <Header fetchTrack={this.addTrack} />
-        <AssocTable tracks={this.state.tracks}
-          fetchTrack={this.fetchTrack}
-          setSelected={this.setSelected} />
-        {/* <SubmitBtn /> */}
-        <button type="button"
-          className="btn btn-primary submitBtn"
-          onClick={this.onSubmit}
-          disabled={this.getSelected().length <= 0}>Submit</button>
+
+        <AssocTable tracks={this.state.tracks} 
+                    fetchTrack={this.fetchTrack}
+                    setSelected={this.setSelected} 
+        />
+      
+          {/* SubmitBtn introduced here instead of from component */}
+          <div className="container">
+          <button type="button" 
+                  className="btn btn-primary submitBtn" 
+                  onClick={this.onSubmit} 
+                  disabled={this.getSelected().length<=0}>
+            Submit
+          </button>
+          </div>
+
         <Footer />
       </Fragment>
     );

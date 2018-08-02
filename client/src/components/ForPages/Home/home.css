@@ -21,7 +21,7 @@
   color: whitesmoke;
   background-size: 100%;
   text-shadow: 1px 1px 1px black;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 img {
   max-height: 100%;
@@ -67,7 +67,7 @@ h1 {
   color: whitesmoke; }
 
 h1:hover {
-  color: #f3f382;
+  color: #FDFB44;
   font-size: 9.5vw; }
 
 @keyframes fadein {

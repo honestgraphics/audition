@@ -29,8 +29,10 @@ class DatabasePage extends React.Component {
   render() {
     return (
       <Fragment>
-        <Header />
-        <DatabaseTable fetchTrack={this.fetchTrack} tracks={this.state.tracks}/>
+        <Header  fetchTrack={this.addTrack} />
+        <DatabaseTable  tracks={this.state.tracks} 
+                    fetchTrack={this.fetchTrack}
+        />
         <Footer />
     </Fragment>
     );
