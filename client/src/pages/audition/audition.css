@@ -1,7 +1,12 @@
-.submitBtn {
+  body{overflow:scroll;}
+  
+  .submitBtn {
   display: flex;
-  flex-direction: row-reverse; }
+  flex-direction: row-reverse;
+  margin-bottom: 14vh; }
 
 .btn-primary.disabled, .btn-primary:disabled {
   background-color: #62abfa;
   color: white; }
+
+
