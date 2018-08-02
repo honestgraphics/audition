@@ -58,30 +58,32 @@ class UploadBtn extends Component {
 
 
   render() {
-    const {
-      loading
-    } = this.state
-    return ( <div className = "App">
-      <Fragment> { /* Ternary stating if loading is true, then load loading gif, else  */ } {
-        loading ? < img src = {
-          Spinner
-        }
-        alt = "spinner"
-        height = "70"
-        width = "70" / >
-          : <div className = "custom-file-upload">
-            <label htmlFor = "file-upload"
-          className = "custom-file-upload" >
-            <i className = "fa fa-cloud-upload" />
-            Upload </label>
-            <input
-              onChange = {this.handleFileUpload}
-              id = "file-upload"
-              type = "file"
-              name="track" />
-          </div>} </Fragment> </div>
-      )
-    }
+    const {loading} = this.state
+    return (
+    <div className = "App">
+      <Fragment> 
+        { /* Ternary stating if loading is true, then load loading gif, else  */ } 
+        {loading ? < img className="spinner" src = {Spinner} alt = "spinner" height = "70" width = "70" / >
+          : <div className = "custom-file-upload uploadBtn">
+              <label htmlFor = "file-upload" className = "custom-file-upload" >
+                {/* <i className = "fa fa-cloud-upload" /> */}
+                
+                <i className="fas fa-cloud-upload-alt  text-primary
+                 uploadBtn"></i> 
+                
+              </label>
+                <input
+                  onChange = {this.handleFileUpload}
+                  id = "file-upload"
+                  type = "file"
+                  name="track" 
+                />
+          </div>
+        } 
+      </Fragment> 
+    </div>
+    )
+  }
   }
 
   export default UploadBtn
