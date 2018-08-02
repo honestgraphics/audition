@@ -45,7 +45,11 @@ const auditionSchema = new Schema({
 // this boolean will only become true if both "selected" and "auditionApprovalStatus" are both true
   readyForManager: {type: Boolean, default: false},
 
-  onManagerPage: {type: Boolean, default: false}
+  onManagerPage: {type: Boolean, default: false},
+
+  readyForDatabase: {type: Boolean, default: false},
+
+  onDatabasePage: {type: Boolean, default: false}
 
 });
 

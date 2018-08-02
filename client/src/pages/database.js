@@ -7,7 +7,7 @@ import axios from 'axios';
 import Header from '../components/ForPages/Header/header';
 import DatabaseTable from '../components/ForTables/3-DatabaseTable/databasetable';
 import Footer from '../components/ForPages/Footer/footer';
-
+import api from "../api/api";
 
 class DatabasePage extends React.Component {
   constructor(props) {
@@ -17,14 +17,20 @@ class DatabasePage extends React.Component {
     }
   }
   fetchTrack = () => {
-    axios.get('/api/auditions')
+
+    api.getDatabaseTracks()
     .then((res) => {
+      console.log("database hit", res)
       const { data } = res;
       this.setState(prevState => ({
         ...prevState,
         tracks: data
       }));
     })
+  }
+
+  componentDidMount(){
+    this.fetchTrack();
   }
   render() {
     return (

@@ -15,6 +15,10 @@ export default {
   getManagerTracks: function(){
     return axios.get("/api/auditions/manTracks");
   },
+
+  getDatabaseTracks: function(){
+    return axios.get("/api/auditions/dbTracks")
+  },
   // creates a new single audition
   createAudition: function(audition){
       return axios.post("/api/auditions", audition)
@@ -30,6 +34,10 @@ export default {
 
   submitToManager: function(){
     return axios.put("/api/auditions/sendToManager");
+  },
+
+  submitToDatabase: function(){
+    return axios.put("api/auditions/sendToDatabase");
   },
   // Deletes the Auditions with the given id
   deleteAudition: function(id) {

@@ -56,14 +56,14 @@ class ManagerPage extends React.Component {
       this.updateObject = {
         auditionApprovalStatus: track.auditionApprovalStatus,
         selected: track.selected,
-        readyForManager: true
+        readyForDatabase: true
       };
 
     else if (track.readyForManager === true && track.selected === false)
-      this.updateObject = { readyForManager: false, selected: false }
+      this.updateObject = { readyForDatabase: false, selected: false }
 
     else
-      this.updateObject = { readyForManager: false, selected: track.selected }
+      this.updateObject = { readyForDatabase: false, selected: track.selected }
 
     // if at the time of selection both selected & auditionApprovalStatus are true, then readyfor
     console.log("Track before being updated", track, this.updateObject);
@@ -94,9 +94,9 @@ class ManagerPage extends React.Component {
 
     let selectedIds = selected.map(i => i._id)
 
-    axios.post('/api/auditions/submit', { selectedIds })
+    api.submitToDatabase()
       .then(val => {
-        console.log(val)
+        this.fetchTrack();
       })
       .catch(err => {
         console.error(err)
