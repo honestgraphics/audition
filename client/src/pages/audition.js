@@ -89,14 +89,14 @@ class AuditionPage extends React.Component {
     return selected
   }
   onSubmit = e => {
-    let selected = this.getSelected()
-    console.log(selected)
+    // let selected = this.getSelected()
+    // console.log(selected)
 
-    let selectedIds = selected.map(i => i._id)
+    // let selectedIds = selected.map(i => i._id)
 
-    axios.post('/api/auditions/submit', { selectedIds })
+    api.submitToManager()
       .then(val => {
-        console.log(val)
+        this.fetchTrack();
       })
       .catch(err => {
         console.error(err)

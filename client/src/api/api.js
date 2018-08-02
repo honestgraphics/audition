@@ -27,6 +27,10 @@ export default {
   updateAudition: function(id, newData){
     return axios.put("/api/auditions/"+id, newData);
   },
+
+  submitToManager: function(){
+    return axios.put("/api/auditions/sendToManager");
+  },
   // Deletes the Auditions with the given id
   deleteAudition: function(id) {
     return axios.delete("/api/auditions/" + id);
