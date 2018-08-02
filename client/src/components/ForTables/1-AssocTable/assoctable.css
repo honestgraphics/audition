@@ -16,3 +16,10 @@
 
 .table tr:hover {
   background-color: #ddd !important; }
+
+.container {
+  margin-left: 10%;
+  margin-rigth: 10%; }
+
+.tableContainer {
+  max-width: 100%; }

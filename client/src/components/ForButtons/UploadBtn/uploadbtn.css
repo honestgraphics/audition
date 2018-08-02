@@ -2,6 +2,11 @@
   display: none; }
 
 .custom-file-upload {
+  all: unset; }
+
+.custom-file-upload {
   flex: 1;
   margin-top: 3px;
-  cursor: pointer; }
+  cursor: pointer;
+  box-shadow: transparent;
+  text-shadow: transparent; }
