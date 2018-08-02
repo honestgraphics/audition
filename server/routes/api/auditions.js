@@ -10,6 +10,10 @@ router
 .route("/manTracks")
 .get((auditionService.getManagerTracks));
 
+router
+.route("/sendToManager")
+.put((auditionService.sendToManager));
+
 // Matches with "/api/auditions"
 router.route("/")
   .get(auditionService.findAll)
