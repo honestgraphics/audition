@@ -8,7 +8,7 @@ import Header from '../components/ForPages/Header/header';
 import AssocTable from '../components/ForTables/1-AssocTable/assoctable';
 import SubmitBtn from '../components/ForButtons/SubmitBtn/submitbtn';
 import Footer from '../components/ForPages/Footer/footer';
-
+import axios from 'axios'
 
 class AuditionPage extends React.Component {
   constructor(props) {
@@ -16,40 +16,85 @@ class AuditionPage extends React.Component {
     this.state = {
       tracks: []
     }
+  
+    this.addTrack = this.addTrack.bind(this)
+    this.setSelected = this.setSelected.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
   fetchTrack = () => {
     api.getAuditions()
     .then((res) => {
       const { data } = res;
-      console.log("this is the tracks for assoctable", this.state.tracks)
+      console.log("this is the tracks for assoctable", this.state)
       console.log("this is the res for fetchtrack for assoctable", res)
-      this.setState(prevState => ({
-        ...prevState,
-        tracks: data
-      }));
+
+      
+      this.setState({tracks: data}, () => {
+        console.log(this.state)
+      });
       
     })
     .catch(err => {
-      debugger
+      console.log("this is a fetch track error", err)
     })
   }
-  findTrack = () => {
-    console.log(this.state)
+  addTrack = (track) => {
+    let tracks = this.state.tracks
+    let data = [...tracks, track]
+    this.setState({tracks: data})
+  }
+  setSelected = (val, id) => {
+    console.log('setSelected', val, id)
+  
+    let tracks = [...this.state.tracks]
+    let track = tracks.find(t => t._id === id)
+    track.selected = val
+
+    this.setState({tracks}, () => {
+      console.log('setselected setstate', this.state.tracks)
+    })
+  }
+  getSelected() {
+    let selected = this.state.tracks.filter(t => t.selected)
+    if(!selected) {
+      return []
+    }
+
+    return selected
+  }
+  onSubmit = e => {
+    let selected = this.getSelected()
+    console.log(selected)
+
+    let selectedIds = selected.map(i => i._id)
+
+    axios.post('/api/auditions/submit', {selectedIds})
+      .then(val => {
+        console.log(val)
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
   componentDidMount = () => {
     this.fetchTrack();
   }
 
   render() {
-    
-    console.log("rendered")
-    console.log(this.state.tracks)
+     //console.log("rendered")
+     console.log('audition render', this.state.tracks)
     return (
       <Fragment>
         {/* <h1 style={sectionStyle}>AUDITION PAGE</h1> */}
-        <Header fetchTrack={this.findTrack} />
-        <AssocTable tracks={this.state.tracks} fetchTrack={this.fetchTrack} />
-        <SubmitBtn />
+        <Header fetchTrack={this.addTrack} />
+        <AssocTable tracks={this.state.tracks} 
+                    fetchTrack={this.fetchTrack}
+                    setSelected={this.setSelected} />
+        {/* <SubmitBtn /> */}
+        <button type="button" 
+                className="btn btn-primary submitBtn" 
+                onClick={this.onSubmit}
+                disabled={this.getSelected().length<=0}>Submit</button>
         <Footer />
     </Fragment>
     );

@@ -1,8 +1,8 @@
 
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import propTypes from 'prop-types'
-import axios from "axios";
+// import { Link } from 'react-router-dom';
+// import propTypes from 'prop-types'
+// import axios from "axios";
 
 
 // create stateful component for modal play button
@@ -19,7 +19,7 @@ class SubmitBtn extends Component {
 
    return (
     <Fragment>
-      <button type="button" class="btn btn-primary submitBtn">Submit</button>
+      <button type="button" className="btn btn-primary submitBtn">Submit</button>
     </Fragment>
     )
   }

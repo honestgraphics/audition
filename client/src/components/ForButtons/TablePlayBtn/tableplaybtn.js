@@ -27,7 +27,7 @@ class TablePlayBtn extends Component {
         loop={true} autoLoad={true}/>
         
 
-      <button onClick={() => {
+      <button className="tablePlayBtn" onClick={() => {
         let playSong = this.state.playSong ? null : auditionSongLink
         this.setState({
           playSong 

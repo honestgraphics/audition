@@ -44,7 +44,7 @@ class UploadBtn extends Component {
             ...prevState,
             loading: false
           }));
-          this.props.fetchTrack();
+          this.props.fetchTrack(response.data);
         })
       })
       .catch((error) => {
