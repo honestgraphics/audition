@@ -19,7 +19,7 @@ class About extends React.Component {
           <li><h3>Storage</h3></li>
           <li><h3>Validation</h3></li>
           <li><h3>Copy rights protection</h3></li>
-          <li><h3>Approval & tarcking System</h3></li>
+          <li><h3>Approval & tracking System</h3></li>
           <li><h3>More ...</h3></li>
         </ul>
       </div>
