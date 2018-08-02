@@ -8,8 +8,8 @@ export default {
     return axios.get("/api/auditions");
   },
 
-  getFilteredAuditions: function(query){
-    return axios.get("/api/auditions", query);
+  getAssociateTracks: function(){
+    return axios.get("/api/auditions/associate");
   },
   // creates a new single audition
   createAudition: function(audition){

@@ -32,4 +32,8 @@ router
     res.send("SUCCESS SUBMIT")
   })
 
+  router
+  .route("/associate")
+  .get(auditionService.findAll)
+
 module.exports = router;
