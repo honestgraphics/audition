@@ -30,7 +30,7 @@ router
   .post((req, res) => {
     console.log(req.body)
     res.send("SUCCESS SUBMIT")
-  })
+  });
 
   router
   .route("/associate")
